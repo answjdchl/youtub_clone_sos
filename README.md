@@ -1,6 +1,6 @@
 # youtub_clone_sos
 
-# branch 구성
+branch 구성
 
 -html
   -html 코드 전체
