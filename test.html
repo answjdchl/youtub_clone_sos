@@ -8,17 +8,44 @@
 </head>
 
 <body>
-    <video id="video" controls loop muted poster="" preload="auto">
-        <source id="source" src="" type="video/mp4">
-        zzz
-    </video>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
-        integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        document.getElementById('video').poster = "https://storage.googleapis.com/oreumi.appspot.com/img_1.jpg";
-        document.getElementById('source').src = "https://storage.googleapis.com/oreumi.appspot.com/video_1.mp4";
-    </script>
+    <video src="" id="video" poster="" controls autoplay preload="auto" width="600">
+        <input type="text" id="search">
+        <button onclick="search()">검색</button>
 </body>
+<script>
+    const videoTag = document.getElementById('video');
+    const searchInput = document.getElementById('search');
+    let videoList = [];
+    let searchedList = [];
+    fetch("http://oreumi.appspot.com/video/getVideoInfo?video_id=1")
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            videoTag.poster = data.image_link;
+            videoTag.src = data.video_link;
+        });
+
+    fetch("http://oreumi.appspot.com/video/getVideoList")
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            videoList = data;
+        });
+
+    function search() {
+        let searchText = searchInput.value;
+        searchedList = [];
+        for (let i = 0; i < videoList.length; i++) {
+            if (videoList[i].video_channel.includes(searchText)
+                || videoList[i].video_detail.includes(searchText)
+                || videoList[i].video_title.includes(searchText)
+                || videoList[i].video_tag.includes(searchText)
+            ) {
+                searchedList.push(videoList[i]);
+            }
+        }
+        console.log(searchedList);
+    }
+</script>
 
 </html>
