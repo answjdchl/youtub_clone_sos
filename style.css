@@ -1,0 +1,15 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: black;
+    color: white;
+  }
+  
+  span:nth-child(2){
+    color: red;
+  }
+
+  .sidebar{
+    text-align: center;
+  }
