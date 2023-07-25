@@ -1,0 +1,173 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+body{
+    background-color: #000;
+    color: #fff;
+    width: 1440px;
+    height: 1024px;
+}
+
+nav{
+    background-color: #212121;
+    height: 56px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    border: 1px solid #303030;
+}
+
+
+aside{
+    width: 224px;
+    height: 968px;
+    padding-right: 16px;
+    float: left;
+    border: 1px solid #303030;
+    background-color: #212121;
+}
+
+main{
+    /* display: inline-block; */
+    width: 1195px;
+    float: left;
+
+}
+
+.channel{
+
+    background-color: #181818;
+}
+
+.channel .channel-cover {
+    height: 192px;
+}
+
+.channel .channel-title {
+    padding: 16px 65px 4px 65px;
+    display: flex;
+    align-items: flex-start;
+    gap: 685px;
+}
+
+
+
+/* user profile */
+
+.channel-profile{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6499999761581421;
+
+    padding-right: 24px;
+}
+
+.user-name {
+    display: flex;
+    padding: 18px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.name{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.subscribers{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+/* sub btn */
+
+.channel-sub-btn{
+    display: flex;
+    width: 124px;
+    padding: 22px 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.sub-btn{
+    display: flex;
+    padding: 10px 16px;
+    align-items: flex-start;
+    gap: 10px;
+
+    border: 0px;
+    border-radius: 2px;
+    background: #C00;
+
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+
+
+/* toolbar */
+
+.channel-toolbar {
+    padding: 0 65px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.toolbars{
+    display: flex;
+    align-items: flex-start;
+}
+
+.toolbar-menu{
+    padding: 16px 32px 15px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+}
+
+.menu-items{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    background-color: #181818;
+    border: 0px;
+
+    color: #aaa;
+}
+
+.menu-items:active{
+    color: #fff;
+    font-weight: bold;
+}
+
+.toolbar-menu:active{
+    border-bottom: 1px #fff solid;
+    padding-bottom: 14px;
+}
