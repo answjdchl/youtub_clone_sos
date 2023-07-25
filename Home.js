@@ -1,8 +1,9 @@
 const videoTag = document.getElementById('video');
 const searchInput = document.getElementById('search');
+//전체 비디오 객체 리스트
 let videoList = [];
-let searchedList = [];
 
+//전체 비디오 리스트 초기화 및 비디오카드 생성
 fetch("http://oreumi.appspot.com/video/getVideoList")
     .then((response) => response.json())
     .then((data) => {
@@ -11,12 +12,15 @@ fetch("http://oreumi.appspot.com/video/getVideoList")
         setVideoCards();
     });
 
+//비디오 카드 생성 함수
 function setVideoCards() {
     for (let i = 0; i < videoList.length; i++) {
+        //비디오카드가 추가될 html 태그
         const article = document.getElementById("videos");
 
+        //비디오카드 생성을 위한 html 태그
         const videoCard = document.createElement("div");
-        const video = document.createElement("video");
+        const thumbnail = document.createElement("img");
         const detail = document.createElement("div");
         const channelProfile = document.createElement("img");
         const infoText = document.createElement("div");
@@ -24,8 +28,8 @@ function setVideoCards() {
         const channelName = document.createElement("div");
         const viewsAndUploaded = document.createElement("div");
 
-        video.width = "300";
-        video.setAttribute("controls", true);
+        //각 태그들의 속성값 설정
+        thumbnail.width = "300";
         channelProfile.src = "./User-Avatar.svg";
 
         infoText.appendChild(title);
@@ -35,13 +39,13 @@ function setVideoCards() {
         detail.appendChild(channelProfile);
         detail.appendChild(infoText);
 
-        videoCard.appendChild(video);
+        videoCard.appendChild(thumbnail);
         videoCard.appendChild(detail);
 
         article.appendChild(videoCard);
 
         videoCard.className = "videoCard";
-        video.className = "video";
+        thumbnail.className = "thumbnail";
         detail.className = "detail";
         channelProfile.className = "channelProfile";
         infoText.className = "infoText";
@@ -49,12 +53,11 @@ function setVideoCards() {
         channelName.className = "channelName";
         viewsAndUploaded.className = "viewsAndUploaded";
 
+        //비디오 정보 받아오기
         fetch(`http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoList[i].video_id}`)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
-                video.poster = data.image_link;
-                video.src = data.video_link;
+                thumbnail.src = data.image_link;
                 title.innerText = data.video_title;
                 channelName.innerText = data.video_channel;
                 viewsAndUploaded.innerText = `${data.views}Views, ${daysAgo(data.upload_date)}`;
@@ -62,9 +65,15 @@ function setVideoCards() {
     }
 }
 
+//검색 결과에 따른 비디오카드 업데이트 함수
+function updateVideoCards(updatedList) {
+
+}
+
+//검색 함수
 function search() {
     let searchText = searchInput.value;
-    searchedList = [];
+    let searchedList = [];
     for (let i = 0; i < videoList.length; i++) {
         if (videoList[i].video_channel.includes(searchText)
             || videoList[i].video_detail.includes(searchText)
@@ -74,9 +83,10 @@ function search() {
             searchedList.push(videoList[i]);
         }
     }
-    console.log(searchedList);
+    updateVideoCards(searchedList);
 }
 
+//업로드 날짜 포맷 함수
 function daysAgo(uploadedTime) {
     const uploaded = new Date(uploadedTime);
     const now = new Date();
