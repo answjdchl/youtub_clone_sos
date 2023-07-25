@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> c6ce25c (header)
@@ -41,6 +42,8 @@ span:nth-child(2){
 >>>>>>> 7d9190d (header)
 =======
 >>>>>>> c6ce25c (header)
+=======
+>>>>>>> 7d9190d (header)
 header{
     display: flex;
     justify-content: space-between;
@@ -56,6 +59,7 @@ header{
   .sidebar{
     text-align: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
   }
 <<<<<<< HEAD
 >>>>>>> c6ce25c (header)
@@ -64,3 +68,6 @@ header{
 =======
   }
 >>>>>>> c6ce25c (header)
+=======
+  }
+>>>>>>> 7d9190d (header)
