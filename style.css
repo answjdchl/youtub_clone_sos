@@ -1,3 +1,37 @@
+<<<<<<< HEAD
+=======
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  padding: 0;
+}
+
+>>>>>>> c6ce25c (header)
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: black;
+    color: white;
+  }
+  
+  span:nth-child(2){
+    color: red;
+  }
+
+<<<<<<< HEAD
+  .sidebar{
+    text-align: center;
+  }
+=======
+span:nth-child(2){
+  color: red;
+}
+
 header{
     display: flex;
     justify-content: space-between;
@@ -13,3 +47,4 @@ header{
   .sidebar{
     text-align: center;
   }
+>>>>>>> c6ce25c (header)
