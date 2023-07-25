@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 *{
@@ -32,6 +33,8 @@ span:nth-child(2){
   color: red;
 }
 
+=======
+>>>>>>> 7d9190d (header)
 header{
     display: flex;
     justify-content: space-between;
@@ -47,4 +50,7 @@ header{
   .sidebar{
     text-align: center;
   }
+<<<<<<< HEAD
 >>>>>>> c6ce25c (header)
+=======
+>>>>>>> 7d9190d (header)
