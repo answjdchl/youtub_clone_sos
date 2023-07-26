@@ -1,24 +1,30 @@
 const videoTag = document.getElementById('video');
 const searchInput = document.getElementById('search');
 //전체 비디오 객체 리스트
-let videoList = [];
+let allVideoList = [];
+//현재 비디오 객체 리스트 (검색 기능 등으로 필터링 된 목록)
+let currentVideoList = [];
 
 //전체 비디오 리스트 초기화 및 비디오카드 생성
 fetch("http://oreumi.appspot.com/video/getVideoList")
     .then((response) => response.json())
     .then((data) => {
         console.log(data);
-        videoList = data;
-        setVideoCards();
+        allVideoList = data;
+        currentVideoList = data;
+        setVideoCards(currentVideoList);
+        setTagNavigator(getTags(currentVideoList));
     });
 
 //비디오 카드 생성 함수
-function setVideoCards() {
-    for (let i = 0; i < videoList.length; i++) {
-        //비디오카드가 추가될 html 태그
-        const article = document.getElementById("videos");
+function setVideoCards(videoList) {
+    //비디오카드가 추가될 html 요소
+    const videos = document.getElementById("videos");
+    //자식 요소 초기화
+    videos.replaceChildren();
 
-        //비디오카드 생성을 위한 html 태그
+    for (let i = 0; i < videoList.length; i++) {
+        //비디오카드 생성을 위한 html 요소
         const videoCard = document.createElement("div");
         const thumbnail = document.createElement("img");
         const detail = document.createElement("div");
@@ -42,7 +48,7 @@ function setVideoCards() {
         videoCard.appendChild(thumbnail);
         videoCard.appendChild(detail);
 
-        article.appendChild(videoCard);
+        videos.appendChild(videoCard);
 
         videoCard.className = "videoCard";
         thumbnail.className = "thumbnail";
@@ -65,25 +71,47 @@ function setVideoCards() {
     }
 }
 
-//검색 결과에 따른 비디오카드 업데이트 함수
-function updateVideoCards(updatedList) {
+//nav 태그 내부의 버튼 생성 함수
+function setTagNavigator(tagList) {
+    //버튼이 추가될 html 요소
+    const tagNav = document.getElementById("tagNav");
+    //자식 요소 초기화
+    tagNav.replaceChildren();
 
+    //전체보기 버튼 추가
+    const tagButton = document.createElement("button");
+    tagButton.innerText = "all";
+    tagButton.id = "all";
+    tagButton.className = "tagBtn selected";
+    tagButton.addEventListener('click', onclickTagButton);
+    tagNav.appendChild(tagButton);
+
+    for (let i = 0; i < tagList.length; i++) {
+        const tagButton = document.createElement("button");
+        tagButton.innerText = tagList[i];
+        tagButton.id = tagList[i];
+        tagButton.className = "tagBtn";
+        tagButton.addEventListener('click', onclickTagButton);
+        tagNav.appendChild(tagButton);
+    }
 }
 
 //검색 함수
 function search() {
     let searchText = searchInput.value;
     let searchedList = [];
-    for (let i = 0; i < videoList.length; i++) {
-        if (videoList[i].video_channel.includes(searchText)
-            || videoList[i].video_detail.includes(searchText)
-            || videoList[i].video_title.includes(searchText)
-            || videoList[i].video_tag.includes(searchText)
+    for (let i = 0; i < allVideoList.length; i++) {
+        if (allVideoList[i].video_channel.includes(searchText)
+            || allVideoList[i].video_detail.includes(searchText)
+            || allVideoList[i].video_title.includes(searchText)
+            || allVideoList[i].video_tag.includes(searchText)
         ) {
-            searchedList.push(videoList[i]);
+            searchedList.push(allVideoList[i]);
         }
     }
-    updateVideoCards(searchedList);
+    currentVideoList = searchedList;
+    setVideoCards(searchedList);
+    setTagNavigator(getTags(currentVideoList));
 }
 
 //업로드 날짜 포맷 함수
@@ -122,4 +150,41 @@ function daysAgo(uploadedTime) {
     else {
         return `${Math.floor(timeDiff)}초 전`
     }
+}
+
+//현재 검색결과의 tag 배열 반환 함수
+function getTags(videoList) {
+    let tags = [];
+    for (let i = 0; i < videoList.length; i++) {
+        for (let j = 0; j < videoList[i].video_tag.length; j++) {
+            tags.push(videoList[i].video_tag[j]);
+        }
+    }
+    const deleteDup = new Set(tags);
+    tags = [...deleteDup];
+    return tags;
+}
+
+//navigator 버튼 이벤트 함수
+function onclickTagButton(event) {
+    //이전에 선택된 버튼 비활성화 / 현재 버튼 활성화
+    const before = document.querySelector('.selected');
+    before.className = "tagBtn";
+    event.target.className = "tagBtn selected";
+
+    //선택된 버튼이 all 버튼이면 전체 비디오 표시
+    if (event.target.id === "all") {
+        setVideoCards(currentVideoList);
+        return;
+    }
+
+    //태그를 포함한 비디오를 필터링
+    let videoList = [];
+    const tag = event.target.id;
+    for (let i = 0; i < currentVideoList.length; i++) {
+        if (currentVideoList[i].video_tag.includes(tag)) {
+            videoList.push(currentVideoList[i]);
+        }
+    }
+    setVideoCards(videoList);
 }
