@@ -1,0 +1,228 @@
+body {
+    height: 100vh;
+    color: white;
+}
+
+button {
+    background-color: transparent;
+    border-width: 0;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+hr {
+    background: #303030;
+    height: 0.1rem;
+    width: 100%;
+    border: 0;
+}
+
+main {
+    background-color: black;
+    flex: 1;
+    margin-top: 3.5rem;
+    overflow: auto;
+    padding: 2rem;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.desktopMode {
+    display: flex;
+}
+
+.mobileMode {
+    display: none;
+}
+
+.headerDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.userAvatar {
+    border-radius: 50%;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    width: 12.5rem;
+    height: 2.5rem;
+    padding-left: 1.5rem;
+}
+
+.menu.selected {
+    background-color: #303030;
+}
+
+.menuTitle {
+    font-family: Roboto;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 1.5rem;
+}
+
+.menuCategory {
+    color: #AAAAAA;
+    display: flex;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    height: 2rem;
+    margin-left: 1.5rem;
+}
+
+.footerLink {
+    color: #AAAAAA;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    height: 2rem;
+    margin-right: 0.5rem;
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #212121;
+}
+
+#menuBtnAndLogo {
+    width: 10.5625rem;
+}
+
+#searchArea {
+    flex-basis: 29.375rem;
+    flex-shrink: 1;
+    display: flex;
+}
+
+#headerMenu {
+    width: 12.75rem;
+}
+
+#search {
+    display: flex;
+    align-items: center;
+    border-width: 1px;
+    border-color: #303030;
+    border-style: solid;
+    border-radius: 0.1rem;
+    background-color: #303030;
+    flex-basis: 28.625rem;
+    margin-right: 0.1rem;
+}
+
+#searchInput {
+    display: inline-block;
+    flex-shrink: 1;
+    flex-grow: 1;
+    background-color: black;
+    border-width: 0;
+    flex-basis: 22.625rem;
+    height: 2.5rem;
+}
+
+#searchBtn {
+    flex-shrink: 0;
+    background-color: #303030;
+    flex-basis: 4rem;
+    height: 2.5rem;
+}
+
+#micBtn {
+    display: inline-block;
+    flex-basis: 2.7rem;
+}
+
+#micBtnIcon {
+    padding: 0.6rem;
+    border-radius: 50%;
+    background-color: black;
+}
+
+#headerUserAvatar {
+    width: 2rem;
+    height: 2rem;
+}
+
+#navAndMain {
+    height: 100%;
+    display: flex;
+}
+
+#navBar {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    margin-top: 3.5rem;
+    overflow: auto;
+    background-color: #212121;
+}
+
+#navFooter {
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+#footerDescription {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #717171;
+}
+
+*::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #717171;
+    border-radius: 0.25rem;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+@media (max-width: 650px) {
+    #headerMenu {
+        width: 17.75rem;
+    }
+
+    .desktopMode {
+        display: none !important;
+    }
+
+    .mobileMode {
+        display: flex;
+    }
+
+    #navBar {
+        display: none;
+    }
+}
