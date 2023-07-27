@@ -118,5 +118,3 @@ fetch(url).then((response) => response.json())
                     sub.textContent = `${subsciber} subscribers`
                })
 });
-
-
