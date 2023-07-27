@@ -1,16 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Youtube</title>
+    <link rel="stylesheet" href="./CSS/reset.css">
 </head>
+
 <body>
     <!-- header -->
-    <header></header>
+    <header id="header" style="background-color:black">
+        <button onclick="menuOpen()"><img src="./media/icon/hamburger.svg"></button>
+        <a href="./Home.html"><img id="logo" src="./media/img/Logo.svg"></a>
+        <span>
+            <input id="search" type="text" onkeyup="searchEnter()">
+            <button onclick="search()"><img class="icon" src="./media/icon/search.svg"></button>
+            <button><img class="icon" src="./media/icon/mic.svg"></button>
+        </span>
+        <span>
+            <button><img class="icon" src="./media/icon/create.svg"></button>
+            <button><img class="icon" src="./media/icon/apps.svg"></button>
+            <button><img class="icon" src="./media/icon/notifications.svg"></button>
+            <button><img class="userAvatar" src="./media/userAvatar/user0.svg"></button>
+        </span>
+    </header>
     <!-- nav -->
-    <nav></nav>
-    <!-- section -->
-    <section></section>
+    <nav id="navBar" style="background-color:gray">
+        <div>
+            <a href="./Home.html">
+                <div>
+                    <img class="icon" src="./media/icon/home.svg">
+                    <span class="menuTitle">Home</span>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <img class="icon" src="./media/icon/explore.svg">
+                    <span class="menuTitle">Explore</span>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <img class="icon" src="./media/icon/subscriptions.svg">
+                    <span class="menuTitle">Subscriptions</span>
+                </div>
+            </a>
+        </div>
+        <hr>
+
+        <div>
+            <a href="">
+                <div>
+                    <img class="icon" src="./media/icon/library.svg">
+                    <span class="menuTitle">Library</span>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <img class="icon" src="./media/icon/history.svg">
+                    <span class="menuTitle">History</span>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <img class="icon" src="./media/icon/yourVideos.svg">
+                    <span class="menuTitle">Your Videos</span>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <img class="icon" src="./media/icon/watchLater.svg">
+                    <span class="menuTitle">Watch Later</span>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <img class="icon" src="./media/icon/liked.svg">
+                    <span class="menuTitle">Liked Videos</span>
+                </div>
+            </a>
+            <button>
+                <div>
+                    <img class="icon" src="./media/icon/arrowBottom.svg">
+                    <span class="menuTitle">Show More</span>
+                </div>
+            </button>
+        </div>
+        <hr>
+
+        <div>
+            <div class="menuCategory">SUBSCRIPTIONS</div>
+            <a href="./Channel.html">
+                <div>
+                    <img class="icon" src="./media/userAvatar/user1.svg">
+                    <span class="menuTitle">channel1</span>
+                </div>
+            </a>
+            <a href="./Channel.html">
+                <div>
+                    <img class="icon" src="./media/userAvatar/user2.svg">
+                    <span class="menuTitle">channel2</span>
+                </div>
+            </a>
+            <a href="./Channel.html">
+                <div>
+                    <img class="icon" src="./media/userAvatar/user3.svg">
+                    <span class="menuTitle">channel3</span>
+                </div>
+            </a>
+            <a href="./Channel.html">
+                <div>
+                    <img class="icon" src="./media/userAvatar/user4.svg">
+                    <span class="menuTitle">channel4</span>
+                </div>
+            </a>
+            <a href="./Channel.html">
+                <div>
+                    <img class="icon" src="./media/userAvatar/user5.svg">
+                    <span class="menuTitle">channel5</span>
+                </div>
+            </a>
+            <a href="./Channel.html">
+                <div>
+                    <img class="icon" src="./media/userAvatar/user6.svg">
+                    <span class="menuTitle">channel6</span>
+                </div>
+            </a>
+            <a href="./Channel.html">
+                <div>
+                    <img class="icon" src="./media/userAvatar/user7.svg">
+                    <span class="menuTitle">channel7</span>
+                </div>
+            </a>
+            <button>
+                <div>
+                    <img class="icon" src="./media/icon/arrowBottom.svg">
+                    <span class="menuTitle">Show More</span>
+                </div>
+            </button>
+        </div>
+        <hr>
+
+        <div>
+            <div class="menuCategory">MORE FROM YOUTUBE</div>
+            <a href="">
+                <div>
+                    <img class="icon" src="./media/icon/premium.svg">
+                    <span class="menuTitle">Youtube Premium</span>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <img class="icon" src="./media/icon/gaming.svg">
+                    <span class="menuTitle">Gaming</span>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <img class="icon" src="./media/icon/live.svg">
+                    <span class="menuTitle">Live</span>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <img class="icon" src="./media/icon/sports.svg">
+                    <span class="menuTitle">Sports</span>
+                </div>
+            </a>
+        </div>
+    </nav>
+    <!-- main -->
+    <main>
+        <!-- 태그 필터링 버튼 -->
+        <nav id="tagNav"></nav>
+        <!-- 영상 목록-->
+        <div id="videos"></div>
+    </main>
 </body>
+<script src="./JavaScript/Home.js"></script>
+
 </html>
