@@ -1,10 +1,10 @@
-*{
+* {
     padding: 0;
     margin: 0;
-    
+
 }
 
-body{
+body {
     background-color: #000;
     color: #fff;
     width: 1440px;
@@ -15,11 +15,11 @@ body{
 
 /* navbar */
 
-nav{
+nav {
     background-color: #212121;
     height: 56px;
-    display:flex;
-    justify-content:space-between;
+    display: flex;
+    justify-content: space-between;
     border: 1px solid #303030;
     position: fixed;
     z-index: 1;
@@ -28,12 +28,12 @@ nav{
     width: 100%;
 }
 
-.ham:hover{
+.ham:hover {
     border-radius: 32px;
     background-color: #303030;
 }
 
-.yt-btn{
+.yt-btn {
     margin-left: 16px;
     display: inline-flex;
     padding-right: 0px;
@@ -50,7 +50,7 @@ nav{
     gap: 10px;
 }
 
-.yt-btn .logo{
+.yt-btn .logo {
     display: flex;
     padding: 18px 14px 18px 16px;
     flex-direction: column;
@@ -58,7 +58,7 @@ nav{
     gap: 10px;
 }
 
-.yt-logo{
+.yt-logo {
     width: 90px;
     height: 20px;
 }
@@ -66,7 +66,7 @@ nav{
 
 /* searchbox */
 
-.searchbox{
+.searchbox {
     display: flex;
     width: 470px;
     height: 40px;
@@ -77,7 +77,7 @@ nav{
     margin: 8px 0;
 }
 
-.search-area{
+.search-area {
     display: flex;
     width: 426px;
     height: 40px;
@@ -86,7 +86,7 @@ nav{
     flex-shrink: 0;
 }
 
-.search{
+.search {
     width: 362px;
     height: 36px;
     flex-shrink: 0;
@@ -100,7 +100,7 @@ nav{
     padding-left: 7px;
 }
 
-.search-box-icon{
+.search-box-icon {
     display: flex;
     width: 50px;
     height: 28px;
@@ -112,14 +112,14 @@ nav{
     background: #303030;
 }
 
-.search-icon img{
+.search-icon img {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
 }
 
 
-.mic-icon{
+.mic-icon {
     display: flex;
     padding: 8px;
     align-items: flex-start;
@@ -128,14 +128,14 @@ nav{
     background: #000;
 }
 
-.mic-icon:hover{
+.mic-icon:hover {
     background: #303030;
 }
 
 
 /* nav-profiles */
 
-.nav-profile{
+.nav-profile {
     display: flex;
     height: 40px;
     justify-content: center;
@@ -146,21 +146,21 @@ nav{
     margin-top: 8px;
 }
 
-.pro-btn{
+.pro-btn {
     display: flex;
     padding: 8px;
     align-items: flex-start;
     gap: 10px;
 }
 
-.nav-profile .profile{
+.nav-profile .profile {
     display: flex;
     padding: 0px 10px;
     align-items: flex-start;
     gap: 10px;
 }
 
-.profile img{
+.profile img {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -169,15 +169,16 @@ nav{
 }
 
 
-.pro-btn:hover{
+.pro-btn:hover {
     background-color: #303030;
-    border-radius: 36px;;
+    border-radius: 36px;
+    ;
 }
 
 
 /* sidebar */
 
-aside{
+aside {
     width: 224px;
     height: 100%;
     padding-right: 16px;
@@ -185,14 +186,14 @@ aside{
     border: 1px solid #303030;
     background-color: #212121;
     position: fixed;
-    top:57px;
+    top: 57px;
     z-index: 1;
 
-    overflow-y:auto;
+    overflow-y: auto;
 }
 
 
-aside::-webkit-scrollbar{
+aside::-webkit-scrollbar {
     display: none;
 }
 
@@ -200,14 +201,17 @@ aside:hover::-webkit-scrollbar {
     display: block;
     width: 7px;
     background-color: #303030;
-  }
+}
+
 aside:hover::-webkit-scrollbar-track {
     background-color: transparent;
 }
+
 aside:hover::-webkit-scrollbar-thumb {
     border-radius: 3px;
     background-color: gray;
 }
+
 aside:hover::-webkit-scrollbar-button {
     width: 0;
     height: 0;
@@ -215,7 +219,7 @@ aside:hover::-webkit-scrollbar-button {
 
 
 
-.side-menu{
+.side-menu {
     display: flex;
     padding: 8px 8px 8px 24px;
     flex-direction: column;
@@ -223,13 +227,13 @@ aside:hover::-webkit-scrollbar-button {
     gap: 10px;
 }
 
-.side-menu:hover{
+.side-menu:hover {
     background: #303030;
 }
 
 
 
-.side-menu .menu-item{
+.side-menu .menu-item {
     display: flex;
     width: 192px;
     align-items: flex-start;
@@ -237,13 +241,13 @@ aside:hover::-webkit-scrollbar-button {
 }
 
 
-.side-menu img{
+.side-menu img {
     width: 24px;
-    height:24px;
+    height: 24px;
     flex-shrink: 0;
 }
 
-.side-menu .menu-title{
+.side-menu .menu-title {
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -251,7 +255,7 @@ aside:hover::-webkit-scrollbar-button {
 }
 
 
-.side-menu-title{
+.side-menu-title {
     display: flex;
     width: 224px;
     height: 32px;
@@ -259,7 +263,7 @@ aside:hover::-webkit-scrollbar-button {
     align-items: center;
 }
 
-.side-title{
+.side-title {
     display: flex;
     padding: 8px 24px;
     align-items: flex-start;
@@ -273,7 +277,7 @@ aside:hover::-webkit-scrollbar-button {
 }
 
 
-.side-top{
+.side-top {
     display: flex;
     padding: 12px 0px;
     flex-direction: column;
@@ -281,18 +285,18 @@ aside:hover::-webkit-scrollbar-button {
     gap: 10px;
 }
 
-.side-top2{
+.side-top2 {
     display: flex;
     padding: 12px 0px;
     flex-direction: column;
     align-items: flex-start;
-    gap:10px;
+    gap: 10px;
 
     border-top: 1px solid #303030;
     border-bottom: 1px solid #303030;
 }
 
-.side-sub{
+.side-sub {
     display: flex;
     padding: 12px 0;
     flex-direction: column;
@@ -302,7 +306,7 @@ aside:hover::-webkit-scrollbar-button {
     border-bottom: #303030 solid 1px;
 }
 
-.more-from{
+.more-from {
     display: flex;
     padding: 12px 0;
     flex-direction: column;
@@ -312,7 +316,7 @@ aside:hover::-webkit-scrollbar-button {
     border-bottom: 1px solid #303030;
 }
 
-.side-bottom{
+.side-bottom {
     display: flex;
     padding: 12px 0;
     flex-direction: column;
@@ -327,7 +331,7 @@ aside:hover::-webkit-scrollbar-button {
 /* side-footer */
 
 
-.side-footer{
+.side-footer {
     display: flex;
     width: 224px;
     flex-direction: column;
@@ -335,7 +339,7 @@ aside:hover::-webkit-scrollbar-button {
     align-items: flex-start;
 }
 
-.footer-item{
+.footer-item {
     display: flex;
     width: 224px;
     padding: 16px 24px;
@@ -344,7 +348,7 @@ aside:hover::-webkit-scrollbar-button {
     gap: 10px;
 }
 
-.footer-item p{
+.footer-item p {
     display: flex;
     padding-right: 0px;
     align-items: flex-start;
@@ -359,16 +363,16 @@ aside:hover::-webkit-scrollbar-button {
     margin-bottom: 80px;
 }
 
-.footer-frame1{
+.footer-frame1 {
     width: 148px;
 }
 
-.footer-frame2{
+.footer-frame2 {
     width: 148px;
 }
 
 
-.frame-item{
+.frame-item {
     display: inline-flex;
     padding-right: 0px;
     align-items: flex-start;
@@ -382,14 +386,14 @@ aside:hover::-webkit-scrollbar-button {
 }
 
 
-.frame-item:hover{
+.frame-item:hover {
     color: #eee;
 }
 
 /* main */
 
 
-main{
+main {
     /* display: inline-block; */
     width: 1195px;
     float: left;
@@ -399,7 +403,7 @@ main{
 
 }
 
-.channel{
+.channel {
 
     background-color: #181818;
 }
@@ -408,7 +412,7 @@ main{
     height: 192px;
 }
 
-.channel-cover img{
+.channel-cover img {
     width: 1195px;
 }
 
@@ -423,7 +427,7 @@ main{
 
 /* user profile */
 
-.channel-profile{
+.channel-profile {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -447,14 +451,14 @@ main{
     align-items: flex-start;
 }
 
-.name{
+.name {
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-.subscribers{
+.subscribers {
     color: #aaa;
     font-size: 14px;
     font-style: normal;
@@ -465,7 +469,7 @@ main{
 
 /* sub btn */
 
-.channel-sub-btn{
+.channel-sub-btn {
     display: flex;
     width: 124px;
     padding: 22px 4px;
@@ -474,7 +478,7 @@ main{
     gap: 10px;
 }
 
-.sub-btn{
+.sub-btn {
     display: flex;
     padding: 10px 16px;
     align-items: flex-start;
@@ -493,7 +497,7 @@ main{
 }
 
 
-.sub-btn:hover{
+.sub-btn:hover {
     background-color: #900;
     color: #ccc
 }
@@ -507,12 +511,12 @@ main{
     justify-content: flex-start;
 }
 
-.toolbars{
+.toolbars {
     display: flex;
     align-items: flex-start;
 }
 
-.toolbar-menu{
+.toolbar-menu {
     padding: 16px 32px 15px 32px;
     display: flex;
     flex-direction: column;
@@ -521,7 +525,7 @@ main{
 
 }
 
-.menu-items{
+.menu-items {
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -534,19 +538,18 @@ main{
 }
 
 
-
-.toolbar-menu:active{
+.toolbar-menu:active {
     border-bottom: 1px #fff solid;
     padding-bottom: 14px;
     color: #fff;
 }
 
-.toolbar-menu:active .menu-items{
+.toolbar-menu:active .menu-items {
     color: #fff;
     font-weight: bold;
 }
 
-.toolbar-search{
+.toolbar-search {
     padding-left: 24px;
 
     display: flex;
@@ -555,13 +558,13 @@ main{
     gap: 202px;
 }
 
-.search-icon{
+.search-icon {
     display: flex;
     padding: 12px 8px;
     align-items: flex-start;
 }
 
-.left-arrow-btn{
+.left-arrow-btn {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -573,7 +576,7 @@ main{
 }
 
 
-.left-arrow-btn:hover{
+.left-arrow-btn:hover {
     background-color: #303030;
 }
 
@@ -581,19 +584,19 @@ main{
 
 /* smal-video */
 
-.smal-video{
+.smal-video {
     display: inline-flex;
     padding: 24px 287px 24px 65px;
     align-items: flex-start;
 }
 
-.smal-video:hover{
+.smal-video:hover {
     background-color: #303030;
 }
 
 
 /* video player */
-.vid-player{
+.vid-player {
     display: flex;
     padding-right: 0px;
     flex-direction: column;
@@ -602,7 +605,7 @@ main{
     padding-right: 24px;
 }
 
-.youtube-player{
+.youtube-player {
     width: 424px;
     height: 238px;
 }
@@ -610,14 +613,14 @@ main{
 
 /* video description */
 
-.vid-desc{
+.vid-desc {
     display: flex;
     padding-bottom: 0px;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.vid-title{
+.vid-title {
     display: flex;
     padding-bottom: 0px;
     flex-direction: column;
@@ -638,7 +641,7 @@ main{
     padding-bottom: 20px;
 }
 
-.vid-title .time{
+.vid-title .time {
     color: #aaa;
     font-size: 13px;
     font-style: normal;
@@ -647,7 +650,7 @@ main{
 }
 
 
-.vid-desc .description{
+.vid-desc .description {
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -659,7 +662,7 @@ main{
 
 /* playlists */
 
-.play-list{
+.play-list {
     display: flex;
     padding: 0px 65px;
     flex-direction: column;
@@ -667,23 +670,23 @@ main{
     width: 1070px;
 }
 
-.border{
+.border {
     width: 1070px;
     height: 1px;
     background-color: #303030;
 }
 
-.play-list .play-lists{
+.play-list .play-lists {
     width: 1070px;
 }
 
-.play-list .play-lists .list{
+.play-list .play-lists .list {
     display: flex;
     padding-top: 8px;
     align-items: flex-start;
 }
 
-.play-list .play-lists .list .title{
+.play-list .play-lists .list .title {
     display: flex;
     padding: 9px 8px 8px 0px;
     align-items: flex-start;
@@ -695,21 +698,21 @@ main{
     line-height: normal;
 }
 
-.play-btn{
+.play-btn {
     display: flex;
     padding: 8px 16px 6px 10px;
     align-items: flex-start;
 }
 
-.play-btn img{
+.play-btn img {
     display: flex;
     align-items: flex-start;
 
-    width:24px;
-    height:24px;
+    width: 24px;
+    height: 24px;
 }
 
-.play-btn .playall{
+.play-btn .playall {
     display: flex;
     padding: 0px 0px 2px 0px;
     align-items: flex-start;
@@ -724,7 +727,7 @@ main{
 }
 
 
-.play-btn:hover{
+.play-btn:hover {
     background-color: #212121;
     border-radius: 10px;
 }
@@ -732,7 +735,7 @@ main{
 
 /* video cards */
 
-.vid-card{
+.vid-card {
     display: flex;
     padding: 24px 0px;
     align-items: flex-start;
@@ -741,30 +744,33 @@ main{
 }
 
 
-.vid-card::-webkit-scrollbar{
+.vid-card::-webkit-scrollbar {
     opacity: 1;
     height: 10px;
-    display:block;
-    
+    display: block;
+
 }
 
 .vid-card:hover::-webkit-scrollbar {
     background-color: #303030;
 }
+
 .vid-card:hover::-webkit-scrollbar-track {
     background-color: transparent;
 }
+
 .vid-card:hover::-webkit-scrollbar-thumb {
     border-radius: 3px;
     background-color: gray;
 }
+
 .vid-card:hover::-webkit-scrollbar-button {
     width: 0;
     height: 0;
 }
 
 
-.vid-card .xsmal-vid{
+.vid-card .xsmal-vid {
     display: flex;
     width: 210px;
     padding: 10px;
@@ -773,17 +779,17 @@ main{
     align-items: flex-start;
 }
 
-.xsmal-vid:hover{
+.xsmal-vid:hover {
     background-color: #303030;
 }
 
 
-.xsmal-vid img{
+.xsmal-vid img {
     width: 210px;
     height: 118px;
 }
 
-.xsmal-vid .xsmal-desc{
+.xsmal-vid .xsmal-desc {
     display: flex;
     width: 186px;
     flex-direction: column;
@@ -791,7 +797,7 @@ main{
     align-items: flex-start;
 }
 
-.xsmal-desc .x-title{
+.xsmal-desc .x-title {
     display: flex;
     padding: 8px 0px;
     align-items: flex-start;
@@ -804,7 +810,7 @@ main{
 }
 
 
-.xsmal-desc .x-ivew{
+.xsmal-desc .x-ivew {
     display: flex;
     width: 186px;
     flex-direction: column;
@@ -812,7 +818,8 @@ main{
     align-items: flex-start;
 }
 
-.views, .channel-name{
+.views,
+.channel-name {
     display: flex;
     align-items: flex-start;
     gap: 10px;
