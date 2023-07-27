@@ -13,35 +13,48 @@
 // "video_title": "재미있는 토끼 트릭과 놀이",
 // "views": 361184
 
-let url = "http://oreumi.appspot.com/video/getVideoInfo?video_id=12"
 
-// 동영상 플레이어는 iframe 이용
+// query에서 정보를 받아와서 비디오를 보기위한 방법 
+const URLSearch = new URLSearchParams(location.search);
+const id = URLSearch.get('video_id')
+
+console.log(id)
+
+
+//쿼리로 비디오 아이디를 받아와서 영상을 받을때
+let url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${id}`
+
+
+//임시로 넣은 비디오
+url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=12`
 
 var iframe = document.querySelector("iframe")
 var title = document.querySelector(".title")
 var view_info = document.querySelector(".info-txt")
+var videoDesc = document.querySelector(".video-desc")
 
-// 채널 이름 받아와서 채널 프로필 띄워 주기 위함
-var Curl = ''
+
+var userAvatar = document.querySelector(".user-avatar")
+var channelName = document.querySelector(".channel-name")
+var sub = document.querySelector(".subscribers")
+
+console.log(view_info)
+console.log(iframe)
+console.log(title)
+
 var Cname = ''
+
+var CURL = ''
 
 fetch(url).then((response) => response.json())
 .then((data) => {
-
-    // 동영상 소스 붙여 넣기
     iframe.src = data["video_link"]
-
-    // 비디오 제목 넣기
     title.textContent = data["video_title"]
-
-    // 조회수 붙이기 위한 내용
     let view = ''
 
     console.log(data["views"])
 
-
-    // 뷰가 너무 길면 줄여 주기 1000 이후에는 1.0K 1000000 이후에는 1.0M
-    if(100000 > data["views"] >= 1000){
+    if(1000000 >= data["views"] >= 1000){
         thou =  Math.floor(data["views"] / 1000);
         console.log(thou);
         hun = Math.floor((data["views"]%1000) / 100);
@@ -58,12 +71,52 @@ fetch(url).then((response) => response.json())
         view = data["views"];
     }
 
-    // 조회수 붙이기
+
+
     view_info.textContent = `${view} Views ${data["upload_date"]}`
+    videoDesc.textContent = data["video_detail"]
+    channelName.textContent = data["video_channel"]
+
+
 
 
     Cname = data["video_channel"]
+
+    CURL = `http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${Cname}`
+
+    CURL = encodeURI(CURL)
+
+    console.log(CURL)
+
+    fetch(CURL, {
+        method: "POST",
+        
+      }).then((response) => response.json())
+               .then((data) =>{
+                    userAvatar.src = data["channel_profile"]
+                    console.log(data)
+                    var subsciber = ''
+
+
+                    if(1000000> data["subscibers"] >= 1000){
+                        thou =  Math.floor(data["subscibers"] / 1000);
+                        console.log(thou);
+                        hun = Math.floor((data["subscibers"]%1000) / 100);
+                        console.log(hun);
+                        subsciber = `${thou}.${hun}K`;
+                    }
+                    else if(data["subscibers"] >= 1000000){
+                        mil =  Math.floor(data["subscibers"] / 1000000);
+                        console.log(mil);
+                        notmil = Math.floor((data["subscibers"]%1000000) / 100000);
+                        console.log(notmil);
+                        subsciber = `${mil}.${notmil}M`;
+                    }else{
+                        subsciber = data["subscibers"];
+                    }
+
+                    sub.textContent = `${subsciber} subscribers`
+               })
 });
 
 
-// fetch(url)
