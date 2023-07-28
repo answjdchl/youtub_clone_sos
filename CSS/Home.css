@@ -1,156 +1,70 @@
-<<<<<<< HEAD
-*{
-    padding: 0;
-    margin: 0;
-  }
-  
-  body{
-    background-color: black;
-    font-family: Roboto;
-  }
-  
-  header{
-=======
-/** {
-  padding: 0;
-  margin: 0;
-}*/
-
 body {
   background-color: black;
   font-family: Roboto;
 }
 
-/*header{
->>>>>>> 8b4252b13d71f009329b2e27d5c4cda182ddbf1f
-    display: flex;
-    justify-content: space-between;
-    padding: 12px;
-    background-color: black;
-    color: white;
-<<<<<<< HEAD
-  }
-  
-  .videoCard{
-    /* display: flex; */
-    float: left;
-    margin-right: 0.5%;
-    margin-left: 1%;
-    margin-top: 2%;
-    margin-bottom: 3%;
-    flex-shrink: 0;
-  }
-  
-  .thumbnail{ 
-    width: 276px;
-    height: 155px;
-    display: flex;
-  }
-  
-  .channelProfile{
-    display: flex;
-    width: 36px;
-    height: 36px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 24px;
-    padding-top: 10px;
-  }
-  
-  .detail{
-    display: flex;
-    gap: 12px;
-  }
-  
-  .detail img{
-    float: left;
-  }
-  
-  .title{ /*영상 제목*/
-    color: white;
-    font-size: 0.8em;
-    font-weight: 700;
-    padding-top: 10px;
-  }
-  
-  .channelName, .viewsAndUploaded{
-    color: #AAAAAA;
-    font-size: 0.8em;
-    font-weight: 400;
-  }
-  
-  #tagNav{
-    background-color: #212121;
-  }
-  
-  #tagNav button{
-    /* display: inline-flex; */
-    flex-direction: column; /*아이템이 가로 방향으로*/
-    background-color: #303030;
-    color: white;
-    padding: 8px 10px;
-    border-radius: 10px;
-    text-align: center;
-    border: 0.5px solid #AAAAAA;
-    margin: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-  }
-  
-  #tagNav button:hover{
-    background-color: white;
-    color: #030303;
-  }
-  
-  #tagNav .selected{
-    background-color: white;
-    color: #030303;
-  }
-  
-=======
-  }*/
+main {
+  display: flex;
+  justify-content: center;
+}
 
 .videoCard {
-  /* display: flex; */
-  float: left;
-  margin-right: 0.5%;
-  margin-left: 1%;
-  margin-top: 2%;
-  margin-bottom: 3%;
-  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 17.25rem;
+  margin: 1.5rem 0.5rem;
+  flex-grow: 1;
+  min-width: 17.25rem;
+  max-width: 25.875rem;
 }
 
 .thumbnail {
-  width: 276px;
-  height: 155px;
-  display: flex;
+  width: 100%;
+  height: auto;
+  flex-shrink: 1;
+  min-height: 9.6875rem;
+  min-width: 17.25rem;
 }
 
 .channelProfile {
-  display: flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  /* display: flex;
   width: 36px;
   height: 36px;
   justify-content: center;
   align-items: center;
   border-radius: 24px;
-  padding-top: 10px;
+  padding-top: 10px; */
 }
 
 .detail {
   display: flex;
-  gap: 12px;
+  width: 100%;
+  flex-direction: row;
+  flex-basis: 4.625rem;
+  margin-top: 0.75rem;
 }
 
 .detail img {
   float: left;
 }
 
+.infoText {
+  padding-left: 0.75rem;
+}
+
 .title {
   /*영상 제목*/
-  color: white;
-  font-size: 0.8em;
+  font-family: Roboto;
+  font-size: 0.875rem;
+  font-style: normal;
   font-weight: 700;
-  padding-top: 10px;
+  line-height: normal;
+}
+
+.channelName {
+  margin-top: 0.38rem;
 }
 
 .channelName,
@@ -160,8 +74,53 @@ body {
   font-weight: 400;
 }
 
+#tagArea {
+  position: fixed;
+  width: calc(100% - 15.5rem);
+}
+
 #tagNav {
+  display: flex;
+  position: relative;
+  align-items: center;
   background-color: #212121;
+  white-space: nowrap;
+  overflow-x: auto;
+  height: 3.5rem;
+  border-top: 0.0625rem solid #303030;
+}
+
+/* #tagNavScrollBtn {
+  display: flex;
+  position: relative;
+  top: -3.5rem;
+  width: 100%;
+} */
+
+#tagNavScrollForward,
+#tagNavScrollBackward {
+  position: relative;
+  top: -3.5rem;
+  height: 3.5rem;
+  width: 7rem;
+
+}
+
+#tagNavScrollForward {
+  float: left;
+  background: linear-gradient(to right, #212121 50%, transparent);
+}
+
+#tagNavScrollBackward {
+  float: right;
+  background: linear-gradient(to left, #212121 50%, transparent);
+  text-align: right;
+}
+
+#tagNavScrollForward button,
+#tagNavScrollBackward button {
+  height: 3.5rem;
+  width: 3.5rem;
 }
 
 #tagNav button {
@@ -170,22 +129,45 @@ body {
   /*아이템이 가로 방향으로*/
   background-color: #303030;
   color: white;
-  padding: 8px 10px;
-  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 2rem;
   text-align: center;
   border: 0.5px solid #AAAAAA;
-  margin: 5px;
+  margin: 0.375rem;
   cursor: pointer;
-  font-size: 0.9em;
+  font-family: Roboto;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 #tagNav button:hover {
-  background-color: white;
-  color: #030303;
+  background-color: #505050;
+  color: white;
 }
 
 #tagNav .selected {
   background-color: white;
   color: #030303;
+  border: 0.5px solid #fff;
 }
->>>>>>> 8b4252b13d71f009329b2e27d5c4cda182ddbf1f
+
+#videos {
+  width: calc(100% - 3rem);
+  margin-top: 3.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#tagNav::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 630px) {
+  #tagArea {
+    position: fixed;
+    width: 100%;
+  }
+}

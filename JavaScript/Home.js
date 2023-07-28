@@ -36,7 +36,7 @@ function setVideoCards(videoList) {
 
         //각 태그들의 속성값 설정
         thumbnail.width = "300";
-        channelProfile.src = "./User-Avatar.svg";
+        channelProfile.src = "./media/userAvatar/user1.svg";
 
         infoText.appendChild(title);
         infoText.appendChild(channelName);
@@ -53,7 +53,7 @@ function setVideoCards(videoList) {
         videoCard.className = "videoCard";
         thumbnail.className = "thumbnail";
         detail.className = "detail";
-        channelProfile.className = "channelProfile";
+        channelProfile.className = "channelProfile userAvatar";
         infoText.className = "infoText";
         title.className = "title";
         channelName.className = "channelName";
