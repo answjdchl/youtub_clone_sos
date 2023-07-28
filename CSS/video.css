@@ -32,12 +32,120 @@ main{
     display: flex;
     gap: 10px;
 }
+article{
+    display:flex;
+  }
+.player{
+    padding: 15px 15px 15px 0px;  
+}
+.video-actions{
+    display: flex;
+    padding: 2px 0px;
+    align-items: flex-start;
+    list-style-type: none;
+   
+}
+.video-title{
+    font-size: 18px;
+    font-family: Roboto;
+}
+.videoviews{
+    font-size: 14px;
+    color: var(--gray-color, #AAA);
+}
+.subscribe{
+    border-radius: 2px;
+    background: #C00;
+    display: flex;
+    padding: 10px 16px;
+    align-items: flex-start;
+    gap: 10px;
+    float:right
+}
+.channelinfo .icon{
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80px;
+}
+.channelinfo .name{
+    color: var(--white-color, #FFF);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.channelinfo .subscribers{
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.channelinfo .infoment{
+    color: var(--white-color, #FFF);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 576px;
+}
+.channelinfo .infomore{
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.comment-avatar .icon{
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80px;
+}
 
-.player {
- padding: 60px;
+.comment-avatar2 .icon{
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80px;
 }
 
 
+.topmenubtn .topbtn{
+    display: flex;
+    padding: 8px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 32px;
+    background: #FFF;
+    color: #030303;
+    
+}
+
+.topmenubtn .topbtn2{
+    display: flex;
+    padding: 8px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 32px;
+    border: 0.3px solid var(--gray-color, #AAA);
+    background: var(--border-color, #303030);
+
+}
 /* navbar */
 
 /* nav{
