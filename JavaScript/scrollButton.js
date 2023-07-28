@@ -1,12 +1,12 @@
 
 $('#prev').on('click', function() {
-    $('#menu ul').animate({
+    $('#tagNav').animate({
         scrollLeft: '-=100'
     }, 300, 'swing');
     });
 
 $('#next').on('click', function() {
-    $('#menu ul').animate({
+    $('#tagNav').animate({
         scrollLeft: '+=100'
     }, 300, 'swing');
     });
