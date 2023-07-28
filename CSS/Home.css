@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+  }
+  
+  body{
+    background-color: black;
+    font-family: Roboto;
+  }
+  
+  header{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: black;
+    color: white;
+  }
+  
+  .videoCard{
+    /* display: flex; */
+    float: left;
+    margin-right: 0.5%;
+    margin-left: 1%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    flex-shrink: 0;
+  }
+  
+  .thumbnail{ 
+    width: 276px;
+    height: 155px;
+    display: flex;
+  }
+  
+  .channelProfile{
+    display: flex;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    padding-top: 10px;
+  }
+  
+  .detail{
+    display: flex;
+    gap: 12px;
+  }
+  
+  .detail img{
+    float: left;
+  }
+  
+  .title{ /*영상 제목*/
+    color: white;
+    font-size: 0.8em;
+    font-weight: 700;
+    padding-top: 10px;
+  }
+  
+  .channelName, .viewsAndUploaded{
+    color: #AAAAAA;
+    font-size: 0.8em;
+    font-weight: 400;
+  }
+  
+  #tagNav{
+    background-color: #212121;
+  }
+  
+  #tagNav button{
+    /* display: inline-flex; */
+    flex-direction: column; /*아이템이 가로 방향으로*/
+    background-color: #303030;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: 0.5px solid #AAAAAA;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+  
+  #tagNav button:hover{
+    background-color: white;
+    color: #030303;
+  }
+  
+  #tagNav .selected{
+    background-color: white;
+    color: #030303;
+  }
+  
