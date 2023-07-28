@@ -26,7 +26,6 @@ main {
     flex: 1;
     margin-top: 3.5rem;
     overflow: auto;
-    padding: 2rem;
 }
 
 .invisible {
@@ -110,6 +109,7 @@ main {
     justify-content: space-between;
     align-items: center;
     background-color: #212121;
+    z-index: 2000;
 }
 
 #menuBtnAndLogo {
@@ -117,7 +117,7 @@ main {
 }
 
 #searchArea {
-    flex-basis: 29.375rem;
+    flex-basis: 40rem;
     flex-shrink: 1;
     display: flex;
 }
@@ -134,7 +134,7 @@ main {
     border-style: solid;
     border-radius: 0.1rem;
     background-color: #303030;
-    flex-basis: 28.625rem;
+    flex-basis: 38rem;
     margin-right: 0.1rem;
 }
 
@@ -144,8 +144,16 @@ main {
     flex-grow: 1;
     background-color: black;
     border-width: 0;
-    flex-basis: 22.625rem;
+    flex-basis: 30rem;
     height: 2.5rem;
+    z-index: 1;
+    color: white;
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+
+#searchInput:focus {
+    outline: 1px solid #1B5EB2;
 }
 
 #searchBtn {
@@ -153,6 +161,7 @@ main {
     background-color: #303030;
     flex-basis: 4rem;
     height: 2.5rem;
+    z-index: 0;
 }
 
 #micBtn {
@@ -209,7 +218,7 @@ main {
     background-color: transparent;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 630px) {
     #headerMenu {
         width: 17.75rem;
     }
