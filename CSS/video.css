@@ -4,6 +4,19 @@
     
 }
 
+header{
+    background-color: #212121;
+    height: 56px;
+    display:flex;
+    justify-content:space-between;
+    border: 1px solid #303030;
+    position: fixed;
+    z-index: 1;
+    flex-shrink: 0;
+
+    width: 100%;
+}
+
 body{
     background-color: #000;
     color: #fff;
@@ -20,10 +33,14 @@ main{
     gap: 10px;
 }
 
+.player {
+ padding: 60px;
+}
+
 
 /* navbar */
 
-nav{
+/* nav{
     background-color: #212121;
     height: 56px;
     display:flex;
@@ -34,7 +51,7 @@ nav{
     flex-shrink: 0;
 
     width: 100%;
-}
+} */
 
 .ham:hover{
     border-radius: 32px;
