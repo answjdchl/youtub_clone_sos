@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 *{
     padding: 0;
     margin: 0;
@@ -9,27 +9,6 @@
     font-family: Roboto;
   }
   
-  header{
-=======
-/** {
-  padding: 0;
-  margin: 0;
-}*/
-
-body {
-  background-color: black;
-  font-family: Roboto;
-}
-
-/*header{
->>>>>>> 8b4252b13d71f009329b2e27d5c4cda182ddbf1f
-    display: flex;
-    justify-content: space-between;
-    padding: 12px;
-    background-color: black;
-    color: white;
-<<<<<<< HEAD
-  }
   
   .videoCard{
     /* display: flex; */
@@ -106,9 +85,8 @@ body {
     background-color: white;
     color: #030303;
   }
-  
-=======
-  }*/
+
+
 
 .videoCard {
   /* display: flex; */
@@ -188,4 +166,4 @@ body {
   background-color: white;
   color: #030303;
 }
->>>>>>> 8b4252b13d71f009329b2e27d5c4cda182ddbf1f
+
