@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="./CSS/reset.css">
     <link rel="stylesheet" href="./CSS/common.css">
     <link rel="stylesheet" href="./CSS/video.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -119,11 +123,30 @@
                 </div>
             </div>
             <section class="comment">
-                <p class="">286 Comments
-                    <button>
-                        <img class="sort-icon" src="./media/icon/SORT_BY.svg">
-                    </button> SORT_BY
-                </p>
+                
+                <div class="comment-info">
+
+                    <!-- 댓글 수 -->
+                    <div class="count">
+                        <p class="count-comments">
+                            286
+                        </p>
+                        <p>Comments</p>
+                    </div>
+
+                    <!-- 정렬 -->
+                    <div class="sort-by">
+                        <div class="sort-icon">
+                            <img src="./media/icon/SORT_BY.svg" alt="" class="sort">
+                        </div>
+                        <p>Sort by</p>
+                        <div class="drop-sort-by">
+                            <div class="drop-down">Popular</div>
+                            <div class="drop-down">latest</div>
+                        </div>
+                    </div>
+                    
+                </div>
 
                 <div class="comment-avatar">
                     <div>
@@ -184,82 +207,7 @@
                 <button class="topbtn">From Marcus Levin </button>
             </div>
             <ul id="videos">
-                <li class="videocard">
-                    <img class="card-img" src="./media/icon/sidevideo1.svg">
-                    <div class="card-desc">
-                        <div class="card-title">
-                            Blind Woodturner: Turning passion into fine art
-                        </div>
-                        <div class="card-channel">
-                            <div>
-                                James Gouse
-                            </div>
-                            <div>
-                                1M views . 3 years ago
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-
-                </li>
-                <li class="videocard">
-                    <img class="card-img" src="./media/icon/sidevideo2.svg">
-                    <div class="card-desc">
-                        <div class="card-title">
-                            Blind Woodturner: Turning passion into fine art
-                        </div>
-                        <div class="card-channel">
-                            <div>
-                                James Gouse
-                            </div>
-                            <div>
-                                1M views . 3 years ago
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                </li>
-                <li class="videocard">
-                    <img class="card-img" src="./media/icon/sidevideo3.svg">
-                    <div class="card-desc">
-                        <div class="card-title">
-                            Blind Woodturner: Turning passion into fine art
-                        </div>
-                        <div class="card-channel">
-                            <div>
-                                James Gouse
-                            </div>
-                            <div>
-                                1M views . 3 years ago
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                </li>
-                
-                <li class="videocard">
-                    <img class="card-img" src="./media/icon/sidevideo6.svg">
-                    <div class="card-desc">
-                        <div class="card-title">
-                            Blind Woodturner: Turning passion into fine art
-                        </div>
-                        <div class="card-channel">
-                            <div>
-                                James Gouse
-                            </div>
-                            <div>
-                                1M views . 3 years ago
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                </li>
-                
-
+            
             </ul>
 
 

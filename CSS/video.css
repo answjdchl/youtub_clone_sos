@@ -9,38 +9,42 @@ header {
     height: 56px;
     display: flex;
     justify-content: space-between;
-    border: 1px solid #303030;
+    /* border: 1px solid #303030; */
     position: fixed;
     z-index: 1;
     flex-shrink: 0;
 
-    width: 100%;
+    width: 100% !important ;
+}
+
+.headerDiv button{
+    padding:1px 6px;
 }
 
 body {
     background-color: #000;
     color: #fff;
+    display: flex;
+    justify-content: center;
 }
 
 main {
     position: absolute;
-    top: 58px;
-    margin: 0 10%;
-
+    top: 1rem;
+    margin: 0 8%;
     display: flex;
     gap: 10px;
-    
 }
 
 article {
     display: flex;
     flex-direction: column;
 
-    width: fit-content;
+    width: min-content;
   }
  
 .player{
-    padding: 15px 15px 15px 0px;  
+    padding: 0px 15px 15px 0px;  
 }
 
 .video-actions {
@@ -166,6 +170,11 @@ article {
     text-transform: uppercase;
 }
 
+.comment-count{
+    display: flex;
+    flex-direction: row;
+}
+
 .comment-avatar {
     width: 100%;
 }
@@ -258,6 +267,12 @@ article {
     border: #303030 1px solid;
 }
 
+.topmenubtn .topbtn:hover{
+    background: #FFF;
+    color: #030303;
+}
+
+
 .topmenubtn .topbtn2 {
     display: flex;
     padding: 8px 12px;
@@ -275,17 +290,6 @@ p button {
 }
 
 
-.topmenubtn .topbtn {
-    display: flex;
-    padding: 8px 12px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    border-radius: 32px;
-    background: #FFF;
-    color: #030303;
-
-}
 
 .topmenubtn .topbtn2 {
     display: flex;
@@ -546,14 +550,15 @@ p button {
     align-items: flex-start;
 }
 
-.video-info {
+.videoinfo {
     display: flex;
-    padding: 20px 0px 8px 0px;
+    padding: 2px 0px 8px 0px;
     flex-direction: column;
     align-items: flex-start;
+    gap: 1rem;
 }
 
-.video-info title {
+.videoinfo title {
     display: flex;
     padding: 3px 0px 2px 0px;
     align-items: flex-start;
@@ -762,7 +767,7 @@ p button {
 .count {
     display: flex;
     gap: 5px;
-
+    align-items: center;
     font-size: 18px;
 }
 
@@ -982,10 +987,57 @@ p button {
     color: #fff;
 }
 
-li.videocard{
+
+ul#videos{
     display: flex;
-    padding-top: 1rem;
+    flex-direction: column;
+    margin-top: 1rem;
 }
+
+.videoCard{
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.videoCard:hover{
+    background-color: #303030;
+}
+
+.videoCard div{
+    display: flex;
+}
+
+.infoText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1rem;
+}
+
+
+
+.infoText .title{
+    padding-bottom: 2rem;
+
+    color: var(--white-color, #FFF);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    width:150px;
+}
+
+
+.infoText .channelName,.viewsAndUploaded{
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 150% */
+}
+
 
 .card-desc{
     display: flex;
@@ -1145,3 +1197,70 @@ li.videocard{
     font-weight: 400;
     line-height: 18px;
 }
+
+
+
+
+
+
+.sort-by{
+    display:flex;
+    padding: 4px 10px;
+    position: relative;
+    width: 85px;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.sort-icon{
+    display: flex;
+}
+
+.sort-by p {
+    color: var(--white-color, #FFF);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 171.429% */
+    text-transform: uppercase;
+}
+
+.sort-by:hover{
+    background-color: #212121;
+    border-radius: 6px 6px 0 0;
+}
+
+
+
+.drop-sort-by{
+    display : none;
+    position : absolute;
+    z-index : 1; /*다른 요소들보다 앞에 배치*/
+}
+  
+.drop-sort-by .drop-down{
+    display : flex;
+    padding: 3px 0;
+    flex-direction: column;
+    justify-content: center;
+    height: 24px;
+}
+  
+.sort-by:hover .drop-sort-by {
+    width:105px;
+    display: block;
+    color: #fff;
+    top:30px;
+    background-color: #303030;
+    text-align: center;
+    left: 0px;
+
+    border-radius: 0 0 6px 6px;
+    padding-bottom: 7px;
+}
+
+.sort-by:hover .drop-sort-by .drop-down:hover{
+    background-color: #555;
+}
+

@@ -6,17 +6,25 @@ body {
 main {
   display: flex;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .videoCard {
   display: flex;
   flex-direction: column;
   flex-basis: 17.25rem;
-  margin: 1.5rem 0.5rem;
-  /* flex-grow: 1; */
+  padding: 1rem 1rem;
+  margin: 0.5rem 0;
+  flex-grow: 1;
   min-width: 17.25rem;
   max-width: 25.875rem;
+  border-radius: 0.5rem;
 }
+
+.videoCard:hover{
+  background-color: #303030;
+}
+
 
 .thumbnail {
   width: 100%;
@@ -113,10 +121,18 @@ main {
   background: linear-gradient(to right, #212121 50%, transparent);
 }
 
+#tagNavScrollForward:hover {
+  background: linear-gradient(to right, #303030 50%, transparent);
+}
+
 #tagNavScrollBackward {
   float: right;
   background: linear-gradient(to left, #212121 50%, transparent);
   text-align: right;
+}
+
+#tagNavScrollBackward:hover {
+  background: linear-gradient(to left, #303030 50%, transparent);
 }
 
 #tagNavScrollForward button,
@@ -160,7 +176,8 @@ main {
   margin-top: 3.5rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  height: fit-content;
 }
 
 #tagNav::-webkit-scrollbar {
@@ -172,4 +189,5 @@ main {
     position: fixed;
     width: 100%;
   }
+  
 }
