@@ -80,6 +80,8 @@ main {
 }
 
 #tagNav {
+
+  scroll-behavior: smooth;
   display: flex;
   position: relative;
   align-items: center;
