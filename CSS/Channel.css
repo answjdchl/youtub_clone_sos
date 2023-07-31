@@ -1,3 +1,4 @@
+
 * {
     padding: 0;
     margin: 0;
@@ -9,12 +10,14 @@ body {
     color: #fff;
     width: 1440px;
     height: 1024px;
+    font-family: Roboto;
 }
 
 
 
-/* navbar */
 
+/* navbar */
+/*
 nav {
     background-color: #212121;
     height: 56px;
@@ -62,10 +65,10 @@ nav {
     width: 90px;
     height: 20px;
 }
-
+*/
 
 /* searchbox */
-
+/*
 .searchbox {
     display: flex;
     width: 470px;
@@ -131,10 +134,10 @@ nav {
 .mic-icon:hover {
     background: #303030;
 }
-
+*/
 
 /* nav-profiles */
-
+/*
 .nav-profile {
     display: flex;
     height: 40px;
@@ -174,10 +177,10 @@ nav {
     border-radius: 36px;
     ;
 }
-
+*/
 
 /* sidebar */
-
+/*
 aside {
     width: 224px;
     height: 100%;
@@ -325,11 +328,11 @@ aside:hover::-webkit-scrollbar-button {
 
     border-bottom: 1px solid #303030;
 }
-
+*/
 
 
 /* side-footer */
-
+/*
 
 .side-footer {
     display: flex;
@@ -389,6 +392,8 @@ aside:hover::-webkit-scrollbar-button {
 .frame-item:hover {
     color: #eee;
 }
+
+*/
 
 /* main */
 
@@ -818,6 +823,7 @@ main {
     align-items: flex-start;
 }
 
+/*
 .views,
 .channel-name {
     display: flex;
@@ -829,4 +835,29 @@ main {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+*/
+
+#channelProfile{
+    display: flex;
+    justify-content:flex-start;
+
+}
+
+#subscriptionBtn{
+    border-radius: 4px;
+    background-color: #C00;
+    padding: 0.5%;
+}
+
+#channelName{
+    font-size: 24px;
+}
+
+#subscribers{
+    font-size: 14px;
+    color: #aaa;
+}
+#channelProfile img{
+    border-radius: 180px;
 }
