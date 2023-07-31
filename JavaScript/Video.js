@@ -159,7 +159,7 @@ function setVideoCards(videoList) {
         const viewsAndUploaded = document.createElement("div");
 
         //각 태그들의 속성값 설정
-        thumbnail.width = "300";
+        thumbnail.width = "200";
 
         infoText.appendChild(title);
         infoText.appendChild(channelName);
