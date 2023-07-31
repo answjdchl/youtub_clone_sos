@@ -13,7 +13,7 @@ main {
   flex-direction: column;
   flex-basis: 17.25rem;
   margin: 1.5rem 0.5rem;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   min-width: 17.25rem;
   max-width: 25.875rem;
 }
@@ -160,7 +160,7 @@ main {
   margin-top: 3.5rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 #tagNav::-webkit-scrollbar {

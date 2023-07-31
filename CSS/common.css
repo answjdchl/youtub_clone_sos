@@ -28,7 +28,7 @@ main {
     background-color: black;
     flex: 1;
     padding-top: 3.5rem;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .display_none {
@@ -52,6 +52,7 @@ main {
 .icon {
     width: 1.5rem;
     height: 1.5rem;
+    border-radius: 1.5rem;
 }
 
 .userAvatar {
@@ -64,6 +65,10 @@ main {
     width: 12.5rem;
     height: 2.5rem;
     padding-left: 1.5rem;
+}
+
+.menu:hover{
+    background: #303030;
 }
 
 .menu.selected {
