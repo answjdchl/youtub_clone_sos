@@ -25,7 +25,7 @@
 
         <div id="searchArea" class="headerDiv desktopMode">
             <div id="search">
-                <input id="searchInput" type="text" onkeyup="searchEnter()">
+                <input id="searchInput" type="text" onkeyup="searchEnter(event)">
                 <button id="searchBtn" onclick="search()"><img class="icon" src="./media/icon/search.svg"></button>
             </div>
             <button id="micBtn"><img id="micBtnIcon" class="icon" src="./media/icon/mic.svg"></button>
@@ -192,12 +192,13 @@
             <div id="tagArea">
                 <nav id="tagNav"></nav>
                 <div id="tagNavScrollBtn">
-                    <div id="tagNavScrollForward">
-                        <button><img class="icon" src="./media/icon/leftArrow.svg"
+                    <div id="tagNavScrollForward" class="display_none">
+                        <button onclick="onclickTagNavForward()"><img class="icon" src="./media/icon/leftArrow.svg"
                                 style="transform: rotate(180deg);"></button>
                     </div>
                     <div id="tagNavScrollBackward">
-                        <button><img class="icon" src="./media/icon/leftArrow.svg"></button>
+                        <button onclick="onclickTagNavBackward()"><img class="icon"
+                                src="./media/icon/leftArrow.svg"></button>
                     </div>
                 </div>
             </div>
