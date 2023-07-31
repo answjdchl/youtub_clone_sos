@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Document</title>
 
-    <link rel="stylesheet" href="CSS/common.css">
-    <link rel="stylesheet" href="CSS/reset.css">
-=======
-    <title>YouTube</title>
+    <title>Video Name</title>
     <link href="./media/img/Logo_mini.svg" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="./CSS/reset.css">
     <link rel="stylesheet" href="./CSS/common.css">
     <link rel="stylesheet" href="./CSS/video.css">
->>>>>>> css_1
 </head>
+
 <body>
     <!-- header -->
+
     <header id="header">
         <div id="menuBtnAndLogo" class="headerDiv">
             <button onclick="menuOpen()"><img src="./media/icon/hamburger.svg"></button>
@@ -42,236 +39,264 @@
     </header>
 
     <main>
-        <section class="player">
-        <video controls src="" controlList="allowFullScreen nodownload"></video>
-    </section> 
 
-    <!-- 비디오정보 -->
-    <div class="videoinfo">
-        <div class="title">
-            <span class="video-title">
-                Blind Woodturner: Turning passion into fine art
-            </span>
-        </div>
-        <div class="videoviews">
-            <span class="videoviews">576,969 views . Oct 8, 2021</span>
-            <span class="actions">
-            <li>
-                <button>
-                    <img class="icon" src="./media/icon/liked.svg">
-                </button>
-                <p class="button-txt">
-                    1.7 K
-                 </p>
-            </li>
-             <li>
-                <button>
-                    <img class="icon" src="./media/icon/SomeDown.svg">
-                </button>
-                <p class="button-txt">
-                    632
-                </p>
-            </li>
-                <li><button>
-                    <img class="icon" src="./media/icon/Share.svg">
-                </button>
-                <p class="button-txt">
-                    Share
-                </p>
-            </li>
-                <li><button>
-                    <img class="icon" src="./media/icon/Save.svg">
-                </button>
-                <p class="button-txt">
-                    Save
-                </p>
-            </li>
-                <li><button>
-                    <img class="icon" src="./media/icon/MoreBtn.svg">
-                </button></li>
-            </span>
-        </div>
-    </div>  
-    <!-- 채널정보 -->
-    <div class="channelinfo">
-        <div><img class="icon" src="./media/userAvatar/user3.svg">
-        <div class="info">
-            <span class="name">Marcus Levin</span>
-            <span class="subscribers">1.2M subscribers</span>
-         </div>
-        </div>  
-        <button class="subscribe">Subscribes</button>
-        <p>Chris Fisher, also known as the Blind Woodturner, learned his craft by listening to hundreds of hours of YouTube videos and experimenting in his workshop. Now he’s a YouTube creator himself, sells his products worldwide, and does demonstrations all around the country.</p>
-        <span>SHOW MORE</span>
-    </div>
-    <section class="comment">
-        <p class="">286  Comments
-            <button>
-                <img class="icon" src="./media/icon/SORT_BY.svg">
-            </button> SORT_BY
-        </p>
+        <article>
+            <section class="player">
+                <video controls src="" controlList="allowFullScreen nodownload" width="640" height="360"></video>
+            </section>
 
-        <div class="comment-avatar">
-            <div >
-                <img class="icon" src="./media/icon/User-Avatar.svg">
-                <input id="comment-input" placeholder="Add a public comment....">
+            <!-- 비디오정보 -->
+            <div class="videoinfo">
+                <div class="title">
+                    <span class="video-title">
+                        Blind Woodturner: Turning passion into fine art
+                    </span>
+                </div>
+                <div class="videoviews">
+                    <span class="videoviews">576,969 views . Oct 8, 2021</span>
+                    <span class="actions">
+                        <div class="btn-list">
+                            <button>
+                                <img class="icon" src="./media/icon/liked.svg">
+                            </button>
+                            <p class="button-txt">
+                                1.7 K
+                            </p>
+                        </div>
+                        <div class="btn-list">
+                            <button>
+                                <img class="icon" src="./media/icon/SomeDown.svg">
+                            </button>
+                            <p class="button-txt">
+                                632
+                            </p>
+                        </div>
+                        <div class="btn-list">
+                            <button>
+                                <img class="icon" src="./media/icon/Share.svg">
+                            </button>
+                            <p class="button-txt">
+                                Share
+                            </p>
+                        </div>
+                        <div class="btn-list">
+                            <button>
+                                <img class="icon" src="./media/icon/Save.svg">
+                            </button>
+                            <p class="button-txt">
+                                Save
+                            </p>
+                        </div>
+                        <div class="btn-list">
+                            <button>
+                                <img class="icon" src="./media/icon/MoreBtn.svg">
+                            </button>
+                        </div>
+                    </span>
+                </div>
             </div>
-        </div>
+            <!-- 채널정보 -->
+            <div class="channelinfos">
+                <div class="channelinfo">
+                    <img class="icon" src="./media/userAvatar/user3.svg">
+                    <div class="info">
+                        <span class="name">Marcus Levin</span>
+                        <span class="subscribers">1.2M subscribers</span>
+                    </div>
 
-        <div class="profile-pic">
-            <img class="icon" src="./media/icon/User-Avatar2.svg">
-        </div>
-        <div class="comment2">
-            <div class="comment-Avatar2">
-                <p class="comment-name"> James Gouse 
-                <span class="commen-hour">8 hours ago</span>
-                </p>
-               
-            </div>
-
-         <div class="comment-text2">
-             <p class="avatar2-txt">
-                    Wow, world is full of different skills 
-            </p>
-                <button class="comment-like">
-                    <img class="icon" src="./media/icon/liked.svg">
-                </button>
-
-                <span class="likecount">3</span>
-
+                    <button class="subscribe">Subscribes</button>
+                </div>
                 
-                <button class="comment-somedown">
-                    <img class="icon" src="./media/icon/SomeDown.svg">
-                </button>
+                <div class="video-description">
+                    <p>
+                        Chris Fisher, also known as the Blind Woodturner, learned his craft by listening to hundreds of hours
+                        of YouTube videos and experimenting in his workshop. Now he’s a YouTube creator himself, sells his
+                        products worldwide, and does demonstrations all around the country.
+                    </p>
+                    <p class="show-more">SHOW MORE</p>
+                </div>
+            </div>
+            <section class="comment">
+                <p class="">286 Comments
+                    <button>
+                        <img class="icon" src="./media/icon/SORT_BY.svg">
+                    </button> SORT_BY
+                </p>
 
-                <button class="comment-reply">
-                    <img class="icon" src="./media/icon/reply.svg">
-                </button>
-         </div>
+                <div class="comment-avatar">
+                    <div>
+                        <img class="icon" src="./media/icon/User-Avatar.svg">
+                        <input id="comment-input" placeholder="Add a public comment....">
+                    </div>
+                </div>
+                
+                <div class="comment-card">
+                    <div class="profile-pic">
+                        <img class="icon" src="./media/icon/User-Avatar2.svg">
+                    </div>
+                    <div class="comment2">
+                        <div class="comment-Avatar2">
+                            <p class="comment-name"> James Gouse
+                                <span class="commen-hour">8 hours ago</span>
+                            </p>
 
-    </section>
+                        </div>
+
+                        <div class="comment-text2">
+                            <p class="avatar2-txt">
+                                Wow, world is full of different skills
+                            </p>
+                            <div class="comment-btns">
+                                <div class="comment-btn">
+                                    <button class="comment-like">
+                                        <img class="icon" src="./media/icon/liked.svg">
+                                    </button>
+
+                                    <span class="likecount">3</span>
+                                </div>
+                                
+                                <div class="comment-btn">
+                                    <button class="comment-somedown">
+                                        <img class="icon" src="./media/icon/SomeDown.svg">
+                                    </button>
+
+                                    <button class="reply">
+                                        reply
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                
+
+            </section>
+        </article>
 
 
-    <aside>
-        <div class="topmenubtn">
-            <span> 
-                <button class="topbtn">All</button>
-                <button class="topbtn">From Marcus Levin </button>
-            </span>
-        </div>
-        <ul>
-            <li class="videocard">
-                <img class="icon" src="./media/icon/sidevideo1.svg">
-                <span class="video-title">
-                    Blind Woodturner: Turning passion into fine art
+
+        <aside>
+            <div class="topmenubtn">
+                <span>
+                    <button class="topbtn-selected">All</button>
+                    <button class="topbtn">From Marcus Levin </button>
                 </span>
-                <span class="video-name">
-                    James Gouse
-                </span>
-                <span class="video-name">
-                    1M views . 3 years ago
-                </span>
-    
-            </li>
-            <li class="videocard">
-                <img class="icon" src="./media/icon/sidevideo2.svg">
-                <span class="video-title">
-                    Blind Woodturner: Turning passion into fine art
-                </span>
-                <span class="video-name">
-                    James Gouse
-                </span>
-                <span class="video-name">
-                    1M views . 3 years ago
-                </span>
-            </li>
-            <li class="videocard">
-                <img class="icon" src="./media/icon/sidevideo3.svg">
-                <span class="video-title">
-                    Blind Woodturner: Turning passion into fine art
-                </span>
-                <span class="video-name">
-                    James Gouse
-                </span>
-                <span class="video-name">
-                    1M views . 3 years ago
-                </span>
-            </li>
-            <li class="videocard">
-                <img class="icon" src="./media/icon/sidevideo4.svg">
-                <span class="video-title">
-                    Blind Woodturner: Turning passion into fine art
-                </span>
-                <span class="video-name">
-                    James Gouse
-                </span>
-                <span class="video-name">
-                    1M views . 3 years ago
-                </span>
-            </li>
-            <li class="videocard">
-                <img class="icon" src="./media/icon/sidevideo5.svg">
-                <span class="video-title">
-                    Blind Woodturner: Turning passion into fine art
-                </span>
-                <span class="video-name">
-                    James Gouse
-                </span>
-                <span class="video-name">
-                    1M views . 3 years ago
-                </span>
-            </li>
-            <li class="videocard">
-                <img class="icon" src="./media/icon/sidevideo6.svg">
-                <span class="video-title">
-                    Blind Woodturner: Turning passion into fine art
-                </span>
-                <span class="video-name">
-                    James Gouse
-                </span>
-                <span class="video-name">
-                    1M views . 3 years ago
-                </span>
-            </li>
-            <li class="videocard">
-                <img class="icon" src="./media/icon/sidevideo7.svg">
-                <span class="video-title">
-                    Blind Woodturner: Turning passion into fine art
-                </span>
-                <span class="video-name">
-                    James Gouse
-                </span>
-                <span class="video-name">
-                    1M views . 3 years ago
-                </span>
-            </li>
-            <li class="videocard">
-                <img class="icon" src="./media/icon/sidevideo9.svg">
-                <span class="video-title">
-                    Blind Woodturner: Turning passion into fine art
-                </span>
-                <span class="video-name">
-                    James Gouse
-                </span>
-                <span class="video-name">
-                    1M views . 3 years ago
-                </span>
-            </li>
-        
-        </ul>
-         
-            
+            </div>
+            <ul>
+                <li class="videocard">
+                    <img class="icon" src="./media/icon/sidevideo1.svg">
+                    <span class="video-title">
+                        Blind Woodturner: Turning passion into fine art
+                    </span>
+                    <span class="video-name">
+                        James Gouse
+                    </span>
+                    <span class="video-name">
+                        1M views . 3 years ago
+                    </span>
+
+                </li>
+                <li class="videocard">
+                    <img class="icon" src="./media/icon/sidevideo2.svg">
+                    <span class="video-title">
+                        Blind Woodturner: Turning passion into fine art
+                    </span>
+                    <span class="video-name">
+                        James Gouse
+                    </span>
+                    <span class="video-name">
+                        1M views . 3 years ago
+                    </span>
+                </li>
+                <li class="videocard">
+                    <img class="icon" src="./media/icon/sidevideo3.svg">
+                    <span class="video-title">
+                        Blind Woodturner: Turning passion into fine art
+                    </span>
+                    <span class="video-name">
+                        James Gouse
+                    </span>
+                    <span class="video-name">
+                        1M views . 3 years ago
+                    </span>
+                </li>
+                <li class="videocard">
+                    <img class="icon" src="./media/icon/sidevideo4.svg">
+                    <span class="video-title">
+                        Blind Woodturner: Turning passion into fine art
+                    </span>
+                    <span class="video-name">
+                        James Gouse
+                    </span>
+                    <span class="video-name">
+                        1M views . 3 years ago
+                    </span>
+                </li>
+                <li class="videocard">
+                    <img class="icon" src="./media/icon/sidevideo5.svg">
+                    <span class="video-title">
+                        Blind Woodturner: Turning passion into fine art
+                    </span>
+                    <span class="video-name">
+                        James Gouse
+                    </span>
+                    <span class="video-name">
+                        1M views . 3 years ago
+                    </span>
+                </li>
+                <li class="videocard">
+                    <img class="icon" src="./media/icon/sidevideo6.svg">
+                    <span class="video-title">
+                        Blind Woodturner: Turning passion into fine art
+                    </span>
+                    <span class="video-name">
+                        James Gouse
+                    </span>
+                    <span class="video-name">
+                        1M views . 3 years ago
+                    </span>
+                </li>
+                <li class="videocard">
+                    <img class="icon" src="./media/icon/sidevideo7.svg">
+                    <span class="video-title">
+                        Blind Woodturner: Turning passion into fine art
+                    </span>
+                    <span class="video-name">
+                        James Gouse
+                    </span>
+                    <span class="video-name">
+                        1M views . 3 years ago
+                    </span>
+                </li>
+                <li class="videocard">
+                    <img class="icon" src="./media/icon/sidevideo9.svg">
+                    <span class="video-title">
+                        Blind Woodturner: Turning passion into fine art
+                    </span>
+                    <span class="video-name">
+                        James Gouse
+                    </span>
+                    <span class="video-name">
+                        1M views . 3 years ago
+                    </span>
+                </li>
+
+            </ul>
+
+
         </aside>
 
     </main>
     <!-- videoplayer -->
-    
-    
+
+
     <!-- aside -->
-    
+
     <!-- section -->
     <section></section>
-    
+
 </body>
 <script src="./JavaScript/video.js"></script>
+
 </html>

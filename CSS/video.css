@@ -32,9 +32,231 @@ main{
     display: flex;
     gap: 10px;
 }
+article{
+    display:flex;
+    flex-direction: column;
+  }
+ 
+.player{
+    padding: 15px 15px 15px 0px;  
+}
+.video-actions{
+    display: flex;
+    padding: 2px 0px;
+    align-items: flex-start;
+    list-style-type: none;
+   
+}
+.video-title{
+    font-size: 18px;
+    font-family: Roboto;
+}
+.videoviews{
+    font-size: 14px;
+    color: var(--gray-color, #AAA);
+}
 
-.player {
- padding: 60px;
+.actions{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-list{
+    display: flex;
+    gap: 10px;
+    padding: 0 5px;
+    border-radius:20px;
+}
+
+.btn-list:hover{
+    background: #303030;
+}
+
+
+
+
+.subscribe{
+    border-radius: 2px;
+    background: #C00;
+    display: flex;
+    padding: 10px 16px;
+    align-items: flex-start;
+    gap: 10px;
+    float:right;
+    border-radius:8px;
+
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+
+    align-items: center;
+    margin-left: 22rem;
+}
+
+
+.subscribe:hover{
+    background: #900;
+    color: #ccc
+}
+
+.channelinfos{
+    padding-top:1rem;
+}
+
+
+.channelinfo{
+    display: flex;
+}
+
+
+
+.channelinfo .icon{
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80px;
+}
+.channelinfo .name{
+    color: var(--white-color, #FFF);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.channelinfo .subscribers{
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.channelinfo .infoment{
+    color: var(--white-color, #FFF);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 576px;
+}
+.channelinfo .infomore{
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.comment-avatar{
+    width: 100%;
+}
+
+.comment-avatar div{
+    display: flex;
+}
+
+.comment-avatar div input{
+    padding: 7px 0 8px 5px;
+    margin-left: 1rem;
+    margin-right: 1.5rem;
+    width: 100%;
+    background-color: #000;
+    border: 0px;
+    border-bottom: 2px solid #303030;
+    height: 50%;
+    align-self: center;
+    color: #fff;
+
+    outline: none;
+
+    transition: 0.5s;
+}
+
+
+.comment-avatar div input:focus{
+    border-bottom: #FFF 2px solid;
+}
+
+
+.comment-card{
+    display: flex;
+    gap: 1rem;
+}
+
+.comment-avatar .icon{
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80px;
+}
+
+.profile-pic .icon{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+}
+
+.avatar2-txt{
+    line-height: 30px;
+}
+
+.commen-hour{
+    color: #AAA
+}
+
+
+.topmenubtn .topbtn-selected{
+    display: flex;
+    padding: 8px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 32px;
+    background: #FFF;
+    color: #030303;
+}
+
+.topmenubtn .topbtn{
+    display: flex;
+    padding: 8px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 32px;
+    background: #303030;
+    
+    border: #303030 1px solid;
+}
+
+.topmenubtn .topbtn2{
+    display: flex;
+    padding: 8px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 32px;
+    border: 0.3px solid var(--gray-color, #AAA);
+    background: var(--border-color, #303030);
+
+}
+
+p button{
+    margin-left: 2.5rem;
 }
 
 
@@ -298,12 +520,33 @@ main{
     gap: 10px;
 }
 
-.info{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 70px;
+.video-description{
+    padding: 10px 2rem 5px 60px;
+    gap: 8px;
 }
+
+
+.show-more{
+    display: flex;
+    padding: 8px 0px 0px 0px;
+    align-items: flex-start;
+    gap: 10px;
+
+    background-color: transparent;
+    border: 0px;
+
+    color:#aaa;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.show-more:hover{
+    color: #fff;
+}
+
 
 .info-txt{
     display: flex;
@@ -417,9 +660,15 @@ main{
 
 .name{
     display: inline-flex;
-    padding: 8px 0px 10px 15px;
+    padding: 0px 0px 0px 1rem;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .name .channel-name{
@@ -429,12 +678,8 @@ main{
     line-height: normal;
 }
 
-.name .subscribers{
-    color: #aaa;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+.subscribers{
+    padding:0 0 0 1rem;
 }
 
 .video-desc{
@@ -444,26 +689,6 @@ main{
     gap: 10px;
 }
 
-.show-more{
-    display: flex;
-    padding: 8px 0px 0px 64px;
-    align-items: flex-start;
-    gap: 10px;
-
-    background-color: transparent;
-    border: 0px;
-
-    color:#aaa;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-}
-
-.show-more:hover{
-    color: #fff;
-}
 
 
 /* 댓글 작성 칸 */
@@ -638,11 +863,11 @@ main{
     white-space: inherit;
 }
 
-.comment-toolbar{
+.comment-btns{
     display: flex;
     flex-direction: row;
 
-    gap: 5px;
+    gap: 1rem;
 }
 
 .comment-btn{
@@ -650,6 +875,7 @@ main{
     padding: 1px 0px;
     align-items: flex-start;
     height:32px;
+    gap: 0.5rem;
 }
 
 .comment-btn .btn{
