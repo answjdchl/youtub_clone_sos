@@ -25,7 +25,7 @@ body {
 main {
     position: absolute;
     top: 58px;
-    margin: 0 15%;
+    margin: 0 10%;
 
     display: flex;
     gap: 10px;
@@ -35,10 +35,10 @@ main {
 article {
     display: flex;
     flex-direction: column;
-}
-
-.player {
-    padding: 15px 15px 15px 0px;
+  }
+ 
+.player{
+    padding: 15px 15px 15px 0px;  
 }
 
 .video-actions {
@@ -905,15 +905,15 @@ p button {
 .comment-btns {
     display: flex;
     flex-direction: row;
-
     gap: 1rem;
+    
 }
 
 .comment-btn {
     display: flex;
     padding: 1px 0px;
     align-items: flex-start;
-    height: 32px;
+    height:32px;
     gap: 0.5rem;
 }
 
@@ -964,6 +964,12 @@ p button {
     font-style: normal;
     font-weight: 400;
     text-transform: uppercase;
+    padding:0 16px;
+}
+
+.reply:hover{
+    color: #fff;
+    font-weight: 600;
 }
 
 .comment-btn-reply:hover {
@@ -974,7 +980,40 @@ p button {
     color: #fff;
 }
 
+li.videocard{
+    display: flex;
+    padding-top: 1rem;
+}
 
+.card-desc{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding-left: 1rem;
+}
+
+.card-title{
+    color: var(--white-color, #FFF);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+    width: 200px;
+}
+
+
+.card-channel{
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 150% */
+}
 
 /* 코멘트 영역 제한 */
 
