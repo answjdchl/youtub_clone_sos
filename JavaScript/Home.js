@@ -228,6 +228,7 @@ function onclickTagNavForward() {
     if (tagNavCurrentScroll - tagNavWidth <= 0) {
         tagNav.scrollLeft = 0;
         tagNavForward.classList.add("display_none");
+        tagNavBackward.classList.remove("display_none");
     }
     else {
         tagNavBackward.classList.remove("display_none");
@@ -244,6 +245,7 @@ function onclickTagNavBackward() {
     if (tagNavCurrentScroll + tagNavWidth >= tagNavScrollWidth - tagNavWidth) {
         tagNav.scrollLeft = tagNavScrollWidth - tagNavWidth;
         tagNavBackward.classList.add("display_none");
+        tagNavForward.classList.remove("display_none");
     }
     else {
         tagNavForward.classList.remove("display_none");
