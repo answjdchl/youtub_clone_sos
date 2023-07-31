@@ -1,14 +1,14 @@
-*{
+* {
     padding: 0;
     margin: 0;
-    
+
 }
 
-header{
+header {
     background-color: #212121;
     height: 56px;
-    display:flex;
-    justify-content:space-between;
+    display: flex;
+    justify-content: space-between;
     border: 1px solid #303030;
     position: fixed;
     z-index: 1;
@@ -17,52 +17,109 @@ header{
     width: 100%;
 }
 
-body{
+body {
     background-color: #000;
     color: #fff;
-    width: 1440px;
-    height: 1024px;
 }
 
-main{
+main {
     position: absolute;
     top: 58px;
-    margin: 0 15%;
+    margin: 0 10%;
 
     display: flex;
     gap: 10px;
+    
 }
-article{
-    display:flex;
+
+article {
+    display: flex;
+    flex-direction: column;
+
+    width: fit-content;
   }
+ 
 .player{
     padding: 15px 15px 15px 0px;  
 }
-.video-actions{
+
+.video-actions {
     display: flex;
     padding: 2px 0px;
     align-items: flex-start;
     list-style-type: none;
-   
+
 }
-.video-title{
+
+.video-title {
     font-size: 18px;
     font-family: Roboto;
 }
-.videoviews{
+
+.videoviews {
     font-size: 14px;
     color: var(--gray-color, #AAA);
 }
-.subscribe{
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-list {
+    display: flex;
+    gap: 10px;
+    padding: 0 5px;
+    border-radius: 20px;
+}
+
+.btn-list:hover {
+    background: #303030;
+}
+
+
+
+
+.subscribe {
     border-radius: 2px;
     background: #C00;
     display: flex;
     padding: 10px 16px;
     align-items: flex-start;
     gap: 10px;
-    float:right
+    float: right;
+    border-radius: 8px;
+
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+
+    align-items: center;
+    margin-left: 22rem;
 }
-.channelinfo .icon{
+
+
+.subscribe:hover {
+    background: #900;
+    color: #ccc
+}
+
+.channelinfos {
+    padding-top: 1rem;
+}
+
+
+.channelinfo {
+    display: flex;
+}
+
+
+
+.channelinfo .icon {
     display: flex;
     width: 48px;
     height: 48px;
@@ -70,7 +127,8 @@ article{
     align-items: center;
     border-radius: 80px;
 }
-.channelinfo .name{
+
+.channelinfo .name {
     color: var(--white-color, #FFF);
     font-family: Roboto;
     font-size: 14px;
@@ -78,7 +136,8 @@ article{
     font-weight: 400;
     line-height: normal;
 }
-.channelinfo .subscribers{
+
+.channelinfo .subscribers {
     color: var(--gray-color, #AAA);
     font-family: Roboto;
     font-size: 12px;
@@ -86,7 +145,8 @@ article{
     font-weight: 400;
     line-height: normal;
 }
-.channelinfo .infoment{
+
+.channelinfo .infoment {
     color: var(--white-color, #FFF);
     font-family: Roboto;
     font-size: 14px;
@@ -95,7 +155,8 @@ article{
     line-height: normal;
     width: 576px;
 }
-.channelinfo .infomore{
+
+.channelinfo .infomore {
     color: var(--gray-color, #AAA);
     font-family: Roboto;
     font-size: 12px;
@@ -104,7 +165,44 @@ article{
     line-height: normal;
     text-transform: uppercase;
 }
-.comment-avatar .icon{
+
+.comment-avatar {
+    width: 100%;
+}
+
+.comment-avatar div {
+    display: flex;
+}
+
+.comment-avatar div input {
+    padding: 7px 0 8px 5px;
+    margin-left: 1rem;
+    margin-right: 1.5rem;
+    width: 100%;
+    background-color: #000;
+    border: 0px;
+    border-bottom: 2px solid #303030;
+    height: 50%;
+    align-self: center;
+    color: #fff;
+
+    outline: none;
+
+    transition: 0.5s;
+}
+
+
+.comment-avatar div input:focus {
+    border-bottom: #FFF 2px solid;
+}
+
+
+.comment-card {
+    display: flex;
+    gap: 1rem;
+}
+
+.comment-avatar .icon {
     display: flex;
     width: 48px;
     height: 48px;
@@ -113,17 +211,31 @@ article{
     border-radius: 80px;
 }
 
-.comment-avatar2 .icon{
+.profile-pic .icon {
     display: flex;
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     justify-content: center;
     align-items: center;
-    border-radius: 80px;
+    border-radius: 40px;
+}
+
+.avatar2-txt {
+    line-height: 30px;
+}
+
+.commen-hour {
+    color: #AAA
+}
+
+.topmenubtn{
+    display: flex;
+    width: max-content;
+    gap: 8px;
 }
 
 
-.topmenubtn .topbtn{
+.topmenubtn .topbtn-selected {
     display: flex;
     padding: 8px 12px;
     flex-direction: column;
@@ -132,10 +244,21 @@ article{
     border-radius: 32px;
     background: #FFF;
     color: #030303;
-    
 }
 
-.topmenubtn .topbtn2{
+.topmenubtn .topbtn {
+    display: flex;
+    padding: 8px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 32px;
+    background: #303030;
+
+    border: #303030 1px solid;
+}
+
+.topmenubtn .topbtn2 {
     display: flex;
     padding: 8px 12px;
     flex-direction: column;
@@ -146,6 +269,36 @@ article{
     background: var(--border-color, #303030);
 
 }
+
+p button {
+    margin-left: 2.5rem;
+}
+
+
+.topmenubtn .topbtn {
+    display: flex;
+    padding: 8px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 32px;
+    background: #FFF;
+    color: #030303;
+
+}
+
+.topmenubtn .topbtn2 {
+    display: flex;
+    padding: 8px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 32px;
+    border: 0.3px solid var(--gray-color, #AAA);
+    background: var(--border-color, #303030);
+
+}
+
 /* navbar */
 
 /* nav{
@@ -161,12 +314,12 @@ article{
     width: 100%;
 } */
 
-.ham:hover{
+.ham:hover {
     border-radius: 32px;
     background-color: #303030;
 }
 
-.yt-btn{
+.yt-btn {
     margin-left: 16px;
     display: inline-flex;
     padding-right: 0px;
@@ -183,7 +336,7 @@ article{
     gap: 10px;
 }
 
-.yt-btn .logo{
+.yt-btn .logo {
     display: flex;
     padding: 18px 14px 18px 16px;
     flex-direction: column;
@@ -191,7 +344,7 @@ article{
     gap: 10px;
 }
 
-.yt-logo{
+.yt-logo {
     width: 90px;
     height: 20px;
 }
@@ -199,7 +352,7 @@ article{
 
 /* searchbox */
 
-.searchbox{
+.searchbox {
     display: flex;
     width: 470px;
     height: 40px;
@@ -210,7 +363,7 @@ article{
     margin: 8px 0;
 }
 
-.search-area{
+.search-area {
     display: flex;
     width: 426px;
     height: 40px;
@@ -219,7 +372,7 @@ article{
     flex-shrink: 0;
 }
 
-.search{
+.search {
     width: 362px;
     height: 36px;
     flex-shrink: 0;
@@ -233,7 +386,7 @@ article{
     padding-left: 7px;
 }
 
-.search-box-icon{
+.search-box-icon {
     display: flex;
     width: 50px;
     height: 28px;
@@ -245,14 +398,14 @@ article{
     background: #303030;
 }
 
-.search-icon img{
+.search-icon img {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
 }
 
 
-.mic-icon{
+.mic-icon {
     display: flex;
     padding: 8px;
     align-items: flex-start;
@@ -261,14 +414,14 @@ article{
     background: #000;
 }
 
-.mic-icon:hover{
+.mic-icon:hover {
     background: #303030;
 }
 
 
 /* nav-profiles */
 
-.nav-profile{
+.nav-profile {
     display: flex;
     height: 40px;
     justify-content: center;
@@ -279,21 +432,21 @@ article{
     margin-top: 8px;
 }
 
-.pro-btn{
+.pro-btn {
     display: flex;
     padding: 8px;
     align-items: flex-start;
     gap: 10px;
 }
 
-.nav-profile .profile{
+.nav-profile .profile {
     display: flex;
     padding: 0px 10px;
     align-items: flex-start;
     gap: 10px;
 }
 
-.profile img{
+.profile img {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -302,15 +455,16 @@ article{
 }
 
 
-.pro-btn:hover{
+.pro-btn:hover {
     background-color: #303030;
-    border-radius: 36px;;
+    border-radius: 36px;
+    ;
 }
 
 
 /* 구독 버튼 */
 
-.channel-sub-btn{
+.channel-sub-btn {
     display: inline-flex;
     width: 124px;
     padding: 4px;
@@ -320,7 +474,7 @@ article{
 }
 
 
-.sub-btn{
+.sub-btn {
     display: flex;
     padding: 10px 16px;
     align-items: flex-start;
@@ -339,7 +493,7 @@ article{
 }
 
 
-.sub-btn:hover{
+.sub-btn:hover {
     background-color: #900;
     color: #ccc
 }
@@ -347,7 +501,7 @@ article{
 
 /* 보더 */
 
-.border{
+.border {
     width: 640px;
     height: 1px;
     flex-shrink: 0;
@@ -359,7 +513,7 @@ article{
 /* 임시 */
 
 
-.primary{
+.primary {
     width: 664px;
     height: 968px;
     padding: 24px 0px 0px 24px;
@@ -367,7 +521,7 @@ article{
 
 /* 비디오 플레이어 구역 */
 
-.vid-player{
+.vid-player {
     display: flex;
     width: 640px;
     height: 455px;
@@ -378,13 +532,13 @@ article{
 }
 
 
-.youtube-player{
+.youtube-player {
     width: 640px;
     height: 360px;
     flex-shrink: 0;
 }
 
-.vid-info{
+.vid-info {
     display: flex;
     width: 640px;
     flex-direction: column;
@@ -392,28 +546,49 @@ article{
     align-items: flex-start;
 }
 
-.video-info{
+.video-info {
     display: flex;
     padding: 20px 0px 8px 0px;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.video-info title{
+.video-info title {
     display: flex;
     padding: 3px 0px 2px 0px;
     align-items: flex-start;
     gap: 10px;
 }
 
-.info{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 70px;
+.video-description {
+    padding: 10px 2rem 5px 60px;
+    gap: 8px;
 }
 
-.info-txt{
+
+.show-more {
+    display: flex;
+    padding: 8px 0px 0px 0px;
+    align-items: flex-start;
+    gap: 10px;
+
+    background-color: transparent;
+    border: 0px;
+
+    color: #aaa;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.show-more:hover {
+    color: #fff;
+}
+
+
+.info-txt {
     display: flex;
     padding: 12px 0px;
     align-items: flex-start;
@@ -430,46 +605,46 @@ article{
 
 /* 정보창 버튼모음 */
 
-.top-level{
+.top-level {
     display: flex;
     align-items: flex-start;
     gap: 8px;
 }
 
 
-.btn{
+.btn {
     display: flex;
     padding: 2px 0px;
     align-items: flex-start;
     border-radius: 24px;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #303030;
 }
 
 
-.button-btn{
+.button-btn {
     display: flex;
     padding: 6px;
     align-items: flex-start;
     gap: 10px;
 
     background-color: transparent;
-    border:0px;
+    border: 0px;
 }
 
-.button-btn img{
+.button-btn img {
     width: 24px;
     height: 24px;
 }
 
-.button-txt{
+.button-txt {
     display: flex;
     padding: 10px 6px 10px 0px;
     align-items: flex-start;
     gap: 10px;
-    
+
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -480,7 +655,7 @@ article{
 
 /* 비디오 설명 */
 
-.vid-desc{
+.vid-desc {
     display: flex;
     width: 640px;
     flex-direction: column;
@@ -489,7 +664,7 @@ article{
     flex-shrink: 0;
 }
 
-.vid-description{
+.vid-description {
     display: flex;
     padding-bottom: 0px;
     flex-direction: column;
@@ -500,7 +675,7 @@ article{
 }
 
 
-.channel-title{
+.channel-title {
     display: flex;
     padding-top: 16px;
     flex-direction: row;
@@ -508,14 +683,14 @@ article{
     gap: 350px;
 }
 
-.title-frame{
+.title-frame {
     display: flex;
     height: 51px;
 }
 
 
 
-.user-avatar{
+.user-avatar {
     display: inline-flex;
     align-items: flex-start;
     gap: 10px;
@@ -523,60 +698,42 @@ article{
     border-radius: 48px 48px;
 }
 
-.name{
+.name {
     display: inline-flex;
-    padding: 8px 0px 10px 15px;
+    padding: 0px 0px 0px 1rem;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.name .channel-name{
+.info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.name .channel-name {
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-.name .subscribers{
-    color: #aaa;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+.subscribers {
+    padding: 0 0 0 1rem;
 }
 
-.video-desc{
+.video-desc {
     display: flex;
     padding: 12px 0px 0px 64px;
     align-items: flex-start;
     gap: 10px;
 }
 
-.show-more{
-    display: flex;
-    padding: 8px 0px 0px 64px;
-    align-items: flex-start;
-    gap: 10px;
-
-    background-color: transparent;
-    border: 0px;
-
-    color:#aaa;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-}
-
-.show-more:hover{
-    color: #fff;
-}
 
 
 /* 댓글 작성 칸 */
 
-.comment{
+.comment {
     display: flex;
     padding: 24px 0px 32px 0px;
     flex-direction: column;
@@ -587,7 +744,7 @@ article{
 
 
 
-.write-comment{
+.write-comment {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -595,49 +752,50 @@ article{
     gap: 10px;
 }
 
-.comment-info{
+.comment-info {
     width: 80%;
     display: flex;
-    
+
     gap: 28px;
 }
 
-.count{
+.count {
     display: flex;
     gap: 5px;
 
     font-size: 18px;
 }
 
-.sort-by{
-    display:flex;
+.sort-by {
+    display: flex;
     padding: 2px 10px;
     position: relative;
 }
 
-.sort-by:hover{
+.sort-by:hover {
     background-color: #212121;
     border-radius: 6px 6px 0 0;
 }
 
 
 
-.drop-sort-by{
-    display : none;
-    position : absolute;
-    z-index : 1; /*다른 요소들보다 앞에 배치*/
+.drop-sort-by {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    /*다른 요소들보다 앞에 배치*/
 }
-  
-.drop-sort-by .drop-down{
-    display : block;
+
+.drop-sort-by .drop-down {
+    display: block;
     padding: 3px 0;
 }
-  
+
 .sort-by:hover .drop-sort-by {
-    width:105px;
+    width: 105px;
     display: block;
     color: #fff;
-    top:30px;
+    top: 30px;
     background-color: #303030;
     text-align: center;
     left: 0px;
@@ -646,7 +804,7 @@ article{
     padding-bottom: 7px;
 }
 
-.sort-by:hover .drop-sort-by .drop-down:hover{
+.sort-by:hover .drop-sort-by .drop-down:hover {
     background-color: #555;
 }
 
@@ -654,7 +812,7 @@ article{
 
 
 
-.comment-area{
+.comment-area {
     background-color: transparent;
     border: 0px;
     border-bottom: 1px solid #303030;
@@ -668,14 +826,14 @@ article{
     gap: 4px;
 
     color: #fff;
-    
+
     transition: 0.3s;
 
 }
 
 
-.comment-area:focus{
-    border-bottom: 1px #fff solid;    
+.comment-area:focus {
+    border-bottom: 1px #fff solid;
 }
 
 
@@ -684,12 +842,12 @@ article{
 
 /* 댓글 보는 구간 */
 
-.user-avatar-one-comment{
+.user-avatar-one-comment {
     border-radius: 32px;
 }
 
 
-.one-comment{
+.one-comment {
     display: flex;
     flex-direction: row;
     gap: 16px;
@@ -697,21 +855,21 @@ article{
     padding-bottom: 15px;
 }
 
-.comment-header{
+.comment-header {
     display: flex;
     flex-direction: row;
     gap: 5px;
     align-self: stretch;
 }
 
-.comment-name{
+.comment-name {
     font-size: 13px;
     font-style: normal;
     font-weight: 700;
     line-height: 20px;
 }
 
-.comment-time{
+.comment-time {
     color: #aaa;
     font-size: 12px;
     font-style: normal;
@@ -720,7 +878,7 @@ article{
 }
 
 
-.comment-text{
+.comment-text {
     display: flex;
     padding: 2px 0px;
     align-items: flex-start;
@@ -735,53 +893,54 @@ article{
 
 
 /* 댓글에 보이는 글자수 조절 */
-.comment-txt{
+.comment-txt {
     width: 500px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.comment-txt:active{
+.comment-txt:active {
     white-space: inherit;
 }
 
-.comment-toolbar{
+.comment-btns {
     display: flex;
     flex-direction: row;
-
-    gap: 5px;
+    gap: 1rem;
+    
 }
 
-.comment-btn{
+.comment-btn {
     display: flex;
     padding: 1px 0px;
     align-items: flex-start;
     height:32px;
+    gap: 0.5rem;
 }
 
-.comment-btn .btn{
+.comment-btn .btn {
     display: flex;
     padding: 6px;
     align-items: flex-start;
     gap: 10px;
-    
+
     border-radius: 24px;
 }
 
-.btn .like{
+.btn .like {
     width: 16px;
     height: 16px;
 }
 
-.like-text{
+.like-text {
     display: flex;
     padding: 7px 8px 7px 0px;
     flex-direction: column;
     align-items: flex-start;
     /* gap: 10px; */
-    
-    height:16px;
+
+    height: 16px;
 
     font-size: 12px;
     font-style: normal;
@@ -789,16 +948,16 @@ article{
     line-height: 18px;
 }
 
-.comment-btn-reply{
+.comment-btn-reply {
     display: flex;
     padding: 8px 16px;
     align-items: center;
 
     border-radius: 24px;
-    
+
 }
 
-.reply{
+.reply {
     background-color: transparent;
 
     color: #aaa;
@@ -807,17 +966,56 @@ article{
     font-style: normal;
     font-weight: 400;
     text-transform: uppercase;
+    padding:0 16px;
 }
 
-.comment-btn-reply:hover{
+.reply:hover{
+    color: #fff;
+    font-weight: 600;
+}
+
+.comment-btn-reply:hover {
     background-color: #303030;
 }
 
-.comment-btn-reply:hover .reply{
+.comment-btn-reply:hover .reply {
     color: #fff;
 }
 
+li.videocard{
+    display: flex;
+    padding-top: 1rem;
+}
 
+.card-desc{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding-left: 1rem;
+}
+
+.card-title{
+    color: var(--white-color, #FFF);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+    width: 200px;
+}
+
+
+.card-channel{
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 150% */
+}
 
 /* 코멘트 영역 제한 */
 
@@ -835,7 +1033,7 @@ article{
 
 
 
-.secondary{
+.secondary {
     display: flex;
     width: 426px;
     flex-direction: column;
@@ -844,7 +1042,7 @@ article{
     flex-shrink: 0;
 }
 
-.secondary .content{
+.secondary .content {
     display: flex;
     padding: 24px 24px 0px 0px;
     flex-direction: column;
@@ -852,20 +1050,20 @@ article{
     height: 100%;
 }
 
-.content .top-menu{
+.content .top-menu {
     display: flex;
     width: 402px;
     padding: 1px 12px 2px 0px;
     align-items: flex-start;
 }
 
-.top-menu-item{
+.top-menu-item {
     display: flex;
     padding: 1px 12px 2px 0px;
     align-items: flex-start;
 }
 
-.top-menu-item .item{
+.top-menu-item .item {
     display: flex;
     padding: 8px 12px;
     flex-direction: column;
@@ -883,13 +1081,13 @@ article{
     line-height: normal;
 }
 
-.item:hover{
+.item:hover {
     background-color: #fff;
     color: #030303;
 }
 
 
-.re-video{
+.re-video {
     display: flex;
     padding: 8px;
     padding-bottom: 0px;
@@ -897,11 +1095,11 @@ article{
     gap: 8px;
 }
 
-.re-video:hover{
+.re-video:hover {
     background-color: #212121;
 }
 
-.re-video .thumbnail{
+.re-video .thumbnail {
     display: flex;
     padding-right: 0px;
     flex-direction: column;
@@ -909,8 +1107,8 @@ article{
     gap: 10px;
 }
 
-.re-video .vid-text{
-    height:90px;
+.re-video .vid-text {
+    height: 90px;
     display: flex;
     width: 226px;
     padding: 7px 0px;
@@ -918,29 +1116,29 @@ article{
     justify-content: space-between;
 }
 
-.vid-text .vid-title{
+.vid-text .vid-title {
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
 }
 
-.re-channel-desc{
+.re-channel-desc {
     display: flex;
     padding: 2px 0px;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.re-channel-name{
-    color:#aaa;
+.re-channel-name {
+    color: #aaa;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: 18px;
 }
 
-.re-channel-views{
+.re-channel-views {
     color: #AAA;
     font-size: 12px;
     font-style: normal;

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body {
   background-color: black;
   font-family: Roboto;
@@ -8,104 +7,13 @@ main {
   display: flex;
   justify-content: center;
 }
-=======
-
-*{
-    padding: 0;
-    margin: 0;
-  }
-  
-  body{
-    background-color: black;
-    font-family: Roboto;
-  }
-  
-  
-  .videoCard{
-    /* display: flex; */
-    float: left;
-    margin-right: 0.5%;
-    margin-left: 1%;
-    margin-top: 2%;
-    margin-bottom: 3%;
-    flex-shrink: 0;
-  }
-  
-  .thumbnail{ 
-    width: 276px;
-    height: 155px;
-    display: flex;
-  }
-  
-  .channelProfile{
-    display: flex;
-    width: 36px;
-    height: 36px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 24px;
-    padding-top: 10px;
-  }
-  
-  .detail{
-    display: flex;
-    gap: 12px;
-  }
-  
-  .detail img{
-    float: left;
-  }
-  
-  .title{ /*영상 제목*/
-    color: white;
-    font-size: 0.8em;
-    font-weight: 700;
-    padding-top: 10px;
-  }
-  
-  .channelName, .viewsAndUploaded{
-    color: #AAAAAA;
-    font-size: 0.8em;
-    font-weight: 400;
-  }
-  
-  #tagNav{
-    background-color: #212121;
-  }
-  
-  #tagNav button{
-    /* display: inline-flex; */
-    flex-direction: column; /*아이템이 가로 방향으로*/
-    background-color: #303030;
-    color: white;
-    padding: 8px 10px;
-    border-radius: 10px;
-    text-align: center;
-    border: 0.5px solid #AAAAAA;
-    margin: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-  }
-  
-  #tagNav button:hover{
-    background-color: white;
-    color: #030303;
-  }
-  
-  #tagNav .selected{
-    background-color: white;
-    color: #030303;
-  }
-
-
->>>>>>> html
 
 .videoCard {
   display: flex;
   flex-direction: column;
   flex-basis: 17.25rem;
   margin: 1.5rem 0.5rem;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   min-width: 17.25rem;
   max-width: 25.875rem;
 }
@@ -172,6 +80,8 @@ main {
 }
 
 #tagNav {
+
+  scroll-behavior: smooth;
   display: flex;
   position: relative;
   align-items: center;
@@ -245,13 +155,12 @@ main {
   border: 0.5px solid #fff;
 }
 
-<<<<<<< HEAD
 #videos {
   width: calc(100% - 3rem);
   margin-top: 3.5rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 #tagNav::-webkit-scrollbar {
@@ -264,5 +173,3 @@ main {
     width: 100%;
   }
 }
-=======
->>>>>>> html

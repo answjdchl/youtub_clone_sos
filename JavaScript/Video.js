@@ -16,7 +16,9 @@
 
 // query에서 정보를 받아와서 비디오를 보기위한 방법 
 const URLSearch = new URLSearchParams(location.search);
-const id = URLSearch.get('video_id')
+const id = URLSearch.get('video_id');
+//우측 비디오카드 리스트
+let recommendedVideo = [];
 
 console.log(id)
 
@@ -47,74 +49,150 @@ var Cname = ''
 var CURL = ''
 
 fetch(url).then((response) => response.json())
-.then((data) => {
-    iframe.src = data["video_link"]
-    title.textContent = data["video_title"]
-    let view = ''
+    .then((data) => {
+        iframe.src = data["video_link"]
+        title.textContent = data["video_title"]
+        let view = ''
 
-    console.log(data["views"])
+        console.log(data["views"])
 
-    if(1000000 >= data["views"] >= 1000){
-        thou =  Math.floor(data["views"] / 1000);
-        console.log(thou);
-        hun = Math.floor((data["views"]%1000) / 100);
-        console.log(hun);
-        view = `${thou}.${hun}K`;
+        if (1000000 >= data["views"] >= 1000) {
+            thou = Math.floor(data["views"] / 1000);
+            console.log(thou);
+            hun = Math.floor((data["views"] % 1000) / 100);
+            console.log(hun);
+            view = `${thou}.${hun}K`;
+        }
+        else if (data["views"] >= 1000000) {
+            mil = Math.floor(data["views"] / 1000000);
+            console.log(mil);
+            notmil = Math.floor((data["views"] % 1000000) / 100000);
+            console.log(notmil);
+            view = `${mil}.${notmil}M`;
+        } else {
+            view = data["views"];
+        }
+
+
+
+        view_info.textContent = `${view} Views ${data["upload_date"]}`
+        videoDesc.textContent = data["video_detail"]
+        channelName.textContent = data["video_channel"]
+
+
+
+
+        Cname = data["video_channel"]
+
+        CURL = `http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${Cname}`
+
+        CURL = encodeURI(CURL)
+
+        console.log(CURL)
+
+        fetch(CURL, {
+            method: "POST",
+
+        }).then((response) => response.json())
+            .then((data) => {
+                userAvatar.src = data["channel_profile"]
+                console.log(data)
+                var subsciber = ''
+
+
+                if (1000000 > data["subscibers"] >= 1000) {
+                    thou = Math.floor(data["subscibers"] / 1000);
+                    console.log(thou);
+                    hun = Math.floor((data["subscibers"] % 1000) / 100);
+                    console.log(hun);
+                    subsciber = `${thou}.${hun}K`;
+                }
+                else if (data["subscibers"] >= 1000000) {
+                    mil = Math.floor(data["subscibers"] / 1000000);
+                    console.log(mil);
+                    notmil = Math.floor((data["subscibers"] % 1000000) / 100000);
+                    console.log(notmil);
+                    subsciber = `${mil}.${notmil}M`;
+                } else {
+                    subsciber = data["subscibers"];
+                }
+
+                sub.textContent = `${subsciber} subscribers`
+            })
+    });
+
+//추천영상 설정
+fetch("http://oreumi.appspot.com/video/getVideoList")
+    .then((response) => response.json())
+    .then((data) => {
+        getRandomVideos(data);
+        setVideoCards(recommendedVideo);
+    });
+
+function getRandomVideos(videoList) {
+    for (var i = 0; i < videoList.length; i++) {
+        if (videoList[i].video_id === id) {
+            fruits.splice(i, 1);
+        }
     }
-    else if(data["views"] >= 1000000){
-        mil =  Math.floor(data["views"] / 1000000);
-        console.log(mil);
-        notmil = Math.floor((data["views"]%1000000) / 100000);
-        console.log(notmil);
-        view = `${mil}.${notmil}M`;
-    }else{
-        view = data["views"];
+    videoList.sort(function (a, b) {
+        return 0.5 - Math.random();
+    });
+
+    recommendedVideo = videoList;
+}
+
+function setVideoCards(videoList) {
+    //비디오카드가 추가될 html 요소
+    const videos = document.getElementById("videos");
+    //자식 요소 초기화
+    videos.replaceChildren();
+
+    for (let i = 0; i < videoList.length; i++) {
+        //비디오카드 생성을 위한 html 요소
+        const videoLink = document.createElement("a");
+        const videoCard = document.createElement("div");
+        const thumbnail = document.createElement("img");
+        const infoText = document.createElement("div");
+        const title = document.createElement("div");
+        const channelName = document.createElement("a");
+        const viewsAndUploaded = document.createElement("div");
+
+        //각 태그들의 속성값 설정
+        thumbnail.width = "300";
+
+        infoText.appendChild(title);
+        infoText.appendChild(channelName);
+        infoText.appendChild(viewsAndUploaded);
+
+        videoCard.appendChild(thumbnail);
+        videoCard.appendChild(infoText);
+
+        videoLink.appendChild(videoCard);
+
+        videos.appendChild(videoLink);
+
+        videoLink.href = `./Video.html?video_id=${videoList[i].video_id}`
+        videoLink.className = "videoCard";
+        thumbnail.className = "thumbnail";
+        infoText.className = "infoText";
+        title.className = "title";
+        channelName.className = "channelName";
+        viewsAndUploaded.className = "viewsAndUploaded";
+
+        //비디오 정보 받아오기
+        fetch(`http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoList[i].video_id}`)
+            .then((response) => response.json())
+            .then((data) => {
+                thumbnail.src = data.image_link;
+                title.innerText = data.video_title;
+                viewsAndUploaded.innerText = `${data.views}Views, ${daysAgo(data.upload_date)}`;
+                const dataVideoChannel = data.video_channel;
+                channelName.innerText = dataVideoChannel;
+                channelName.href = `./Channel.html?channel_name=${dataVideoChannel}`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     }
-
-
-
-    view_info.textContent = `${view} Views ${data["upload_date"]}`
-    videoDesc.textContent = data["video_detail"]
-    channelName.textContent = data["video_channel"]
-
-
-
-
-    Cname = data["video_channel"]
-
-    CURL = `http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${Cname}`
-
-    CURL = encodeURI(CURL)
-
-    console.log(CURL)
-
-    fetch(CURL, {
-        method: "POST",
-        
-      }).then((response) => response.json())
-               .then((data) =>{
-                    userAvatar.src = data["channel_profile"]
-                    console.log(data)
-                    var subsciber = ''
-
-
-                    if(1000000> data["subscibers"] >= 1000){
-                        thou =  Math.floor(data["subscibers"] / 1000);
-                        console.log(thou);
-                        hun = Math.floor((data["subscibers"]%1000) / 100);
-                        console.log(hun);
-                        subsciber = `${thou}.${hun}K`;
-                    }
-                    else if(data["subscibers"] >= 1000000){
-                        mil =  Math.floor(data["subscibers"] / 1000000);
-                        console.log(mil);
-                        notmil = Math.floor((data["subscibers"]%1000000) / 100000);
-                        console.log(notmil);
-                        subsciber = `${mil}.${notmil}M`;
-                    }else{
-                        subsciber = data["subscibers"];
-                    }
-
-                    sub.textContent = `${subsciber} subscribers`
-               })
-});
+}

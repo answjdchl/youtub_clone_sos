@@ -1,9 +1,14 @@
 const videoTag = document.getElementById('video');
 const searchInput = document.getElementById('searchInput');
+const tagNav = document.getElementById('tagNav');
+const tagNavForward = document.getElementById('tagNavScrollForward');
+const tagNavBackward = document.getElementById('tagNavScrollBackward');
 //전체 비디오 객체 리스트
 let allVideoList = [];
 //현재 비디오 객체 리스트 (검색 기능 등으로 필터링 된 목록)
 let currentVideoList = [];
+//현재 비디오의 태그 리스트
+let currentTags = [];
 
 //전체 비디오 리스트 초기화 및 비디오카드 생성
 fetch("http://oreumi.appspot.com/video/getVideoList")
@@ -25,32 +30,38 @@ function setVideoCards(videoList) {
 
     for (let i = 0; i < videoList.length; i++) {
         //비디오카드 생성을 위한 html 요소
+        const videoLink = document.createElement("a");
         const videoCard = document.createElement("div");
         const thumbnail = document.createElement("img");
         const detail = document.createElement("div");
+        const channelProfileLink = document.createElement("a");
         const channelProfile = document.createElement("img");
         const infoText = document.createElement("div");
         const title = document.createElement("div");
-        const channelName = document.createElement("div");
+        const channelName = document.createElement("a");
         const viewsAndUploaded = document.createElement("div");
 
         //각 태그들의 속성값 설정
         thumbnail.width = "300";
-        channelProfile.src = "./media/userAvatar/user1.svg";
 
         infoText.appendChild(title);
         infoText.appendChild(channelName);
         infoText.appendChild(viewsAndUploaded);
 
-        detail.appendChild(channelProfile);
+        channelProfileLink.appendChild(channelProfile);
+
+        detail.appendChild(channelProfileLink);
         detail.appendChild(infoText);
 
         videoCard.appendChild(thumbnail);
         videoCard.appendChild(detail);
 
-        videos.appendChild(videoCard);
+        videoLink.appendChild(videoCard);
 
-        videoCard.className = "videoCard";
+        videos.appendChild(videoLink);
+
+        videoLink.href = `./Video.html?video_id=${videoList[i].video_id}`
+        videoLink.className = "videoCard";
         thumbnail.className = "thumbnail";
         detail.className = "detail";
         channelProfile.className = "channelProfile userAvatar";
@@ -65,8 +76,20 @@ function setVideoCards(videoList) {
             .then((data) => {
                 thumbnail.src = data.image_link;
                 title.innerText = data.video_title;
-                channelName.innerText = data.video_channel;
                 viewsAndUploaded.innerText = `${data.views}Views, ${daysAgo(data.upload_date)}`;
+                const dataVideoChannel = data.video_channel;
+                channelName.innerText = dataVideoChannel;
+                channelName.href = `./Channel.html?channel_name=${dataVideoChannel}`;
+                channelProfileLink.href = `./Channel.html?channel_name=${dataVideoChannel}`;
+
+                return fetch(`http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${dataVideoChannel}`, { method: "POST" });
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                channelProfile.src = data.channel_profile;
+            })
+            .catch(error => {
+                console.error('Error:', error);
             });
     }
 }
@@ -114,62 +137,32 @@ function search() {
     setTagNavigator(getTags(currentVideoList));
 }
 
-//업로드 날짜 포맷 함수
-function daysAgo(uploadedTime) {
-    const uploaded = new Date(uploadedTime);
-    const now = new Date();
-
-    const timeToSecond = {
-        YEAR: 31356000,
-        MONTH: 2592000,
-        WEEK: 604800,
-        DAY: 86400,
-        HOUR: 3600,
-        MINUTE: 60,
-    }
-
-    const timeDiff = (now.getTime() - uploaded.getTime()) / 1000;
-    if (timeDiff >= timeToSecond.YEAR) {
-        return `${Math.floor(timeDiff / timeToSecond.YEAR)}년 전`
-    }
-    else if (timeDiff >= timeToSecond.MONTH) {
-        return `${Math.floor(timeDiff / timeToSecond.MONTH)}달 전`
-    }
-    else if (timeDiff >= timeToSecond.WEEK) {
-        return `${Math.floor(timeDiff / timeToSecond.WEEK)}주 전`
-    }
-    else if (timeDiff >= timeToSecond.DAY) {
-        return `${Math.floor(timeDiff / timeToSecond.DAY)}일 전`
-    }
-    else if (timeDiff >= timeToSecond.HOUR) {
-        return `${Math.floor(timeDiff / timeToSecond.HOUR)}시간 전`
-    }
-    else if (timeDiff >= timeToSecond.MINUTE) {
-        return `${Math.floor(timeDiff / timeToSecond.MINUTE)}분 전`
-    }
-    else {
-        return `${Math.floor(timeDiff)}초 전`
+//검색창 엔터 이벤트 리스너
+function searchEnter(event) {
+    if (event.key === 'Enter') {
+        search();
     }
 }
 
+
 //현재 검색결과의 tag 배열 반환 함수
 function getTags(videoList) {
-    let tags = [];
+    currentTags = [];
     for (let i = 0; i < videoList.length; i++) {
         for (let j = 0; j < videoList[i].video_tag.length; j++) {
-            tags.push(videoList[i].video_tag[j]);
+            currentTags.push(videoList[i].video_tag[j]);
         }
     }
-    const deleteDup = new Set(tags);
-    tags = [...deleteDup];
-    return tags;
+    const deleteDup = new Set(currentTags);
+    currentTags = [...deleteDup];
+    return currentTags;
 }
 
 //navigator 버튼 이벤트 함수
 function onclickTagButton(event) {
     //이전에 선택된 버튼 비활성화 / 현재 버튼 활성화
-    const before = document.querySelector('.selected');
-    before.className = "tagBtn";
+    const before = document.querySelector('.tagBtn.selected');
+    before.classList.remove('selected');
     event.target.className = "tagBtn selected";
 
     //선택된 버튼이 all 버튼이면 전체 비디오 표시
@@ -187,4 +180,38 @@ function onclickTagButton(event) {
         }
     }
     setVideoCards(videoList);
+}
+
+//tagNav 앞으로가기 버튼
+function onclickTagNavForward() {
+    const tagNavWidth = tagNav.clientWidth;
+    const tagNavScrollWidth = tagNav.scrollWidth;
+    const tagNavCurrentScroll = tagNav.scrollLeft;
+
+    if (tagNavCurrentScroll - tagNavWidth <= 0) {
+        tagNav.scrollLeft = 0;
+        tagNavForward.classList.add("display_none");
+        tagNavBackward.classList.remove("display_none");
+    }
+    else {
+        tagNavBackward.classList.remove("display_none");
+        tagNav.scrollLeft = tagNavCurrentScroll - tagNavWidth;
+    }
+}
+
+//tagNav 뒤로가기 버튼
+function onclickTagNavBackward() {
+    const tagNavWidth = tagNav.clientWidth;
+    const tagNavScrollWidth = tagNav.scrollWidth;
+    const tagNavCurrentScroll = tagNav.scrollLeft;
+
+    if (tagNavCurrentScroll + tagNavWidth >= tagNavScrollWidth - tagNavWidth) {
+        tagNav.scrollLeft = tagNavScrollWidth - tagNavWidth;
+        tagNavBackward.classList.add("display_none");
+        tagNavForward.classList.remove("display_none");
+    }
+    else {
+        tagNavForward.classList.remove("display_none");
+        tagNav.scrollLeft = tagNavCurrentScroll + tagNavWidth;
+    }
 }
