@@ -1,3 +1,4 @@
+
 * {
     padding: 0;
     margin: 0;
@@ -7,14 +8,16 @@
 body {
     background-color: #000;
     color: #fff;
-    width: 1440px;
-    height: 1024px;
+    /* width: 1440px; */
+    /* height: 1024px; */
+    font-family: Roboto;
 }
 
+#header{padding: 0 6px;}
 
 
 /* navbar */
-
+/*
 nav {
     background-color: #212121;
     height: 56px;
@@ -62,10 +65,10 @@ nav {
     width: 90px;
     height: 20px;
 }
-
+*/
 
 /* searchbox */
-
+/*
 .searchbox {
     display: flex;
     width: 470px;
@@ -131,10 +134,10 @@ nav {
 .mic-icon:hover {
     background: #303030;
 }
-
+*/
 
 /* nav-profiles */
-
+/*
 .nav-profile {
     display: flex;
     height: 40px;
@@ -174,10 +177,10 @@ nav {
     border-radius: 36px;
     ;
 }
-
+*/
 
 /* sidebar */
-
+/*
 aside {
     width: 224px;
     height: 100%;
@@ -325,11 +328,11 @@ aside:hover::-webkit-scrollbar-button {
 
     border-bottom: 1px solid #303030;
 }
-
+*/
 
 
 /* side-footer */
-
+/*
 
 .side-footer {
     display: flex;
@@ -390,39 +393,39 @@ aside:hover::-webkit-scrollbar-button {
     color: #eee;
 }
 
+*/
+
 /* main */
 
 
 main {
     /* display: inline-block; */
-    width: 1195px;
+    /* width: 1195px; */
     float: left;
     top: 57px;
-    left: 242px;
-    position: absolute;
-
+    /* left: 242px; */
+    /* position: absolute; */
+    width: 100%;
 }
 
-.channel {
-
+/* .channel {
     background-color: #181818;
 }
 
 .channel .channel-cover {
     height: 192px;
-}
+} */
 
-.channel-cover img {
+/* .channel-cover img {
     width: 1195px;
-}
+} */
 
-.channel .channel-title {
+/* .channel .channel-title {
     padding: 16px 65px 4px 65px;
     display: flex;
     align-items: flex-start;
     gap: 685px;
-}
-
+} */
 
 
 /* user profile */
@@ -818,6 +821,7 @@ main {
     align-items: flex-start;
 }
 
+/*
 .views,
 .channel-name {
     display: flex;
@@ -829,4 +833,68 @@ main {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+*/
+
+#channelInfo{
+    background-color: #181818;
+}
+
+#channelProfile{
+    display: flex;
+    justify-content:flex-start;
+    margin-top: 1%;
+    align-items: center;
+}
+
+#subscriptionBtn{
+    border-radius: 4px;
+    background-color: #C00;
+    padding: 0.5%;
+    /* margin-left: auto; */
+}
+
+#channelName{
+    font-size: 24px;
+}
+
+#subscribers{
+    font-size: 14px;
+    color: #aaa;
+}
+
+#channelProfile img{
+    border-radius: 180px;
+    /* object-fit: cover; */
+    width: 5%;
+    margin-right: 1.5%;
+}
+
+#channelCover img {
+    width:100%;
+ }
+
+ #semiVideo{
+    display: flex;
+    /* align-items: center; */
+ }
+
+ #channelNav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #181818;
+}
+
+#channelSearch{
+    background-color: #181818;
+    border: none;
+}
+.channelNavBtn{
+    color: #aaaaaa;
+    font-weight: bold;
+    padding: 0.75rem 1.75rem;
+}
+
+.channelNavBtn:hover{
+    color: white;
 }
