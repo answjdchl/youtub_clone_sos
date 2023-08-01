@@ -28,7 +28,7 @@ main {
     background-color: black;
     flex: 1;
     padding-top: 3.5rem;
-    overflow: auto;
+    overflow: scroll;
 }
 
 .display_none {
@@ -65,11 +65,16 @@ main {
     width: 12.5rem;
     height: 2.5rem;
     padding-left: 1.5rem;
+    
 }
 
 .menu:hover{
     background: #303030;
 }
+
+.showMore{
+    width:14rem;
+  }
 
 .menu.selected {
     background-color: #303030;
@@ -201,6 +206,7 @@ main {
     margin-top: 3.5rem;
     overflow: auto;
     background-color: #212121;
+    padding-bottom: 1rem;
 }
 
 #navFooter {

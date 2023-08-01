@@ -5,9 +5,10 @@ body {
 
 main {
   display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
+  /* justify-content: center; */
+  /* margin-bottom: 1rem; */
 }
+
 
 .videoCard {
   display: flex;
@@ -15,9 +16,9 @@ main {
   flex-basis: 17.25rem;
   padding: 1rem 1rem;
   margin: 0.5rem 0;
-  flex-grow: 1;
-  min-width: 17.25rem;
-  max-width: 25.875rem;
+  /* flex-grow: 1; */
+  min-width: 17.5rem;
+  max-width: 18.5rem;
   border-radius: 0.5rem;
 }
 
@@ -172,7 +173,7 @@ main {
 }
 
 #videos {
-  width: calc(100% - 3rem);
+  /* width: calc(100% - 3rem); */
   margin-top: 3.5rem;
   display: flex;
   flex-wrap: wrap;
@@ -189,5 +190,55 @@ main {
     position: fixed;
     width: 100%;
   }
+
+  #videos{
+    justify-content: space-around;
+  }
+
+  .videoCard{
+    flex-grow: 1;
+  }
   
+}
+
+
+@media (min-width:1240px){
+  .videoCard{
+    flex-grow: 1;
+  }
+}
+
+
+
+@media (min-width:1024px) and (max-width: 1240px){
+  #videos{
+    min-width: 1024px;
+    justify-content: flex-start;
+  }
+
+  .videoCard{
+    flex-grow: 1;
+  }
+}
+
+@media (max-width:1024px) and (min-width: 900px){
+  #videos{
+    min-width: 920px;
+    justify-content: flex-start;
+  }
+
+  .videoCard{
+    flex-grow: 1;
+  }
+}
+
+@media (max-width:900px) and (min-width: 630px){
+  #videos{
+    min-width: 630px;
+    justify-content: flex-start;
+  }
+
+  .videoCard{
+    flex-grow: 0;
+  }
 }

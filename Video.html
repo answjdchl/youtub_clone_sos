@@ -42,178 +42,325 @@
         </div>
     </header>
 
-    <main>
-
-        <article>
-            <section class="player">
-                <video controls src="https://storage.googleapis.com/oreumi.appspot.com/video_12.mp4" controlList="allowFullScreen nodownload" width="640" height="360" poster="https://storage.googleapis.com/oreumi.appspot.com/img_12.jpg"></video>
-            </section>
-
-            <!-- 비디오정보 -->
-            <div class="videoinfo">
-                <div class="title">
-                    <span class="video-title">
-                        Blind Woodturner: Turning passion into fine art
-                    </span>
-                </div>
-                <div class="videoviews">
-                    <span class="videoviews">576,969 views . Oct 8, 2021</span>
-                    <span class="actions">
-                        <div class="btn-list">
-                            <button>
-                                <img class="btn-icon" src="./media/icon/liked.svg">
-                            </button>
-                            <p class="button-txt">
-                                1.7 K
-                            </p>
-                        </div>
-                        <div class="btn-list">
-                            <button>
-                                <img class="btn-icon" src="./media/icon/SomeDown.svg">
-                            </button>
-                            <p class="button-txt">
-                                632
-                            </p>
-                        </div>
-                        <div class="btn-list">
-                            <button>
-                                <img class="btn-icon" src="./media/icon/Share.svg">
-                            </button>
-                            <p class="button-txt">
-                                Share
-                            </p>
-                        </div>
-                        <div class="btn-list">
-                            <button>
-                                <img class="btn-icon" src="./media/icon/Save.svg">
-                            </button>
-                            <p class="button-txt">
-                                Save
-                            </p>
-                        </div>
-                        <div class="btn-list">
-                            <button>
-                                <img class="btn-icon" src="./media/icon/MoreBtn.svg">
-                            </button>
-                        </div>
-                    </span>
-                </div>
+    <div id="navAndMain">
+        <!-- nav -->
+        <nav id="navBar">
+            <div>
+                <a href="./Home.html">
+                    <div class="menu selected">
+                        <img class="icon" src="./media/icon/home.svg">
+                        <span class="menuTitle">Home</span>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="menu">
+                        <img class="icon" src="./media/icon/explore.svg">
+                        <span class="menuTitle">Explore</span>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="menu">
+                        <img class="icon" src="./media/icon/subscriptions.svg">
+                        <span class="menuTitle">Subscriptions</span>
+                    </div>
+                </a>
             </div>
-            <!-- 채널정보 -->
-            <div class="channelinfos">
-                <div class="channelinfo">
-                    <img class="icon" src="./media/userAvatar/user3.svg">
-                    <div class="info">
-                        <span class="name">Marcus Levin</span>
-                        <span class="subscribers">1.2M subscribers</span>
+            <hr>
+
+            <div>
+                <a href="">
+                    <div class="menu">
+                        <img class="icon" src="./media/icon/library.svg">
+                        <span class="menuTitle">Library</span>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="menu">
+                        <img class="icon" src="./media/icon/history.svg">
+                        <span class="menuTitle">History</span>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="menu">
+                        <img class="icon" src="./media/icon/yourVideos.svg">
+                        <span class="menuTitle">Your Videos</span>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="menu">
+                        <img class="icon" src="./media/icon/watchLater.svg">
+                        <span class="menuTitle">Watch Later</span>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="menu">
+                        <img class="icon" src="./media/icon/liked.svg">
+                        <span class="menuTitle">Liked Videos</span>
+                    </div>
+                </a>
+                <button class="menu showMore">
+                    <img class="icon" src="./media/icon/arrowBottom.svg">
+                    <span class="menuTitle">Show More</span>
+                </button>
+            </div>
+            <hr>
+
+            <div>
+                <div class="menuCategory">SUBSCRIPTIONS</div>
+                <a href="./Channel.html">
+                    <div class="menu">
+                        <img class="icon" src="./media/userAvatar/user1.svg">
+                        <span class="menuTitle">channel1</span>
+                    </div>
+                </a>
+                <a href="./Channel.html">
+                    <div class="menu">
+                        <img class="icon" src="./media/userAvatar/user2.svg">
+                        <span class="menuTitle">channel2</span>
+                    </div>
+                </a>
+                <a href="./Channel.html">
+                    <div class="menu">
+                        <img class="icon" src="./media/userAvatar/user3.svg">
+                        <span class="menuTitle">channel3</span>
+                    </div>
+                </a>
+                <a href="./Channel.html">
+                    <div class="menu">
+                        <img class="icon" src="./media/userAvatar/user4.svg">
+                        <span class="menuTitle">channel4</span>
+                    </div>
+                </a>
+                <a href="./Channel.html">
+                    <div class="menu">
+                        <img class="icon" src="./media/userAvatar/user5.svg">
+                        <span class="menuTitle">channel5</span>
+                    </div>
+                </a>
+                <a href="./Channel.html">
+                    <div class="menu">
+                        <img class="icon" src="./media/userAvatar/user6.svg">
+                        <span class="menuTitle">channel6</span>
+                    </div>
+                </a>
+                <a href="./Channel.html">
+                    <div class="menu">
+                        <img class="icon" src="./media/userAvatar/user7.svg">
+                        <span class="menuTitle">channel7</span>
+                    </div>
+                </a>
+                <button class="menu showMore">
+                    <img class="icon" src="./media/icon/arrowBottom.svg">
+                    <span class="menuTitle">Show More</span>
+                </button>
+            </div>
+            <hr>
+
+            <div>
+                <div class="menuCategory">MORE FROM YOUTUBE</div>
+                <a href="">
+                    <div class="menu">
+                        <img class="icon" src="./media/icon/premium.svg">
+                        <span class="menuTitle">Youtube Premium</span>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="menu">
+                        <img class="icon" src="./media/icon/gaming.svg">
+                        <span class="menuTitle">Gaming</span>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="menu">
+                        <img class="icon" src="./media/icon/live.svg">
+                        <span class="menuTitle">Live</span>
+                    </div>
+                </a>
+            </div>
+            <footer id="navFooter">
+                <div>
+                    <a class="footerLink" href="https://github.com/answjdchl/youtub_clone_sos" target="_blank">깃허브</a>
+                    <a class="footerLink" href="https://www.notion.so/47d8f458da5e48b99f455d3cc64b0eaf"
+                        target="_blank">노션</a>
+                </div>
+                <div id="footerDescription">
+                    © 2023 SOS YouTube Clone
+                </div>
+            </footer>
+        </nav>
+        <main>
+
+            <article>
+                <section class="player">
+                    <video controls src="https://storage.googleapis.com/oreumi.appspot.com/video_12.mp4" controlList="allowFullScreen nodownload" width="640" height="360" poster="https://storage.googleapis.com/oreumi.appspot.com/img_12.jpg"></video>
+                </section>
+
+                <!-- 비디오정보 -->
+                <div class="videoinfo">
+                    <div class="title">
+                        <span class="video-title">
+                            Blind Woodturner: Turning passion into fine art
+                        </span>
+                    </div>
+                    <div class="videoviews" id="viewsAnduploaded">
+                        <span class="videoviews">576,969 views . Oct 8, 2021</span>
+                        <span class="actions">
+                            <div class="btn-list">
+                                <button>
+                                    <img class="btn-icon" src="./media/icon/liked.svg">
+                                </button>
+                                <p class="button-txt">
+                                    1.7 K
+                                </p>
+                            </div>
+                            <div class="btn-list">
+                                <button>
+                                    <img class="btn-icon" src="./media/icon/SomeDown.svg">
+                                </button>
+                                <p class="button-txt">
+                                    632
+                                </p>
+                            </div>
+                            <div class="btn-list">
+                                <button>
+                                    <img class="btn-icon" src="./media/icon/Share.svg">
+                                </button>
+                                <p class="button-txt">
+                                    Share
+                                </p>
+                            </div>
+                            <div class="btn-list">
+                                <button>
+                                    <img class="btn-icon" src="./media/icon/Save.svg">
+                                </button>
+                                <p class="button-txt">
+                                    Save
+                                </p>
+                            </div>
+                            <div class="btn-list">
+                                <button>
+                                    <img class="btn-icon" src="./media/icon/MoreBtn.svg">
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <!-- 채널정보 -->
+                <div class="channelinfos">
+                    <div class="channelinfo">
+                        <img id="channelProfile" class="icon" src="./media/userAvatar/user3.svg">
+                        <div class="info">
+                            <span class="name">Marcus Levin</span>
+                            <span class="subscribers">1.2M subscribers</span>
+                        </div>
+
+                        <button class="subscribe">Subscribes</button>
                     </div>
 
-                    <button class="subscribe">Subscribes</button>
-                </div>
-
-                <div class="video-description">
-                    <p>
-                        Chris Fisher, also known as the Blind Woodturner, learned his craft by listening to hundreds of
-                        hours
-                        of YouTube videos and experimenting in his workshop. Now he’s a YouTube creator himself, sells
-                        his
-                        products worldwide, and does demonstrations all around the country.
-                    </p>
-                    <p class="show-more">SHOW MORE</p>
-                </div>
-            </div>
-            <section class="comment">
-                
-                <div class="comment-info">
-
-                    <!-- 댓글 수 -->
-                    <div class="count">
-                        <p class="count-comments">
-                            286
+                    <div class="video-description">
+                        <p>
+                            Chris Fisher, also known as the Blind Woodturner, learned his craft by listening to hundreds of
+                            hours
+                            of YouTube videos and experimenting in his workshop. Now he’s a YouTube creator himself, sells
+                            his
+                            products worldwide, and does demonstrations all around the country.
                         </p>
-                        <p>Comments</p>
+                        <p class="show-more">SHOW MORE</p>
                     </div>
-
-                    <!-- 정렬 -->
-                    <div class="sort-by">
-                        <div class="sort-icon">
-                            <img src="./media/icon/SORT_BY.svg" alt="" class="sort">
-                        </div>
-                        <p>Sort by</p>
-                        <div class="drop-sort-by">
-                            <div class="drop-down">Popular</div>
-                            <div class="drop-down">latest</div>
-                        </div>
-                    </div>
+                </div>
+                <section class="comment">
                     
-                </div>
+                    <div class="comment-info">
 
-                <div class="comment-avatar">
-                    <div>
-                        <img class="icon" src="./media/icon/User-Avatar.svg">
-                        <input id="comment-input" placeholder="Add a public comment....">
-                    </div>
-                </div>
-
-                <div class="comment-card">
-                    <div class="profile-pic">
-                        <img class="icon" src="./media/icon/User-Avatar2.svg">
-                    </div>
-                    <div class="comment2">
-                        <div class="comment-Avatar2">
-                            <p class="comment-name"> James Gouse
-                                <span class="commen-hour">8 hours ago</span>
+                        <!-- 댓글 수 -->
+                        <div class="count">
+                            <p class="count-comments">
+                                286
                             </p>
-
+                            <p>Comments</p>
                         </div>
 
-                        <div class="comment-text2">
-                            <p class="avatar2-txt">
-                                Wow, world is full of different skills
-                            </p>
-                            <div class="comment-btns">
-                                <div class="comment-btn">
-                                    <button class="comment-like">
-                                        <img class="comment-icon" src="./media/icon/liked.svg">
-                                    </button>
+                        <!-- 정렬 -->
+                        <div class="sort-by">
+                            <div class="sort-icon">
+                                <img src="./media/icon/SORT_BY.svg" alt="" class="sort">
+                            </div>
+                            <p>Sort by</p>
+                            <div class="drop-sort-by">
+                                <div class="drop-down">Popular</div>
+                                <div class="drop-down">latest</div>
+                            </div>
+                        </div>
+                        
+                    </div>
 
-                                    <span class="likecount">3</span>
-                                </div>
+                    <div class="comment-avatar">
+                        <div>
+                            <img class="icon" src="./media/icon/User-Avatar.svg">
+                            <input id="comment-input" placeholder="Add a public comment....">
+                        </div>
+                    </div>
 
-                                <div class="comment-btn">
-                                    <button class="comment-somedown">
-                                        <img class="comment-icon" src="./media/icon/SomeDown.svg">
-                                    </button>
+                    <div class="comment-card">
+                        <div class="profile-pic">
+                            <img class="icon" src="./media/icon/User-Avatar2.svg">
+                        </div>
+                        <div class="comment2">
+                            <div class="comment-Avatar2">
+                                <p class="comment-name"> James Gouse
+                                    <span class="commen-hour">8 hours ago</span>
+                                </p>
 
-                                    <button class="reply">
-                                        reply
-                                    </button>
-                                </div>
                             </div>
 
+                            <div class="comment-text2">
+                                <p class="avatar2-txt">
+                                    Wow, world is full of different skills
+                                </p>
+                                <div class="comment-btns">
+                                    <div class="comment-btn">
+                                        <button class="comment-like">
+                                            <img class="comment-icon" src="./media/icon/liked.svg">
+                                        </button>
 
+                                        <span class="likecount">3</span>
+                                    </div>
+
+                                    <div class="comment-btn">
+                                        <button class="comment-somedown">
+                                            <img class="comment-icon" src="./media/icon/SomeDown.svg">
+                                        </button>
+
+                                        <button class="reply">
+                                            reply
+                                        </button>
+                                    </div>
+                                </div>
+
+
+                            </div>
                         </div>
-                    </div>
 
 
-            </section>
-        </article>
+                </section>
+            </article>
 
 
 
-        <aside>
-            <div class="topmenubtn">
-                <button class="topbtn-selected">All</button>
-                <button class="topbtn">From Marcus Levin </button>
-            </div>
-            <ul id="videos">
-            
-            </ul>
+            <aside>
+                <div class="topmenubtn">
+                    <button class="topbtn-selected">All</button>
+                    <button class="topbtn">From Marcus Levin </button>
+                </div>
+                <ul id="videos">
+                
+                </ul>
 
 
-        </aside>
+            </aside>
 
-    </main>
+        </main>
+    </div>
     <!-- videoplayer -->
 
 
