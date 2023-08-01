@@ -16,8 +16,8 @@ main {
   padding: 1rem 1rem;
   margin: 0.5rem 0;
   /* flex-grow: 1; */
-  /* min-width: 17.25rem; */
-  max-width: 18.875rem;
+  min-width: 17.5rem;
+  max-width: 18.5rem;
   border-radius: 0.5rem;
 }
 
