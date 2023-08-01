@@ -179,6 +179,7 @@ main {
   flex-wrap: wrap;
   /* justify-content: space-around; */
   height: fit-content;
+  padding-left: 0.7rem;
 }
 
 #tagNav::-webkit-scrollbar {
