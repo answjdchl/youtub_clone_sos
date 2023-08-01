@@ -6,7 +6,7 @@ body {
 main {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .videoCard {
@@ -15,7 +15,7 @@ main {
   flex-basis: 17.25rem;
   padding: 1rem 1rem;
   margin: 0.5rem 0;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   min-width: 17.25rem;
   max-width: 25.875rem;
   border-radius: 0.5rem;

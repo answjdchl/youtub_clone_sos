@@ -25,15 +25,22 @@ body {
     background-color: #000;
     color: #fff;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 main {
-    position: absolute;
+    /* position: absolute; */
     top: 1rem;
-    margin: 0 8%;
+    padding: 0 8%;
     display: flex;
     gap: 10px;
+    margin-top: 5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+#navAndMain{
+    width:100%
 }
 
 article {
