@@ -8,14 +8,23 @@
 body {
     background-color: #000;
     color: #fff;
+<<<<<<< HEAD
     width: 1440px;
     height: 1024px;
+=======
+    /* width: 1440px; */
+    /* height: 1024px; */
+>>>>>>> css_2
     font-family: Roboto;
 }
 
+#header{padding: 0 6px;}
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> css_2
 /* navbar */
 /*
 nav {
@@ -400,34 +409,32 @@ aside:hover::-webkit-scrollbar-button {
 
 main {
     /* display: inline-block; */
-    width: 1195px;
+    /* width: 1195px; */
     float: left;
     top: 57px;
-    left: 242px;
-    position: absolute;
-
+    /* left: 242px; */
+    /* position: absolute; */
+    width: 100%;
 }
 
-.channel {
-
+/* .channel {
     background-color: #181818;
 }
 
 .channel .channel-cover {
     height: 192px;
-}
+} */
 
-.channel-cover img {
+/* .channel-cover img {
     width: 1195px;
-}
+} */
 
-.channel .channel-title {
+/* .channel .channel-title {
     padding: 16px 65px 4px 65px;
     display: flex;
     align-items: flex-start;
     gap: 685px;
-}
-
+} */
 
 
 /* user profile */
@@ -838,16 +845,32 @@ main {
 }
 */
 
+<<<<<<< HEAD
 #channelProfile{
     display: flex;
     justify-content:flex-start;
 
+=======
+#channelInfo{
+    background-color: #181818;
+}
+
+#channelProfile{
+    display: flex;
+    justify-content:flex-start;
+    margin-top: 1%;
+    align-items: center;
+>>>>>>> css_2
 }
 
 #subscriptionBtn{
     border-radius: 4px;
     background-color: #C00;
     padding: 0.5%;
+<<<<<<< HEAD
+=======
+    /* margin-left: auto; */
+>>>>>>> css_2
 }
 
 #channelName{
@@ -858,6 +881,45 @@ main {
     font-size: 14px;
     color: #aaa;
 }
+<<<<<<< HEAD
 #channelProfile img{
     border-radius: 180px;
 }
+=======
+
+#channelProfile img{
+    border-radius: 180px;
+    /* object-fit: cover; */
+    width: 5%;
+    margin-right: 1.5%;
+}
+
+#channelCover img {
+    width:100%;
+ }
+
+ #semiVideo{
+    display: flex;
+    /* align-items: center; */
+ }
+
+ #channelNav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #181818;
+}
+
+#channelSearch{
+    background-color: #181818;
+    border: none;
+}
+.channelNavBtn{
+    color: #aaaaaa;
+    font-weight: bold;
+    padding: 0.75rem 1.75rem;
+}
+
+.channelNavBtn:hover{
+    color: white;
+}
+>>>>>>> css_2
