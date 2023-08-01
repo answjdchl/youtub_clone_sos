@@ -72,6 +72,10 @@ main {
     background: #303030;
 }
 
+.showMore{
+    width:14rem;
+  }
+
 .menu.selected {
     background-color: #303030;
 }
