@@ -1,62 +1,60 @@
-// src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
-
-// "image_link": "https://storage.googleapis.com/oreumi.appspot.com/img_12.jpg",
-// "upload_date": "2023/05/01",
-// "video_channel": "나와 토끼들",
-// "video_detail": "귀여운 동물 친구들의 재롱꾼 면모",
-// "video_id": 12,
-// "video_link": "https://storage.googleapis.com/oreumi.appspot.com/video_12.mp4",
-// "video_tag": [
-//   "토끼",
-//   "놀이"
-// ],
-// "video_title": "재미있는 토끼 트릭과 놀이",
-// "views": 361184
-
-
 // query에서 정보를 받아와서 비디오를 보기위한 방법 
 const URLSearch = new URLSearchParams(location.search);
 const id = URLSearch.get('video_id');
+
+const monthToString = {
+    1: "Jan",
+    2: "Feb",
+    3: "Mar",
+    4: "Apr",
+    5: "May",
+    6: "Jun",
+    7: "Jul",
+    8: "Aug",
+    9: "Sept",
+    10: "Oct",
+    11: "Nov",
+    12: "Dec",
+};
+
 //우측 비디오카드 리스트
 let recommendedVideo = [];
-
-console.log(id)
-
 
 //쿼리로 비디오 아이디를 받아와서 영상을 받을때
 let url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${id}`
 
 
-//임시로 넣은 비디오
-url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=12`
-
-var iframe = document.querySelector("iframe")
-var title = document.querySelector(".title")
-var view_info = document.querySelector(".info-txt")
-var videoDesc = document.querySelector(".video-desc")
+var video = document.querySelector("video");
+var title = document.querySelector(".title");
+var view_info = document.querySelector("#viewsAnduploaded");
+var videoDesc = document.querySelector(".video-description");
 
 
-var userAvatar = document.querySelector(".user-avatar")
-var channelName = document.querySelector(".channel-name")
-var sub = document.querySelector(".subscribers")
+var userAvatar = document.querySelector("#channelProfile");
+var channelName = document.querySelector(".name");
+var sub = document.querySelector(".subscribers");
 
-console.log(view_info)
-console.log(iframe)
-console.log(title)
+var filterByChannelBtn = document.querySelector("#filterByChannel");
+var filterByAllBtn = document.querySelector("#filterByAll");
 
-var Cname = ''
+console.log(view_info);
+console.log(video);
+console.log(title);
 
-var CURL = ''
+var Cname = '';
+
+var CURL = '';
 
 fetch(url).then((response) => response.json())
     .then((data) => {
-        iframe.src = data["video_link"]
-        title.textContent = data["video_title"]
-        let view = ''
+        video.src = data["video_link"];
+        video.poster = data["image_link"];
+        title.textContent = data["video_title"];
+        let view = '';
 
         console.log(data["views"])
 
-        if (1000000 >= data["views"] >= 1000) {
+        if (1000000 >= data["views"] && data["views"] >= 1000) {
             thou = Math.floor(data["views"] / 1000);
             console.log(thou);
             hun = Math.floor((data["views"] % 1000) / 100);
@@ -75,11 +73,11 @@ fetch(url).then((response) => response.json())
 
 
 
-        view_info.textContent = `${view} Views ${data["upload_date"]}`
+        view_info.textContent = `${view} Views . ${uploadDateformat(data["upload_date"])}`
         videoDesc.textContent = data["video_detail"]
         channelName.textContent = data["video_channel"]
 
-
+        filterByChannelBtn.innerHTML = `From ${data["video_channel"]}`
 
 
         Cname = data["video_channel"]
@@ -99,22 +97,21 @@ fetch(url).then((response) => response.json())
                 console.log(data)
                 var subsciber = ''
 
-
-                if (1000000 > data["subscibers"] >= 1000) {
-                    thou = Math.floor(data["subscibers"] / 1000);
+                if (1000000 > data["subscribers"] && data["subscribers"] >= 1000) {
+                    thou = Math.floor(data["subscribers"] / 1000);
                     console.log(thou);
-                    hun = Math.floor((data["subscibers"] % 1000) / 100);
+                    hun = Math.floor((data["subscribers"] % 1000) / 100);
                     console.log(hun);
                     subsciber = `${thou}.${hun}K`;
                 }
-                else if (data["subscibers"] >= 1000000) {
-                    mil = Math.floor(data["subscibers"] / 1000000);
+                else if (data["subscribers"] >= 1000000) {
+                    mil = Math.floor(data["subscribers"] / 1000000);
                     console.log(mil);
-                    notmil = Math.floor((data["subscibers"] % 1000000) / 100000);
+                    notmil = Math.floor((data["subscribers"] % 1000000) / 100000);
                     console.log(notmil);
                     subsciber = `${mil}.${notmil}M`;
                 } else {
-                    subsciber = data["subscibers"];
+                    subsciber = data["subscribers"];
                 }
 
                 sub.textContent = `${subsciber} subscribers`
@@ -129,6 +126,7 @@ fetch("http://oreumi.appspot.com/video/getVideoList")
         setVideoCards(recommendedVideo);
     });
 
+//비디오 순서 랜덤으로 정렬
 function getRandomVideos(videoList) {
     for (var i = 0; i < videoList.length; i++) {
         if (videoList[i].video_id === id) {
@@ -195,4 +193,38 @@ function setVideoCards(videoList) {
                 console.error('Error:', error);
             });
     }
+}
+
+function uploadDateformat(dateString) {
+    const uploaded = new Date(dateString);
+
+    return `${monthToString[uploaded.getMonth()]} ${uploaded.getDate()}, ${uploaded.getFullYear()}`;
+}
+
+//비디오카드 탑 메뉴 버튼 이벤트리스너
+function filterVideos(event) {
+    if (event.target.id == "filterByAll") {
+        setVideoCards(recommendedVideo);
+        filterByAllBtn.className = "topbtn-selected";
+        filterByChannelBtn.className = "topbtn";
+    }
+    else if (event.target.id == "filterByChannel") {
+        var filteredVideos = [];
+        for (const video of recommendedVideo) {
+            if (video.video_channel === Cname) {
+                filteredVideos.push(video);
+            }
+        }
+        setVideoCards(filteredVideos);
+        filterByAllBtn.className = "topbtn";
+        filterByChannelBtn.className = "topbtn-selected";
+    }
+}
+
+function menuOpenInner(isOpen) {
+    //햄버거 메뉴 열고 닫음에 따른 개별 변화
+}
+
+function onResizeInner(isScrollable) {
+    //전체창 리사이즈에 따른 개별 변화
 }

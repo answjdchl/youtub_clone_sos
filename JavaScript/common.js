@@ -1,13 +1,46 @@
 const navBar = document.getElementById("navBar");
-const tagArea = document.getElementById("tagArea");
+const main = document.getElementsByTagName("main")[0];
+const header = document.getElementById("header");
+
+//navBar가 열려있는지에 대한 변수
+let isOpen = true;
+//main의 스크롤 가능 여부
+let isScrollable = true;
+
+//공통적용사항
+window.addEventListener(`resize`, onResize);
+
+//navBar 열고 닫는 함수
 function menuOpen() {
-    if (navBar.classList.contains("display_none")) {
-        navBar.classList.remove("display_none");
-        tagArea.style.width = "calc(100% - 15.5rem)";
+    if (isOpen) {
+        navBar.classList.add("display_none");
+        isOpen = false;
+        //navBar 닫기에 따른 개별 변경사항
+        menuOpenInner(isOpen);
     }
     else {
-        navBar.classList.add("display_none");
-        tagArea.style.width = "calc(100% - 0.5rem)";
+        navBar.classList.remove("display_none");
+        isOpen = true;
+        //navBar 열기에 따른 개별 변경사항
+        menuOpenInner(isOpen);
+    }
+}
+
+//resize 이벤트에 따라 스타일 변경하는 함수
+function onResize() {
+    const mainHeight = main.clientHeight;
+    const mainScrollHeight = main.scrollHeight;
+    if (mainHeight < mainScrollHeight) {
+        isScrollable = true;
+        header.style.width = `calc(100% - 0.5rem)`
+        //개별 스타일 설정
+        onResizeInner(isScrollable);
+    }
+    else {
+        isScrollable = false;
+        header.style.width = `100%`
+        //개별 스타일 설정
+        onResizeInner(isScrollable);
     }
 }
 

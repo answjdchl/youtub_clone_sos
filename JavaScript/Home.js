@@ -3,6 +3,7 @@ const searchInput = document.getElementById('searchInput');
 const tagNav = document.getElementById('tagNav');
 const tagNavForward = document.getElementById('tagNavScrollForward');
 const tagNavBackward = document.getElementById('tagNavScrollBackward');
+const tagArea = document.getElementById("tagArea");
 //전체 비디오 객체 리스트
 let allVideoList = [];
 //현재 비디오 객체 리스트 (검색 기능 등으로 필터링 된 목록)
@@ -19,7 +20,12 @@ fetch("http://oreumi.appspot.com/video/getVideoList")
         currentVideoList = data;
         setVideoCards(currentVideoList);
         setTagNavigator(getTags(currentVideoList));
+        onResize();
     });
+
+//tagNav 직접 스크롤 시 이벤트 리스너
+tagNav.addEventListener('scroll', tagNavResize);
+
 
 //비디오 카드 생성 함수
 function setVideoCards(videoList) {
@@ -214,4 +220,73 @@ function onclickTagNavBackward() {
         tagNavForward.classList.remove("display_none");
         tagNav.scrollLeft = tagNavCurrentScroll + tagNavWidth;
     }
+}
+
+//tagNav 사이즈 변경에 따른 버튼 컨트롤 함수
+function tagNavResize() {
+    const tagNavWidth = tagNav.clientWidth;
+    const tagNavScrollWidth = tagNav.scrollWidth;
+    const tagNavCurrentScroll = tagNav.scrollLeft;
+
+    if (tagNavWidth < tagNavScrollWidth) {
+        if (tagNavCurrentScroll < tagNavScrollWidth - tagNavWidth) {
+            tagNavBackward.classList.remove("display_none");
+        }
+        else {
+            tagNavBackward.classList.add("display_none");
+        }
+
+        if (tagNavCurrentScroll > 0) {
+            tagNavForward.classList.remove("display_none");
+        }
+        else {
+            tagNavForward.classList.add("display_none");
+        }
+    }
+    else {
+        tagNavForward.classList.add("display_none");
+        tagNavBackward.classList.add("display_none");
+    }
+}
+
+//navBar 열기/닫기에 따른 개별 변경사항
+function menuOpenInner(isOpen) {
+    if (isOpen) {
+        if (isScrollable) {
+            tagArea.style.width = `calc(100% - 15.5rem)`
+        }
+        else {
+            tagArea.style.width = `calc(100% - 15rem)`
+        }
+    }
+    else {
+        if (isScrollable) {
+            tagArea.style.width = `calc(100% - 0.5rem)`
+        }
+        else {
+            tagArea.style.width = `100%`
+        }
+    }
+}
+
+//전체창 resize에 따른 개별 변경사항 
+function onResizeInner(isScrollable) {
+    if (isScrollable) {
+        if (isOpen) {
+            tagArea.style.width = `calc(100% - 15.5rem)`
+        }
+        else {
+            tagArea.style.width = `calc(100% - 0.5rem)`
+        }
+    }
+    else {
+        if (isOpen) {
+            tagArea.style.width = `calc(100% - 15rem)`
+        }
+        else {
+            tagArea.style.width = `100%`
+        }
+    }
+
+    tagNavResize();
 }
