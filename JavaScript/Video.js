@@ -228,3 +228,12 @@ function menuOpenInner(isOpen) {
 function onResizeInner(isScrollable) {
     //전체창 리사이즈에 따른 개별 변화
 }
+
+
+// function postComments(){
+//     const comment = document.getElementsByClassName("comment");
+//     const userName = document.createElement("p");  // 유저 이름
+//     const writeTime = document.createElement("span");  // 작성 시간
+//     const userImg = document.createElement("img");  //유저 사진
+//     const userComment = document.createElement("p");  // 댓글 내용
+// }
