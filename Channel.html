@@ -26,7 +26,7 @@
 
         <div id="searchArea" class="headerDiv desktopMode">
             <div id="search">
-                <input id="searchInput" type="text" onkeyup="searchEnter()">
+                <input id="searchInput" type="text" onkeyup="searchEnter()" placeholder="Search">
                 <button id="searchBtn" onclick="search()"><img class="icon" src="./media/icon/search.svg"></button>
             </div>
             <button id="micBtn"><img id="micBtnIcon" class="icon" src="./media/icon/mic.svg"></button>
@@ -220,13 +220,91 @@
                         <video src="https://storage.googleapis.com/oreumi.appspot.com/video_1.mp4" controls
                             poster="https://storage.googleapis.com/oreumi.appspot.com/img_1.jpg" width="500"></video>
                     </div>
-                    <div id="semiVideoTitle">VideoTitle</div>
-                    <div id="semiVideoViewsAndUploaded">Views,Uploaded</div>
-                    <div id="semiVideoDescription">VideoDescription</div>
+                    <div class="semiVideoinfo"> 
+                        <div id="semiVideoTitle">Blind Woodturner: Turning passion into fine art</div>
+                        <div id="semiVideoViewsAndUploaded">576,969 views . 3 weeks ago</div>
+                        <div id="semiVideoDescription">Chris Fisher, also known as the Blind Woodturner, learned his craft by listening to hundreds of hours of YouTube videos and experimenting in his workshop. Now he’s a YouTube creator himself, sells his products worldwide, and does demonstrations all around the country.</div>
+                    </div>
                     <!--교체구간-->
                 </div>
+                <div id="playlist__box" class="playlist__box">
+                    <div id="playlist__info" class="playlist__info">
+                        <div class="playlist__title">재생목록</div>
+                        <button>
+                            <div>
+                                <img src="./media/icon/Play1.svg" alt="">
+                            </div>
+                            <div>PLAY ALL</div>
+                        </button>
+                    </div>
+                    <div id="playlist" class="playlist">
+                        
+                    </div>
+    
+                </div>
+
                 <div id="playLists">
                     <!--추후에 js로 교체-->
+                    <div class="playList" style="display: inline-block;">
+                        <div class="videoCard"><img width="200" class="thumbnail"
+                                src="https://storage.googleapis.com/oreumi.appspot.com/img_6.jpg">
+                            <div class="detail">
+                                <div class="infoText">
+                                    <div class="title">가상현실(VR)과 증강현실(AR)의 혁신</div>
+                                    <div class="channelName">oreumi</div>
+                                    <div class="viewsAndUploaded">225308Views, 1달 전</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playList" style="display: inline-block;">
+                        <div class="videoCard"><img width="200" class="thumbnail"
+                                src="https://storage.googleapis.com/oreumi.appspot.com/img_6.jpg">
+                            <div class="detail">
+                                <div class="infoText">
+                                    <div class="title">가상현실(VR)과 증강현실(AR)의 혁신</div>
+                                    <div class="channelName">oreumi</div>
+                                    <div class="viewsAndUploaded">225308Views, 1달 전</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playList" style="display: inline-block;">
+                        <div class="videoCard"><img width="200" class="thumbnail"
+                                src="https://storage.googleapis.com/oreumi.appspot.com/img_6.jpg">
+                            <div class="detail">
+                                <div class="infoText">
+                                    <div class="title">가상현실(VR)과 증강현실(AR)의 혁신</div>
+                                    <div class="channelName">oreumi</div>
+                                    <div class="viewsAndUploaded">225308Views, 1달 전</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playList" style="display: inline-block;">
+                        <div class="videoCard"><img width="200" class="thumbnail"
+                                src="https://storage.googleapis.com/oreumi.appspot.com/img_6.jpg">
+                            <div class="detail">
+                                <div class="infoText">
+                                    <div class="title">가상현실(VR)과 증강현실(AR)의 혁신</div>
+                                    <div class="channelName">oreumi</div>
+                                    <div class="viewsAndUploaded">225308Views, 1달 전</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playList" style="display: inline-block;">
+                        <div class="videoCard"><img width="200" class="thumbnail"
+                                src="https://storage.googleapis.com/oreumi.appspot.com/img_6.jpg">
+                            <div class="detail">
+                                <div class="infoText">
+                                    <div class="title">가상현실(VR)과 증강현실(AR)의 혁신</div>
+                                    <div class="channelName">oreumi</div>
+                                    <div class="viewsAndUploaded">225308Views, 1달 전</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="playList" style="display: inline-block;">
                         <div class="videoCard"><img width="200" class="thumbnail"
                                 src="https://storage.googleapis.com/oreumi.appspot.com/img_6.jpg">

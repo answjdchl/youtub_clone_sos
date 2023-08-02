@@ -8,28 +8,15 @@
 body {
     background-color: #000;
     color: #fff;
-<<<<<<< HEAD
-    width: 1440px;
-    height: 1024px;
-=======
     /* width: 1440px; */
     /* height: 1024px; */
->>>>>>> css_2
     font-family: Roboto;
 }
 
 #header{padding: 0 6px;}
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> css_2
-/* navbar */
-/*
-nav {
-    background-color: #212121;
-    height: 56px;
+/* navbar
     display: flex;
     justify-content: space-between;
     border: 1px solid #303030;
@@ -38,7 +25,7 @@ nav {
     flex-shrink: 0;
 
     width: 100%;
-}
+} */
 
 .ham:hover {
     border-radius: 32px;
@@ -672,7 +659,7 @@ main {
 
 
 
-/* playlists */
+
 
 .play-list {
     display: flex;
@@ -845,12 +832,6 @@ main {
 }
 */
 
-<<<<<<< HEAD
-#channelProfile{
-    display: flex;
-    justify-content:flex-start;
-
-=======
 #channelInfo{
     background-color: #181818;
 }
@@ -860,32 +841,19 @@ main {
     justify-content:flex-start;
     margin-top: 1%;
     align-items: center;
->>>>>>> css_2
 }
 
 #subscriptionBtn{
     border-radius: 4px;
     background-color: #C00;
     padding: 0.5%;
-<<<<<<< HEAD
-=======
     /* margin-left: auto; */
->>>>>>> css_2
 }
 
 #channelName{
-    font-size: 24px;
-}
-
-#subscribers{
     font-size: 14px;
     color: #aaa;
 }
-<<<<<<< HEAD
-#channelProfile img{
-    border-radius: 180px;
-}
-=======
 
 #channelProfile img{
     border-radius: 180px;
@@ -898,12 +866,119 @@ main {
     width:100%;
  }
 
+ #semiVideoTitle{
+    color: var(--white-color, #FFF);
+    font-variant-numeric: stacked-fractions;
+    font-feature-settings: 'hlig' on, 'dlig' on;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.14px;
+  
+ }
+
+ #semiVideoViewsAndUploaded{
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+   
+ }
+
+ #semiVideoDescription{
+    color: var(--white-color, #FFF);
+    font-variant-numeric: stacked-fractions;
+    font-feature-settings: 'hlig' on, 'dlig' on;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.14px;
+    
+ }
+
  #semiVideo{
     display: flex;
     /* align-items: center; */
  }
+ 
+.semiVideoinfo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 40%;
+    padding: 20px;
+ }
+ 
+ .playlist__title {
+    font-weight: 700;
+    font-size: 18px;
+}
+ .playlist__box{
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+ }
+
+ .playlist__info {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+}
+
+ .playlist__info button {
+    background-color: transparent;
+    color: #AAAAAA;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding: 6px 16px;
+    gap: 8px;
+    border: none;
+}
+.playList{
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    padding: 24px 0;
+    border-bottom: #343434 1px solid;
+}
+
+.playList .channelName{
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.playList .viewsAndUploaded{
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.playList .title{
+    color: var(--white-color, #FFF);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
 
  #channelNav{
+    padding: 0 65px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     background-color: #181818;
@@ -914,12 +989,17 @@ main {
     border: none;
 }
 .channelNavBtn{
-    color: #aaaaaa;
-    font-weight: bold;
-    padding: 0.75rem 1.75rem;
+    background-color: transparent;
+    color: #AAAAAA;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    padding: 16px 32px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
 }
 
 .channelNavBtn:hover{
     color: white;
 }
->>>>>>> css_2
