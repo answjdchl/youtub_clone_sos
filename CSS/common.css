@@ -8,7 +8,7 @@ button {
     border-width: 0;
     color: white;
     align-self: center;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 a {
@@ -65,16 +65,16 @@ main {
     width: 12.5rem;
     height: 2.5rem;
     padding-left: 1.5rem;
-    
+
 }
 
-.menu:hover{
+.menu:hover {
     background: #303030;
 }
 
-.showMore{
-    width:14rem;
-  }
+.showMore {
+    width: 14rem;
+}
 
 .menu.selected {
     background-color: #303030;
@@ -153,11 +153,9 @@ main {
 
 #searchInput {
     display: inline-block;
-    flex-shrink: 1;
-    flex-grow: 1;
     background-color: black;
     border-width: 0;
-    flex-basis: 30rem;
+    width: calc(100% - 4rem);
     height: 2.5rem;
     z-index: 1;
     color: white;
@@ -233,15 +231,15 @@ main {
     background-color: transparent;
 }
 
-#navBar::-webkit-scrollbar{
+#navBar::-webkit-scrollbar {
     display: none;
 }
 
-#navBar:hover::-webkit-scrollbar{
+#navBar:hover::-webkit-scrollbar {
     display: block;
 }
 
-@media (max-width: 630px) {
+@media (max-width: 600px) {
     #headerMenu {
         width: 17.75rem;
     }

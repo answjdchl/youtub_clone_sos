@@ -26,7 +26,7 @@
 
         <div id="searchArea" class="headerDiv desktopMode">
             <div id="search">
-                <input id="searchInput" type="text" onkeyup="searchEnter()">
+                <input id="searchInput" type="text" onkeyup="searchEnter(event)">
                 <button id="searchBtn" onclick="search()"><img class="icon" src="./media/icon/search.svg"></button>
             </div>
             <button id="micBtn"><img id="micBtnIcon" class="icon" src="./media/icon/mic.svg"></button>
@@ -40,152 +40,9 @@
             <button><img id="headerUserAvatar" class="userAvatar" src="./media/userAvatar/user0.svg"></button>
         </div>
     </header>
-    <!-- nav -->
-    <!-- <nav id="navBar" style="background-color:gray">
-        <div>
-            <a href="./Home.html">
-                <div>
-                    <img class="icon" src="./media/icon/home.svg">
-                    <span class="menuTitle">Home</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/explore.svg">
-                    <span class="menuTitle">Explore</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/subscriptions.svg">
-                    <span class="menuTitle">Subscriptions</span>
-                </div>
-            </a>
-        </div>
-        <hr>
 
-        <div>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/library.svg">
-                    <span class="menuTitle">Library</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/history.svg">
-                    <span class="menuTitle">History</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/yourVideos.svg">
-                    <span class="menuTitle">Your Videos</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/watchLater.svg">
-                    <span class="menuTitle">Watch Later</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/liked.svg">
-                    <span class="menuTitle">Liked Videos</span>
-                </div>
-            </a>
-            <button>
-                <div>
-                    <img class="icon" src="./media/icon/arrowBottom.svg">
-                    <span class="menuTitle">Show More</span>
-                </div>
-            </button>
-        </div>
-        <hr>
-
-        <div>
-            <div class="menuCategory">SUBSCRIPTIONS</div>
-            <a href="./Channel.html">
-                <div>
-                    <img class="icon" src="./media/userAvatar/user1.svg">
-                    <span class="menuTitle">channel1</span>
-                </div>
-            </a>
-            <a href="./Channel.html">
-                <div>
-                    <img class="icon" src="./media/userAvatar/user2.svg">
-                    <span class="menuTitle">channel2</span>
-                </div>
-            </a>
-            <a href="./Channel.html">
-                <div>
-                    <img class="icon" src="./media/userAvatar/user3.svg">
-                    <span class="menuTitle">channel3</span>
-                </div>
-            </a>
-            <a href="./Channel.html">
-                <div>
-                    <img class="icon" src="./media/userAvatar/user4.svg">
-                    <span class="menuTitle">channel4</span>
-                </div>
-            </a>
-            <a href="./Channel.html">
-                <div>
-                    <img class="icon" src="./media/userAvatar/user5.svg">
-                    <span class="menuTitle">channel5</span>
-                </div>
-            </a>
-            <a href="./Channel.html">
-                <div>
-                    <img class="icon" src="./media/userAvatar/user6.svg">
-                    <span class="menuTitle">channel6</span>
-                </div>
-            </a>
-            <a href="./Channel.html">
-                <div>
-                    <img class="icon" src="./media/userAvatar/user7.svg">
-                    <span class="menuTitle">channel7</span>
-                </div>
-            </a>
-            <button>
-                <div>
-                    <img class="icon" src="./media/icon/arrowBottom.svg">
-                    <span class="menuTitle">Show More</span>
-                </div>
-            </button>
-        </div>
-        <hr>
-
-        <div>
-            <div class="menuCategory">MORE FROM YOUTUBE</div>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/premium.svg">
-                    <span class="menuTitle">Youtube Premium</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/gaming.svg">
-                    <span class="menuTitle">Gaming</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/live.svg">
-                    <span class="menuTitle">Live</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/sports.svg">
-                    <span class="menuTitle">Sports</span>
-                </div>
-            </a>
-        </div>
-    </nav> -->
     <div id="navAndMain">
+        <!-- nav -->
         <nav id="navBar">
             <div>
                 <a href="./Home.html">
@@ -240,7 +97,7 @@
                         <span class="menuTitle">Liked Videos</span>
                     </div>
                 </a>
-                <button class="menu">
+                <button class="menu showMore">
                     <img class="icon" src="./media/icon/arrowBottom.svg">
                     <span class="menuTitle">Show More</span>
                 </button>
@@ -291,7 +148,7 @@
                         <span class="menuTitle">channel7</span>
                     </div>
                 </a>
-                <button class="menu">
+                <button class="menu showMore">
                     <img class="icon" src="./media/icon/arrowBottom.svg">
                     <span class="menuTitle">Show More</span>
                 </button>
@@ -334,12 +191,14 @@
         <main>
             <header id="channelInfo">
                 <div id="channelCover"><img src="./media/img/channelCover.svg"></div>
-                <div id="channelProfile">
+                <div id="channelTitle">
                     <!--추후에 js로 교체-->
-                    <img src="./media/userAvatar/user3.svg">
-                    <div >
-                        <div id="channelName">ChannelName</div>
-                        <div id="subscribers">1.2M subscribers</div>
+                    <div id="channelProfile">
+                        <img src="./media/userAvatar/user3.svg">
+                        <span>
+                            <div id="channelName">ChannelName</div>
+                            <div id="subscribers">1.2M subscribers</div>
+                        </span>
                     </div>
                     <!--교체구간-->
                     <button id="subscriptionBtn">SUBSCRIBES</button>
@@ -354,8 +213,8 @@
                 <button class="channelNavBtn" id="ABOUT">ABOUT</button>
                 <button class="channelSearchActivate" onclick="searchActivate()"><img class="icon"
                         src="./media/icon/search.svg"></button>
-                <input type="text" id="channelSearch" placeholder="검색">
-                <button><img class="icon" src="./media/icon/leftArrow.svg"></button>
+                <input type="text" id="channelSearch" class="display_none" placeholder="검색">
+                <button class="channelNavScroll"><img class="icon" src="./media/icon/leftArrow.svg"></button>
             </nav>
             <div id="channelMain">
                 <div id="semiVideo">
@@ -426,5 +285,6 @@
     </div>
 </body>
 <script src="./JavaScript/Channel.js"></script>
+<script src="./JavaScript/common.js"></script>
 
 </html>
