@@ -162,7 +162,7 @@ async function getChannelVideos(){
       let calDate = caluateDate(data[i]['upload_date']);                                          // 영상 업로드 날짜 계산
 
       playList.innerHTML +=                                                                       // 넣기 시작 (형식에 맞춰)
-      `<div class="videoCard">
+      `<a class="videoCard" href= './Video.html?video_id=${data[i]['video_id']}'>
         <img width="200" class="thumbnail" src="https://storage.googleapis.com/oreumi.appspot.com/img_${data[i]['video_id']}.jpg">
         <div class="detail">
           <div class="infoText">
@@ -171,7 +171,7 @@ async function getChannelVideos(){
             <div class="viewsAndUploaded">${calculateNum(data[i]['views'])} Views, ${calDate}</div>
           </div>
         </div>
-      </div>`;
+      </a>`;
     }
 
     
