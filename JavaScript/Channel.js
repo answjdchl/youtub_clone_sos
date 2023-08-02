@@ -3,7 +3,7 @@ const URLSearch = new URLSearchParams(location.search);
 const id = URLSearch.get('channel_name');
 
 console.log(id)
-// 채널 정보 ( 배너, 프로필. 채널명, 구독자 )
+// 채널 정보 ( 배너 channel_banner, 프로필 channel_profile, 채널명 channel_name, 구독자 subscribers )
 var Curl = `http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${id}`
 Curl = encodeURI(Curl)
 
@@ -15,34 +15,56 @@ fetch(Curl, {
 .then((response) => response.json())
 .then((data) => {
      console.log(data)
-     var subsciber = ''
+
+
+    // 구독자 수 세기
+     var subscriber = ''
 
      if (1000000 > data["subscribers"] && data["subscribers"] >= 1000) {
         thou = Math.floor(data["subscribers"] / 1000);
         console.log(thou);
         hun = Math.floor((data["subscribers"] % 1000) / 100);
         console.log(hun);
-        subsciber = `${thou}.${hun}K`;
+        subscriber = `${thou}.${hun}K`;
     }
     else if (data["subscribers"] >= 1000000) {
         mil = Math.floor(data["subscribers"] / 1000000);
         console.log(mil);
         notmil = Math.floor((data["subscribers"] % 1000000) / 100000);
         console.log(notmil);
-        subsciber = `${mil}.${notmil}M`;
+        subscriber = `${mil}.${notmil}M`;
     } else {
-        subsciber = data["subscribers"];
+        subscriber = data["subscribers"];
     }
 
-    console.log(subsciber)
+    var sub = document.querySelector("#subscribers");
+    sub.textContent = `${subscriber} Subscribers`;
+    
+    console.log(subscriber);
+
+    // 채널 이름 받아오기
+    var name = document.querySelector("#channelName");
+    name.textContent = data['channel_name'];
+
+    console.log(name);
+
+
+    // 채널 배너 바꾸기
+    var banner = document.querySelector('#channelCover img');
+    banner.src = data['channel_banner']
+
+    // 채널 프로필
+    var profile = document.querySelector('#channelProfile img')
+    profile.src = data['channel_profile']
+    profile.width = 80
+
 })
-
-
-
 
 
 // 채널 비디오 정보 ( 비디오 이름 title, 조회수, 업로드 날짜, 비디오 아이디, )
 // response url = http://oreumi.appspot.com/channel/getChannelVideo?video_channel=
+
+
 
 
 
