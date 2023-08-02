@@ -90,7 +90,6 @@ fetch(url).then((response) => response.json())
 
         fetch(CURL, {
             method: "POST",
-
         }).then((response) => response.json())
             .then((data) => {
                 userAvatar.src = data["channel_profile"]
