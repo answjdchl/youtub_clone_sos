@@ -10,8 +10,7 @@ let allVideoList = [];
 let currentVideoList = [];
 //현재 비디오의 태그 리스트
 let currentTags = [];
-// allVideoList 소문자화
-let allLowerList =[]
+
 
 
 //전체 비디오 리스트 초기화 및 비디오카드 생성
@@ -134,7 +133,6 @@ function setTagNavigator(tagList) {
 function search() {
     let searchText = searchInput.value.toLowerCase();
     let searchedList = [];
-    let lowerList = []
 
     
 
@@ -147,9 +145,22 @@ function search() {
             searchedList.push(allVideoList[i]);
         }
     }
-    currentVideoList = searchedList;
-    setVideoCards(searchedList);
-    setTagNavigator(getTags(currentVideoList));
+
+    let none = document.querySelector('.noneSearch')
+
+    if(searchedList.length == 0){        
+        currentVideoList = searchedList;
+        setVideoCards(searchedList);
+        setTagNavigator(getTags(currentVideoList));
+        
+        none.style.display = 'block'
+    }else{
+        currentVideoList = searchedList;
+        setVideoCards(searchedList);
+        setTagNavigator(getTags(currentVideoList));
+
+        none.style.display = 'none'
+    }
 }
 
 //검색창 엔터 이벤트 리스너
