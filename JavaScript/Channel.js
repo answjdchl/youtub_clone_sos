@@ -28,8 +28,11 @@ function caluateDate(date){
   else if(diffSec < (24 * 60 * 60 * 1000)){
     calDate = `${parseInt(diffSec / (60 * 60 * 1000))}시간 전`
   }
-  else if(diffSec < (30 * 24 * 60 * 60 * 1000)){
+  else if(diffSec < (7 * 24 * 60 * 60 * 1000)){
     calDate = `${parseInt(diffSec / (24 * 60 * 60 * 1000))}일 전`
+  }
+  else if(diffSec < (30 * 24 * 60 * 60 * 1000)){
+    calDate = `${parseInt(diffSec / (7 * 24 * 60 * 60 * 1000))}주 전`
   }
   else if(diffSec < (12 * 30 * 24 * 60 * 60 * 1000)){
     calDate = `${parseInt(diffSec / (30 * 24 * 60 * 60 * 1000))}달 전`
