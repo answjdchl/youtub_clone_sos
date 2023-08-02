@@ -10,6 +10,9 @@ let allVideoList = [];
 let currentVideoList = [];
 //현재 비디오의 태그 리스트
 let currentTags = [];
+// allVideoList 소문자화
+let allLowerList =[]
+
 
 //전체 비디오 리스트 초기화 및 비디오카드 생성
 fetch("http://oreumi.appspot.com/video/getVideoList")
@@ -22,6 +25,8 @@ fetch("http://oreumi.appspot.com/video/getVideoList")
         setTagNavigator(getTags(currentVideoList));
         onResize();
     });
+
+
 
 //tagNav 직접 스크롤 시 이벤트 리스너
 tagNav.addEventListener('scroll', tagNavResize);
@@ -127,12 +132,16 @@ function setTagNavigator(tagList) {
 
 //검색 함수
 function search() {
-    let searchText = searchInput.value;
+    let searchText = searchInput.value.toLowerCase();
     let searchedList = [];
+    let lowerList = []
+
+    
+
     for (let i = 0; i < allVideoList.length; i++) {
-        if (allVideoList[i].video_channel.includes(searchText)
-            || allVideoList[i].video_detail.includes(searchText)
-            || allVideoList[i].video_title.includes(searchText)
+        if (allVideoList[i].video_channel.toLowerCase().includes(searchText)
+            || allVideoList[i].video_detail.toLowerCase().includes(searchText)
+            || allVideoList[i].video_title.toLowerCase().includes(searchText)
             || allVideoList[i].video_tag.includes(searchText)
         ) {
             searchedList.push(allVideoList[i]);
