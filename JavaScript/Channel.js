@@ -93,7 +93,7 @@ async function getChannelInfos(){
   })
 }
 
-getChannelInfos()
+
 
 // 채널 비디오 정보 ( 비디오 이름 title, 조회수, 업로드 날짜, 비디오 아이디, )
 Rurl = `http://oreumi.appspot.com/channel/getChannelVideo?video_channel=${id}`
@@ -158,8 +158,6 @@ async function getChannelVideos(){
 
 }
 
-getChannelVideos()
-
 
 
 function search() {
@@ -219,6 +217,9 @@ function searchEnter(event) {
 }
 
 
+
+getChannelVideos()
+getChannelInfos()
 
 
 
