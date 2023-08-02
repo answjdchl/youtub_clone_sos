@@ -71,8 +71,6 @@ fetch(url).then((response) => response.json())
             view = data["views"];
         }
 
-
-
         view_info.textContent = `${view} Views . ${uploadDateformat(data["upload_date"])}`
         videoDesc.textContent = data["video_detail"]
         channelName.textContent = data["video_channel"]
