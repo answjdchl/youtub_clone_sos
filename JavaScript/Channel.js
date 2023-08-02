@@ -6,73 +6,90 @@ const searchInput = document.getElementById('channelSearch');
 
 let allVideoList = [];
 
-// 채널 정보 ( 배너 channel_banner, 프로필 channel_profile, 채널명 channel_name, 구독자 subscribers )
-var Curl = `http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${id}`
-Curl = encodeURI(Curl)
 
 
 
-function caluateDate(date){
-  let Upload = new Date(date)
-  let nowDate = Date.now();
-  let diffSec = nowDate - Upload;
+//날짜 계산
+function caluateDate(date){                                            // date -> 업로드 날짜를 넣을 예정
+  let Upload = new Date(date)                                          // 받아온 변수 date 를 날짜 형식으로 변환
+  let nowDate = Date.now();                                            // 현재 날자흫 받아오기
+  let diffSec = nowDate - Upload;                                      // 현재 날짜 - 받아온 날짜 가 저장 (밀리초 단위로 저장)
 
-  let calDate = ''
+  let calDate = ''                                                     // 계산 후 원하는 형식을 저장할 변수
 
-  if(diffSec < 60000){
-    calDate += '몇초전'
+  if(diffSec < 60 * 1000){                                              // 만약 60초 이하라면
+    calDate += '몇초전'                                                 // 뭉뚱그려 '몇초전'을 반환
   }
-  else if(diffSec < (60 * 60 * 1000 )){
-    calDate = `${parseInt(diffSec / (60 * 1000))}분 전`
+  else if(diffSec < (60 * 60 * 1000 )){                                 // 60분 이하라면
+    calDate = `${parseInt(diffSec / (60 * 1000))}분 전`                 // 계산된 시간을 분 단위로 변환하여 반환
   }
-  else if(diffSec < (24 * 60 * 60 * 1000)){
-    calDate = `${parseInt(diffSec / (60 * 60 * 1000))}시간 전`
+  else if(diffSec < (24 * 60 * 60 * 1000)){                             // 24시간 이하라면
+    calDate = `${parseInt(diffSec / (60 * 60 * 1000))}시간 전`           // 계산된 시간을 시간 단위로 변환하여 반환
   }
-  else if(diffSec < (7 * 24 * 60 * 60 * 1000)){
-    calDate = `${parseInt(diffSec / (24 * 60 * 60 * 1000))}일 전`
+  else if(diffSec < (7 * 24 * 60 * 60 * 1000)){                          // 7일 이하라면
+    calDate = `${parseInt(diffSec / (24 * 60 * 60 * 1000))}일 전`        // 계산된 시간을 일 단위로 변환하여 반환
   }
-  else if(diffSec < (30 * 24 * 60 * 60 * 1000)){
-    calDate = `${parseInt(diffSec / (7 * 24 * 60 * 60 * 1000))}주 전`
+  else if(diffSec < (30 * 24 * 60 * 60 * 1000)){                         // 30일 이하라면 (위에서 7일을 걸렀으니 7 < 날짜 < 30 )
+    calDate = `${parseInt(diffSec / (7 * 24 * 60 * 60 * 1000))}주 전`    // 계산된 시간을 주 단위로 변환하여 반환
   }
-  else if(diffSec < (12 * 30 * 24 * 60 * 60 * 1000)){
-    calDate = `${parseInt(diffSec / (30 * 24 * 60 * 60 * 1000))}달 전`
+  else if(diffSec < (12 * 30 * 24 * 60 * 60 * 1000)){                    // 12달 이하라면
+    calDate = `${parseInt(diffSec / (30 * 24 * 60 * 60 * 1000))}달 전`   // 계산된 시간을 개월 단위로 변환하여 반환
   }
-  else{
-    calDate = `${parseInt(diffSec / (12 * 24 * 60 * 60 * 1000))}년 전`
+  else{                                                                  // 나머지(12개월 이상)면
+    calDate = `${parseInt(diffSec / (12 * 24 * 60 * 60 * 1000))}년 전`   // 계산된 시간을 년 단위로 변환하여 반환
   }
 
-  return calDate
+  return calDate                                                         // 결과적으로 계산된 날짜 반환
+}
+
+
+function calculateNum(data){
+
+  let calNum = 0
+
+  if (1000000 > data && data >= 1000) {
+      let thou = Math.floor(data / 1000);
+      console.log(thou);
+      let hun = Math.floor((data % 1000) / 100);
+      console.log(hun);
+      calNum = `${thou}.${hun}K`;
+  }
+  else if (data >= 1000000) {
+      let mil = Math.floor(data / 1000000);
+      console.log(mil);
+      let notmil = Math.floor((data % 1000000) / 100000);
+      console.log(notmil);
+      calNum = `${mil}.${notmil}M`;
+  } else {
+      calNum = data;
+  }
+
+  return calNum
 }
 
 
 
+// 채널 정보 ( 배너 channel_banner, 프로필 channel_profile, 채널명 channel_name, 구독자 subscribers )
+var Curl = `http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${id}`
+Curl = encodeURI(Curl)
 
+// 동기적으로 fetch를 받아오기 위해 함수화
+// await는 async 함수 안에서만 사용 가능
+// 채널 정보를 받아오는 함수
 async function getChannelInfos(){
+
+  // 동기적으로 데이터 받아오기
   await fetch(Curl, {
+    // POST방식의 API
     method: "POST",
   })
-  .then((response) => response.json())
-  .then((data) => {
+  .then((response) => response.json()) // 오는 응답 json 형식으로 변환
+  .then((data) => {                    // 오는 데이터를 이용
 
-      // 구독자 수 세기
-      var subscriber = ''
+      // 구독자 수 세기 시작
+      var subscriber = ''               // 구독자 수를 저장할 함수
 
-      if (1000000 > data["subscribers"] && data["subscribers"] >= 1000) {
-          thou = Math.floor(data["subscribers"] / 1000);
-          console.log(thou);
-          hun = Math.floor((data["subscribers"] % 1000) / 100);
-          console.log(hun);
-          subscriber = `${thou}.${hun}K`;
-      }
-      else if (data["subscribers"] >= 1000000) {
-          mil = Math.floor(data["subscribers"] / 1000000);
-          console.log(mil);
-          notmil = Math.floor((data["subscribers"] % 1000000) / 100000);
-          console.log(notmil);
-          subscriber = `${mil}.${notmil}M`;
-      } else {
-          subscriber = data["subscribers"];
-      }
+      subscriber = calculateNum(data["subscribers"])
 
       var sub = document.querySelector("#subscribers");
       sub.textContent = `${subscriber} Subscribers`;
@@ -123,9 +140,6 @@ async function getChannelVideos(){
     document.querySelector('#semiVideoTitle').textContent = data[idx]['video_title']
     document.querySelector('#semiVideoDescription').textContent = data[idx]['video_detail']
 
-
-    
-    
     let calDate = caluateDate(data[idx]['upload_date'])
 
     document.querySelector('#semiVideoViewsAndUploaded').textContent = calDate
@@ -147,7 +161,7 @@ async function getChannelVideos(){
           <div class="infoText">
             <div class="title">${data[i]['video_title']}</div>
             <div class="channelName">${id}</div>
-            <div class="viewsAndUploaded">${data[i]['views']}Views, ${calDate}</div>
+            <div class="viewsAndUploaded">${calculateNum(data[i]['views'])} Views, ${calDate}</div>
           </div>
         </div>
       </div>`;
