@@ -17,6 +17,11 @@ const monthToString = {
     12: "Dec",
 };
 
+//댓글 요소
+let commnetInput = document.getElementById("comment-input");
+let cancelBtn = document.getElementById("cancelComment");
+let writeBtn = document.getElementById("writeComment");
+
 //우측 비디오카드 리스트
 let recommendedVideo = [];
 
@@ -234,3 +239,138 @@ function onResizeInner(isScrollable) {
 //     const userImg = document.createElement("img");  //유저 사진
 //     const userComment = document.createElement("p");  // 댓글 내용
 // }
+
+function commentInputOnfocus() {
+    cancelBtn.classList.remove("display_none");
+    writeBtn.classList.remove("display_none");
+}
+
+function commentInputOnkeyup(event) {
+    if (event.key === 'Enter' && commnetInput.value != "") {
+        writeComment();
+    }
+    else if (event.key === 'Backspace' && commnetInput.value == "") {
+        writeBtn.disabled = true;
+    }
+    else {
+        writeBtn.disabled = false;
+    }
+}
+
+function cancelComment() {
+    commnetInput.value = "";
+    commnetInput.blur();
+    cancelBtn.classList.add("display_none");
+    writeBtn.classList.add("display_none");
+}
+
+function writeComment() {
+    const commentCard = document.createElement('div');
+    const profilePic = document.createElement('div');
+    const profilePic_icon = document.createElement('img');
+    const comment_nth = document.createElement('div');
+    const commentAvatar_nth = document.createElement('div');
+    const commentName = document.createElement('p');
+    const commentHour = document.createElement('span');
+    const commentText_nth = document.createElement('div');
+    const comment_nth_txt = document.createElement('p');
+    const commentBtns = document.createElement('div');
+    const commentBtn_1 = document.createElement('div');
+    const commentBtn_2 = document.createElement('div');
+    const commentLike = document.createElement('button');
+    const commentLike_icon = document.createElement('img');
+    const likeCount = document.createElement('span');
+    const commentSomedown = document.createElement('button');
+    const commentSomedown_icon = document.createElement('img');
+    const reply = document.createElement('button');
+
+    const writerProfile = document.querySelector(".comment-avatar").querySelector(".icon");
+    const commentSection = document.querySelector('.comment');
+    const latestComment = commentSection.querySelector('.latest-comment');
+    const countComment = document.querySelector('.count-comments');
+
+    //comment 자식요소 설정
+    commentCard.appendChild(profilePic);
+    commentCard.appendChild(comment_nth);
+
+    profilePic.appendChild(profilePic_icon);
+
+    comment_nth.appendChild(commentAvatar_nth);
+    comment_nth.appendChild(commentText_nth);
+
+    commentAvatar_nth.appendChild(commentName);
+
+    commentName.appendChild(commentHour);
+
+    commentText_nth.appendChild(comment_nth_txt);
+    commentText_nth.appendChild(commentBtns);
+
+    commentBtns.appendChild(commentBtn_1);
+    commentBtns.appendChild(commentBtn_2);
+
+    commentBtn_1.appendChild(commentLike);
+    commentBtn_1.appendChild(likeCount);
+
+    commentLike.appendChild(commentLike_icon);
+
+    commentBtn_2.appendChild(commentSomedown);
+    commentBtn_2.appendChild(reply);
+
+    commentSomedown.appendChild(commentSomedown_icon);
+
+    //속성설정
+    commentCard.classList.add("comment-card");
+    commentCard.classList.add("latest-comment");
+
+    profilePic.classList.add("profile-pic");
+
+    profilePic_icon.src = writerProfile.src;
+    profilePic_icon.classList.add("icon");
+
+    comment_nth.classList.add("comment2");
+
+    commentAvatar_nth.classList.add("comment-Avatar2");
+
+    commentHour.classList.add("commen-hour");
+    commentHour.innerText = " now";
+
+    commentName.classList.add("comment-name");
+    commentName.innerHTML = "SOS" + commentName.innerHTML;
+
+    commentText_nth.classList.add("comment-text2");
+
+    comment_nth_txt.classList.add("avatar2-txt");
+    comment_nth_txt.innerText = commnetInput.value;
+
+    commentBtns.classList.add("comment-btns");
+
+    commentBtn_1.classList.add("comment-btn");
+
+    commentLike.classList.add("comment-like");
+
+    commentLike_icon.classList.add("comment-icon");
+    commentLike_icon.src = "./media/icon/liked.svg"
+
+    likeCount.classList.add("likecount");
+    likeCount.innerText = "0";
+
+    commentBtn_2.classList.add("comment-btn");
+
+    commentSomedown.classList.add("comment-somedown");
+
+    commentSomedown_icon.classList.add("comment-icon");
+    commentSomedown_icon.src = "./media/icon/SomeDown.svg";
+
+    reply.classList.add("reply");
+    reply.innerText = "reply";
+
+    //댓글삽입
+    commentSection.insertBefore(commentCard, latestComment);
+    latestComment.classList.remove("latest-comment");
+
+    //댓글 입력란 초기화
+    cancelComment();
+
+    //댓글수 증가
+    countComment.innerText = parseInt(countComment.innerText) + 1;
+}

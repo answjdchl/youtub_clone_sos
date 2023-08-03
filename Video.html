@@ -44,7 +44,7 @@
 
     <div id="navAndMain">
         <!-- nav -->
-        <nav id="navBar">
+        <nav id="navBar" class="display_none">
             <div>
                 <a href="./Home.html">
                     <div class="menu selected">
@@ -105,50 +105,9 @@
             </div>
             <hr>
 
-            <div>
+            <div id="subscriptions">
                 <div class="menuCategory">SUBSCRIPTIONS</div>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user1.svg">
-                        <span class="menuTitle">channel1</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user2.svg">
-                        <span class="menuTitle">channel2</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user3.svg">
-                        <span class="menuTitle">channel3</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user4.svg">
-                        <span class="menuTitle">channel4</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user5.svg">
-                        <span class="menuTitle">channel5</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user6.svg">
-                        <span class="menuTitle">channel6</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user7.svg">
-                        <span class="menuTitle">channel7</span>
-                    </div>
-                </a>
+                <!--JS로 채워지는 부분-->
                 <button class="menu showMore">
                     <img class="icon" src="./media/icon/arrowBottom.svg">
                     <span class="menuTitle">Show More</span>
@@ -301,11 +260,17 @@
                     <div class="comment-avatar">
                         <div>
                             <img class="icon" src="./media/icon/User-Avatar.svg">
-                            <input id="comment-input" placeholder="Add a public comment....">
+                            <input onfocus="commentInputOnfocus()" onkeyup="commentInputOnkeyup(event)"
+                                id="comment-input" placeholder="Add a public comment....">
+                            <div>
+                                <button id="cancelComment" onclick="cancelComment()" class="display_none">취소</button>
+                                <button id="writeComment" onclick="writeComment()" class="display_none"
+                                    disabled>댓글</button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="comment-card">
+                    <div class="comment-card latest-comment">
                         <div class="profile-pic">
                             <img class="icon" src="./media/icon/User-Avatar2.svg">
                         </div>
@@ -340,12 +305,9 @@
                                         </button>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
-
-
+                    </div>
                 </section>
             </article>
 
