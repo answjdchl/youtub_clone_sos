@@ -134,7 +134,7 @@ function search() {
     let searchText = searchInput.value.toLowerCase();
     let searchedList = [];
 
-    
+
 
     for (let i = 0; i < allVideoList.length; i++) {
         if (allVideoList[i].video_channel.toLowerCase().includes(searchText)
@@ -148,13 +148,13 @@ function search() {
 
     let none = document.querySelector('.noneSearch')
 
-    if(searchedList.length == 0){        
+    if (searchedList.length == 0) {
         currentVideoList = searchedList;
         setVideoCards(searchedList);
         setTagNavigator(getTags(currentVideoList));
-        
+
         none.style.display = 'block'
-    }else{
+    } else {
         currentVideoList = searchedList;
         setVideoCards(searchedList);
         setTagNavigator(getTags(currentVideoList));
