@@ -49,6 +49,10 @@ main {
     justify-content: space-between;
 }
 
+.headerDiv .icon:hover{
+    background-color: #303030;
+}
+
 .icon {
     width: 1.5rem;
     height: 1.5rem;
@@ -173,6 +177,10 @@ main {
     flex-basis: 4rem;
     height: 2.5rem;
     z-index: 0;
+}
+
+#searchBtn:hover{
+    filter: brightness(1.5);
 }
 
 #micBtn {

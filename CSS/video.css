@@ -36,7 +36,7 @@ main {
     gap: 10px;
     margin-top: 5rem;
     width: 100%;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 #navAndMain{
@@ -137,6 +137,7 @@ article {
     justify-content: center;
     align-items: center;
     border-radius: 80px;
+    cursor: pointer;
 }
 
 .channelinfo .name {
@@ -146,6 +147,7 @@ article {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    cursor: pointer;
 }
 
 .channelinfo .subscribers {
@@ -234,6 +236,7 @@ article {
     justify-content: center;
     align-items: center;
     border-radius: 40px;
+    cursor: pointer;
 }
 
 .avatar2-txt {
@@ -879,6 +882,7 @@ p button {
     font-style: normal;
     font-weight: 700;
     line-height: 20px;
+    cursor: pointer;
 }
 
 .comment-time {
