@@ -243,6 +243,12 @@ function searchEnter(event) {
 }
 
 
+document.querySelector('#subscriptionBtn').addEventListener('click', () => {
+
+	alert('구독하시겠습니까?');
+});
+
+
 
 getChannelVideos()
 getChannelInfos()
