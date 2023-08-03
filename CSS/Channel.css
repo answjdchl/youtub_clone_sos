@@ -21,9 +21,6 @@ body {
     padding: 1px 6px;
 }
 
-<<<<<<< HEAD
-/* navbar
-=======
 /*08.02 css_2 작업분*/
 
 /* navbar */
@@ -31,7 +28,6 @@ body {
 nav {
     background-color: #212121;
     height: 56px;
->>>>>>> css_2
     display: flex;
     justify-content: space-between;
     border: 1px solid #303030;
@@ -76,8 +72,8 @@ nav {
     width: 90px;
     height: 20px;
 }
-*/
 
+*/
 /* searchbox */
 /*
 .searchbox {
@@ -847,31 +843,30 @@ main {
 }
 */
 
-<<<<<<< HEAD
-#channelInfo{
+#channelInfo {
     background-color: #181818;
 }
 
-#channelProfile{
+#channelProfile {
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
     margin-top: 1%;
     align-items: center;
 }
 
-#subscriptionBtn{
+#subscriptionBtn {
     border-radius: 4px;
     background-color: #C00;
     padding: 0.5%;
     /* margin-left: auto; */
 }
 
-#channelName{
+#channelName {
     font-size: 14px;
     color: #aaa;
 }
 
-#channelProfile img{
+#channelProfile img {
     border-radius: 180px;
     /* object-fit: cover; */
     width: 5%;
@@ -879,10 +874,10 @@ main {
 }
 
 #channelCover img {
-    width:100%;
- }
+    width: 100%;
+}
 
- #semiVideoTitle{
+#semiVideoTitle {
     color: var(--white-color, #FFF);
     font-variant-numeric: stacked-fractions;
     font-feature-settings: 'hlig' on, 'dlig' on;
@@ -892,20 +887,20 @@ main {
     font-weight: 700;
     line-height: normal;
     letter-spacing: 0.14px;
-  
- }
 
- #semiVideoViewsAndUploaded{
+}
+
+#semiVideoViewsAndUploaded {
     color: var(--gray-color, #AAA);
     font-family: Roboto;
     font-size: 13px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-   
- }
 
- #semiVideoDescription{
+}
+
+#semiVideoDescription {
     color: var(--white-color, #FFF);
     font-variant-numeric: stacked-fractions;
     font-feature-settings: 'hlig' on, 'dlig' on;
@@ -915,39 +910,40 @@ main {
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.14px;
-    
- }
 
- #semiVideo{
+}
+
+#semiVideo {
     display: flex;
     /* align-items: center; */
- }
- 
-.semiVideoinfo{
+}
+
+.semiVideoinfo {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 40%;
     padding: 20px;
- }
- 
- .playlist__title {
+}
+
+.playlist__title {
     font-weight: 700;
     font-size: 18px;
 }
- .playlist__box{
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
- }
 
- .playlist__info {
+.playlist__box {
     margin-top: 8px;
     display: flex;
     align-items: center;
 }
 
- .playlist__info button {
+.playlist__info {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.playlist__info button {
     background-color: transparent;
     color: #AAAAAA;
     font-weight: 700;
@@ -957,7 +953,8 @@ main {
     gap: 8px;
     border: none;
 }
-.playList{
+
+.playList {
     display: flex;
     gap: 4px;
     flex-wrap: wrap;
@@ -965,7 +962,7 @@ main {
     border-bottom: #343434 1px solid;
 }
 
-.playList .channelName{
+.playList .channelName {
     color: var(--gray-color, #AAA);
     font-family: Roboto;
     font-size: 12px;
@@ -974,7 +971,7 @@ main {
     line-height: normal;
 }
 
-.playList .viewsAndUploaded{
+.playList .viewsAndUploaded {
     color: var(--gray-color, #AAA);
     font-family: Roboto;
     font-size: 12px;
@@ -983,7 +980,7 @@ main {
     line-height: normal;
 }
 
-.playList .title{
+.playList .title {
     color: var(--white-color, #FFF);
     font-family: Roboto;
     font-size: 14px;
@@ -992,17 +989,8 @@ main {
     line-height: normal;
 }
 
- #channelNav{
-    padding: 0 65px;
-    width: 100%;
-=======
-#channelInfo {
-    background-color: #181818;
-}
-
 /*08.02 css_2 작업분*/
 #channelTitle {
->>>>>>> css_2
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
@@ -1069,18 +1057,6 @@ main {
     background-color: #181818;
     border: none;
 }
-<<<<<<< HEAD
-.channelNavBtn{
-    background-color: transparent;
-    color: #AAAAAA;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    padding: 16px 32px;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-=======
 
 .channelNavBtn {
     color: #aaaaaa;
@@ -1093,17 +1069,13 @@ main {
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
->>>>>>> css_2
 }
 
 .channelNavBtn:hover {
     color: white;
 }
-<<<<<<< HEAD
-=======
 
 .channelNavBtn.selected {
     border-bottom: 0.0625rem solid #aaa;
     color: #fff;
 }
->>>>>>> css_2
