@@ -7,8 +7,7 @@
 body {
     background-color: #000;
     color: #fff;
-    /* width: 1440px; */
-    /* height: 1024px; */
+
     font-family: Roboto;
 }
 
@@ -64,12 +63,8 @@ body {
 
 
 main {
-    /* display: inline-block; */
-    /* width: 1195px; */
     float: left;
     top: 57px;
-    /* left: 242px; */
-    /* position: absolute; */
     width: 100%;
 }
 
@@ -701,7 +696,6 @@ main {
     border-bottom: 0.0625rem solid #aaa;
     color: #fff;
 }
-
 
 
 /* 8.3 */
