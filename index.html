@@ -20,7 +20,7 @@
     <header id="header">
         <div id="menuBtnAndLogo" class="headerDiv">
             <button onclick="menuOpen()"><img src="./media/icon/hamburger.svg"></button>
-            <a href="./Home.html"><img id="logo" src="./media/img/Logo.svg"></a>
+            <a href="./index.html"><img id="logo" src="./media/img/Logo.svg"></a>
         </div>
 
         <div id="searchArea" class="headerDiv desktopMode">
@@ -44,7 +44,7 @@
         <!-- nav -->
         <nav id="navBar">
             <div>
-                <a href="./Home.html">
+                <a href="./index.html">
                     <div class="menu selected">
                         <img class="icon" src="./media/icon/home.svg">
                         <span class="menuTitle">Home</span>
@@ -103,50 +103,9 @@
             </div>
             <hr>
 
-            <div>
+            <div id="subscriptions">
                 <div class="menuCategory">SUBSCRIPTIONS</div>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user1.svg">
-                        <span class="menuTitle">channel1</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user2.svg">
-                        <span class="menuTitle">channel2</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user3.svg">
-                        <span class="menuTitle">channel3</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user4.svg">
-                        <span class="menuTitle">channel4</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user5.svg">
-                        <span class="menuTitle">channel5</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user6.svg">
-                        <span class="menuTitle">channel6</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user7.svg">
-                        <span class="menuTitle">channel7</span>
-                    </div>
-                </a>
+                <!--JS로 채워지는 부분-->
                 <button class="menu showMore">
                     <img class="icon" src="./media/icon/arrowBottom.svg">
                     <span class="menuTitle">Show More</span>
@@ -190,7 +149,8 @@
         <main>
             <!-- 태그 필터링 버튼 -->
 
-            <h1 style="font-size: 40px; font-weight: 700; text-align:center; width: 100%; align-self:center; display: none;" class="noneSearch">검색 결과가 없습니다.</h1>
+            <h1 style="font-size: 40px; font-weight: 700; text-align:center; width: 100%; align-self:center; display: none;"
+                class="noneSearch">검색 결과가 없습니다.</h1>
             <div id="tagArea">
                 <nav id="tagNav"></nav>
                 <div id="tagNavScrollBtn">
