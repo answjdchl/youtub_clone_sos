@@ -14,11 +14,11 @@ header {
     z-index: 1;
     flex-shrink: 0;
 
-    width: 100% !important ;
+    width: 100% !important;
 }
 
-.headerDiv button{
-    padding:1px 6px;
+.headerDiv button {
+    padding: 1px 6px;
 }
 
 body {
@@ -36,11 +36,11 @@ main {
     gap: 10px;
     margin-top: 5rem;
     width: 100%;
-    /* justify-content: center; */
+    justify-content: center;
 }
 
-#navAndMain{
-    width:100%
+#navAndMain {
+    width: 100%
 }
 
 article {
@@ -48,10 +48,10 @@ article {
     flex-direction: column;
 
     width: min-content;
-  }
- 
-.player{
-    padding: 0px 15px 15px 0px;  
+}
+
+.player {
+    padding: 0px 15px 15px 0px;
 }
 
 .video-actions {
@@ -179,13 +179,15 @@ article {
     text-transform: uppercase;
 }
 
-.comment-count{
+.comment-count {
     display: flex;
     flex-direction: row;
 }
 
 .comment-avatar {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .comment-avatar div {
@@ -214,6 +216,39 @@ article {
     border-bottom: #FFF 2px solid;
 }
 
+#commentWriteBtns {
+    width: calc(100% - 1.5rem);
+    padding-right: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#commentWriteBtns button {
+    background-color: #303030;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: 0.5px solid #AAAAAA;
+    margin: 0.375rem;
+    cursor: pointer;
+    font-family: Roboto;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#commentWriteBtns button:hover {
+    background-color: #505050;
+    color: white;
+}
+
+#commentWriteBtns button:disabled {
+    background-color: #404040;
+    color: #AAAAAA;
+    border: 0.5px solid #404040;
+}
 
 .comment-card {
     display: flex;
@@ -247,7 +282,7 @@ article {
     color: #AAA
 }
 
-.topmenubtn{
+.topmenubtn {
     display: flex;
     width: max-content;
     gap: 8px;
@@ -277,7 +312,7 @@ article {
     border: #303030 1px solid;
 }
 
-.topmenubtn .topbtn:hover{
+.topmenubtn .topbtn:hover {
     background: #FFF;
     color: #030303;
 }
@@ -924,14 +959,14 @@ p button {
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    
+
 }
 
 .comment-btn {
     display: flex;
     padding: 1px 0px;
     align-items: flex-start;
-    height:32px;
+    height: 32px;
     gap: 0.5rem;
 }
 
@@ -982,10 +1017,10 @@ p button {
     font-style: normal;
     font-weight: 400;
     text-transform: uppercase;
-    padding:0 16px;
+    padding: 0 16px;
 }
 
-.reply:hover{
+.reply:hover {
     color: #fff;
     font-weight: 600;
 }
@@ -999,26 +1034,26 @@ p button {
 }
 
 
-ul#videos{
+ul#videos {
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
 }
 
-.videoCard{
+.videoCard {
     padding: 1rem;
     border-radius: 1rem;
 }
 
-.videoCard:hover{
+.videoCard:hover {
     background-color: #303030;
 }
 
-.videoCard div{
+.videoCard div {
     display: flex;
 }
 
-.infoText{
+.infoText {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1027,7 +1062,7 @@ ul#videos{
 
 
 
-.infoText .title{
+.infoText .title {
     padding-bottom: 2rem;
 
     color: var(--white-color, #FFF);
@@ -1035,22 +1070,25 @@ ul#videos{
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px; /* 142.857% */
-    width:150px;
+    line-height: 20px;
+    /* 142.857% */
+    width: 150px;
 }
 
 
-.infoText .channelName,.viewsAndUploaded{
+.infoText .channelName,
+.viewsAndUploaded {
     color: var(--gray-color, #AAA);
     font-family: Roboto;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 18px; /* 150% */
+    line-height: 18px;
+    /* 150% */
 }
 
 
-.card-desc{
+.card-desc {
     display: flex;
     flex-direction: column;
 
@@ -1059,7 +1097,7 @@ ul#videos{
     padding-left: 1rem;
 }
 
-.card-title{
+.card-title {
     color: var(--white-color, #FFF);
     font-family: Roboto;
     font-size: 14px;
@@ -1071,13 +1109,14 @@ ul#videos{
 }
 
 
-.card-channel{
+.card-channel {
     color: var(--gray-color, #AAA);
     font-family: Roboto;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 18px; /* 150% */
+    line-height: 18px;
+    /* 150% */
 }
 
 /* 코멘트 영역 제한 */
@@ -1214,8 +1253,8 @@ ul#videos{
 
 
 
-.sort-by{
-    display:flex;
+.sort-by {
+    display: flex;
     padding: 4px 10px;
     position: relative;
     width: 85px;
@@ -1223,7 +1262,7 @@ ul#videos{
     justify-content: space-around;
 }
 
-.sort-icon{
+.sort-icon {
     display: flex;
 }
 
@@ -1233,36 +1272,38 @@ ul#videos{
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
-    line-height: 24px; /* 171.429% */
+    line-height: 24px;
+    /* 171.429% */
     text-transform: uppercase;
 }
 
-.sort-by:hover{
+.sort-by:hover {
     background-color: #212121;
     border-radius: 6px 6px 0 0;
 }
 
 
 
-.drop-sort-by{
-    display : none;
-    position : absolute;
-    z-index : 1; /*다른 요소들보다 앞에 배치*/
+.drop-sort-by {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    /*다른 요소들보다 앞에 배치*/
 }
-  
-.drop-sort-by .drop-down{
-    display : flex;
+
+.drop-sort-by .drop-down {
+    display: flex;
     padding: 3px 0;
     flex-direction: column;
     justify-content: center;
     height: 24px;
 }
-  
+
 .sort-by:hover .drop-sort-by {
-    width:105px;
+    width: 105px;
     display: block;
     color: #fff;
-    top:30px;
+    top: 30px;
     background-color: #303030;
     text-align: center;
     left: 0px;
@@ -1271,7 +1312,6 @@ ul#videos{
     padding-bottom: 7px;
 }
 
-.sort-by:hover .drop-sort-by .drop-down:hover{
+.sort-by:hover .drop-sort-by .drop-down:hover {
     background-color: #555;
 }
-

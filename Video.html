@@ -151,7 +151,7 @@
 
             <article>
                 <section class="player">
-                    <video controls src="https://storage.googleapis.com/oreumi.appspot.com/video_12.mp4"
+                    <video controls autoplay muted src="https://storage.googleapis.com/oreumi.appspot.com/video_12.mp4"
                         controlList="allowFullScreen nodownload" width="640" height="360"
                         poster="https://storage.googleapis.com/oreumi.appspot.com/img_12.jpg"></video>
                 </section>
@@ -266,11 +266,10 @@
                             <img class="icon" src="./media/icon/User-Avatar.svg">
                             <input onfocus="commentInputOnfocus()" onkeyup="commentInputOnkeyup(event)"
                                 id="comment-input" placeholder="Add a public comment....">
-                            <div>
-                                <button id="cancelComment" onclick="cancelComment()" class="display_none">취소</button>
-                                <button id="writeComment" onclick="writeComment()" class="display_none"
-                                    disabled>댓글</button>
-                            </div>
+                        </div>
+                        <div id="commentWriteBtns">
+                            <button id="cancelComment" onclick="cancelComment()" class="display_none">취소</button>
+                            <button id="writeComment" onclick="writeComment()" class="display_none" disabled>댓글</button>
                         </div>
                     </div>
 

@@ -28,7 +28,7 @@ main {
     background-color: black;
     flex: 1;
     padding-top: 3.5rem;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .display_none {
@@ -49,7 +49,7 @@ main {
     justify-content: space-between;
 }
 
-.headerDiv .icon:hover{
+.headerDiv .icon:hover {
     background-color: #303030;
 }
 
@@ -179,7 +179,7 @@ main {
     z-index: 0;
 }
 
-#searchBtn:hover{
+#searchBtn:hover {
     filter: brightness(1.5);
 }
 
@@ -258,9 +258,5 @@ main {
 
     .mobileMode {
         display: flex;
-    }
-
-    #navBar {
-        display: none;
     }
 }
