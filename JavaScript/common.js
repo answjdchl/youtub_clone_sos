@@ -1,11 +1,13 @@
 const navBar = document.getElementById("navBar");
-const main = document.getElementsByTagName("main")[0];
+const main = document.querySelector("main");
 const header = document.getElementById("header");
 
 const subscription_list = ["oreumi", "나와 토끼들", "개조"];
 
 //navBar가 열려있는지에 대한 변수
 let isOpen = true;
+//모바일모드에 진입했는지 여부
+let isMobile = false;
 //main의 스크롤 가능 여부 및 관련변수
 let isScrollable = true;
 const mainHeight = main.clientHeight;
@@ -34,6 +36,16 @@ function menuOpen() {
 
 //resize 이벤트에 따라 스타일 변경하는 함수
 function onResize() {
+    if (!isMobile && window.innerWidth <= 600) {
+        if (isOpen) menuOpen();
+
+        isMobile = true;
+    }
+    else if (isMobile && window.innerWidth > 600) {
+        if (!isOpen) menuOpen();
+        isMobile = false;
+    }
+
     if (mainHeight < mainScrollHeight) {
         isScrollable = true;
         header.style.width = `calc(100% - 0.5rem)`
