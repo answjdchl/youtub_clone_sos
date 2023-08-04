@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./CSS/reset.css">
     <link rel="stylesheet" href="./CSS/common.css">
     <link rel="stylesheet" href="./CSS/Channel.css">
-    
+
     <!-- <link rel="stylesheet" href="./CSS/Channel.css"> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
     <header id="header">
         <div id="menuBtnAndLogo" class="headerDiv">
             <button onclick="menuOpen()"><img src="./media/icon/hamburger.svg"></button>
-            <a href="./Home.html"><img id="logo" src="./media/img/Logo.svg"></a>
+            <a href="./index.html"><img id="logo" src="./media/img/Logo.svg"></a>
         </div>
 
         <div id="searchArea" class="headerDiv desktopMode">
@@ -45,7 +45,7 @@
         <!-- nav -->
         <nav id="navBar">
             <div>
-                <a href="./Home.html">
+                <a href="./index.html">
                     <div class="menu selected">
                         <img class="icon" src="./media/icon/home.svg">
                         <span class="menuTitle">Home</span>
@@ -104,50 +104,9 @@
             </div>
             <hr>
 
-            <div>
+            <div id="subscriptions">
                 <div class="menuCategory">SUBSCRIPTIONS</div>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user1.svg">
-                        <span class="menuTitle">channel1</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user2.svg">
-                        <span class="menuTitle">channel2</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user3.svg">
-                        <span class="menuTitle">channel3</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user4.svg">
-                        <span class="menuTitle">channel4</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user5.svg">
-                        <span class="menuTitle">channel5</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user6.svg">
-                        <span class="menuTitle">channel6</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user7.svg">
-                        <span class="menuTitle">channel7</span>
-                    </div>
-                </a>
+                <!--JS로 채워지는 부분-->
                 <button class="menu showMore">
                     <img class="icon" src="./media/icon/arrowBottom.svg">
                     <span class="menuTitle">Show More</span>
@@ -220,8 +179,7 @@
                 <div id="semiVideo">
                     <!--추후에 js로 교체-->
                     <div>
-                        <video src="" controls
-                            poster="" width="500"></video>
+                        <video src="" controls poster="" width="500"></video>
                     </div>
                     <div class="semiVideoinfo">
                         <div id="semiVideoTitle"></div>

@@ -14,7 +14,7 @@ let currentTags = [];
 
 
 //전체 비디오 리스트 초기화 및 비디오카드 생성
-fetch("http://oreumi.appspot.com/video/getVideoList")
+fetch("https://oreumi.appspot.com/video/getVideoList")
     .then((response) => response.json())
     .then((data) => {
         console.log(data);
@@ -81,7 +81,7 @@ function setVideoCards(videoList) {
         viewsAndUploaded.className = "viewsAndUploaded";
 
         //비디오 정보 받아오기
-        fetch(`http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoList[i].video_id}`)
+        fetch(`https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoList[i].video_id}`)
             .then((response) => response.json())
             .then((data) => {
                 thumbnail.src = data.image_link;
@@ -92,7 +92,7 @@ function setVideoCards(videoList) {
                 channelName.href = `./Channel.html?channel_name=${dataVideoChannel}`;
                 channelProfileLink.href = `./Channel.html?channel_name=${dataVideoChannel}`;
 
-                return fetch(`http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${dataVideoChannel}`, { method: "POST" });
+                return fetch(`https://oreumi.appspot.com/channel/getChannelInfo?video_channel=${dataVideoChannel}`, { method: "POST" });
             })
             .then((response) => response.json())
             .then((data) => {

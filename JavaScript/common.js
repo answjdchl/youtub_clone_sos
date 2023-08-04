@@ -108,7 +108,7 @@ function subscriptionsFill(subscriptionList) {
 
         subscriptionArea.insertBefore(subscriptionLink, subscriptionShowMore);
 
-        fetch(`http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${subscription}`, { method: "POST" })
+        fetch(`https://oreumi.appspot.com/channel/getChannelInfo?video_channel=${subscription}`, { method: "POST" })
             .then((response) => response.json())
             .then((data) => {
                 subscriptionLink.href = `./Channel.html?channel_name=${data.channel_name}`;

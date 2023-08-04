@@ -26,7 +26,7 @@ let writeBtn = document.getElementById("writeComment");
 let recommendedVideo = [];
 
 //쿼리로 비디오 아이디를 받아와서 영상을 받을때
-let url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${id}`
+let url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${id}`
 
 
 var video = document.querySelector("video");
@@ -38,6 +38,7 @@ var videoDesc = document.querySelector(".video-description");
 var userAvatar = document.querySelector("#channelProfile");
 var channelName = document.querySelector(".name");
 var sub = document.querySelector(".subscribers");
+var linkToChannel = document.querySelectorAll(".linkToChannel");
 
 var filterByChannelBtn = document.querySelector("#filterByChannel");
 var filterByAllBtn = document.querySelector("#filterByAll");
@@ -82,10 +83,13 @@ fetch(url).then((response) => response.json())
 
         filterByChannelBtn.innerHTML = `From ${data["video_channel"]}`
 
+        for (const link of linkToChannel) {
+            link.href = `file:///D:/project/youtub_clone_sos/Channel.html?channel_name=${data["video_channel"]}`
+        }
 
         Cname = data["video_channel"]
 
-        CURL = `http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${Cname}`
+        CURL = `https://oreumi.appspot.com/channel/getChannelInfo?video_channel=${Cname}`
 
         CURL = encodeURI(CURL)
 
@@ -121,7 +125,7 @@ fetch(url).then((response) => response.json())
     });
 
 //추천영상 설정
-fetch("http://oreumi.appspot.com/video/getVideoList")
+fetch("https://oreumi.appspot.com/video/getVideoList")
     .then((response) => response.json())
     .then((data) => {
         getRandomVideos(data);
@@ -181,7 +185,7 @@ function setVideoCards(videoList) {
         viewsAndUploaded.className = "viewsAndUploaded";
 
         //비디오 정보 받아오기
-        fetch(`http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoList[i].video_id}`)
+        fetch(`https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoList[i].video_id}`)
             .then((response) => response.json())
             .then((data) => {
                 thumbnail.src = data.image_link;
