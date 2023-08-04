@@ -34,6 +34,16 @@ function menuOpen() {
 
 //resize 이벤트에 따라 스타일 변경하는 함수
 function onResize() {
+    if (!isMobile && window.innerWidth <= 600) {
+        if (isOpen) menuOpen();
+
+        isMobile = true;
+    }
+    else if (isMobile && window.innerWidth > 600) {
+        if (!isOpen) menuOpen();
+        isMobile = false;
+    }
+
     if (mainHeight < mainScrollHeight) {
         isScrollable = true;
         header.style.width = `calc(100% - 0.5rem)`
