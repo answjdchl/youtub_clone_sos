@@ -7,9 +7,14 @@
     <title>ChannelName</title>
     <link href="./media/img/Logo_mini.svg" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="./CSS/reset.css">
-    <!--link rel="stylesheet" href="./CSS/Channel.css"-->
     <link rel="stylesheet" href="./CSS/common.css">
+    <link rel="stylesheet" href="./CSS/Channel.css">
+
     <!-- <link rel="stylesheet" href="./CSS/Channel.css"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,12 +22,12 @@
     <header id="header">
         <div id="menuBtnAndLogo" class="headerDiv">
             <button onclick="menuOpen()"><img src="./media/icon/hamburger.svg"></button>
-            <a href="./Home.html"><img id="logo" src="./media/img/Logo.svg"></a>
+            <a href="./index.html"><img id="logo" src="./media/img/Logo.svg"></a>
         </div>
 
         <div id="searchArea" class="headerDiv desktopMode">
             <div id="search">
-                <input id="searchInput" type="text" onkeyup="searchEnter()">
+                <input id="searchInput" type="text" onkeyup="searchEnter(event)" placeholder="Search">
                 <button id="searchBtn" onclick="search()"><img class="icon" src="./media/icon/search.svg"></button>
             </div>
             <button id="micBtn"><img id="micBtnIcon" class="icon" src="./media/icon/mic.svg"></button>
@@ -36,155 +41,11 @@
             <button><img id="headerUserAvatar" class="userAvatar" src="./media/userAvatar/user0.svg"></button>
         </div>
     </header>
-    <!-- nav -->
-    <!-- <nav id="navBar" style="background-color:gray">
-        <div>
-            <a href="./Home.html">
-                <div>
-                    <img class="icon" src="./media/icon/home.svg">
-                    <span class="menuTitle">Home</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/explore.svg">
-                    <span class="menuTitle">Explore</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/subscriptions.svg">
-                    <span class="menuTitle">Subscriptions</span>
-                </div>
-            </a>
-        </div>
-        <hr>
-
-        <div>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/library.svg">
-                    <span class="menuTitle">Library</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/history.svg">
-                    <span class="menuTitle">History</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/yourVideos.svg">
-                    <span class="menuTitle">Your Videos</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/watchLater.svg">
-                    <span class="menuTitle">Watch Later</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/liked.svg">
-                    <span class="menuTitle">Liked Videos</span>
-                </div>
-            </a>
-            <button>
-                <div>
-                    <img class="icon" src="./media/icon/arrowBottom.svg">
-                    <span class="menuTitle">Show More</span>
-                </div>
-            </button>
-        </div>
-        <hr>
-
-        <div>
-            <div class="menuCategory">SUBSCRIPTIONS</div>
-            <a href="./Channel.html">
-                <div>
-                    <img class="icon" src="./media/userAvatar/user1.svg">
-                    <span class="menuTitle">channel1</span>
-                </div>
-            </a>
-            <a href="./Channel.html">
-                <div>
-                    <img class="icon" src="./media/userAvatar/user2.svg">
-                    <span class="menuTitle">channel2</span>
-                </div>
-            </a>
-            <a href="./Channel.html">
-                <div>
-                    <img class="icon" src="./media/userAvatar/user3.svg">
-                    <span class="menuTitle">channel3</span>
-                </div>
-            </a>
-            <a href="./Channel.html">
-                <div>
-                    <img class="icon" src="./media/userAvatar/user4.svg">
-                    <span class="menuTitle">channel4</span>
-                </div>
-            </a>
-            <a href="./Channel.html">
-                <div>
-                    <img class="icon" src="./media/userAvatar/user5.svg">
-                    <span class="menuTitle">channel5</span>
-                </div>
-            </a>
-            <a href="./Channel.html">
-                <div>
-                    <img class="icon" src="./media/userAvatar/user6.svg">
-                    <span class="menuTitle">channel6</span>
-                </div>
-            </a>
-            <a href="./Channel.html">
-                <div>
-                    <img class="icon" src="./media/userAvatar/user7.svg">
-                    <span class="menuTitle">channel7</span>
-                </div>
-            </a>
-            <button>
-                <div>
-                    <img class="icon" src="./media/icon/arrowBottom.svg">
-                    <span class="menuTitle">Show More</span>
-                </div>
-            </button>
-        </div>
-        <hr>
-
-        <div>
-            <div class="menuCategory">MORE FROM YOUTUBE</div>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/premium.svg">
-                    <span class="menuTitle">Youtube Premium</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/gaming.svg">
-                    <span class="menuTitle">Gaming</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/live.svg">
-                    <span class="menuTitle">Live</span>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img class="icon" src="./media/icon/sports.svg">
-                    <span class="menuTitle">Sports</span>
-                </div>
-            </a>
-        </div>
-    </nav> -->
     <div id="navAndMain">
+        <!-- nav -->
         <nav id="navBar">
             <div>
-                <a href="./Home.html">
+                <a href="./index.html">
                     <div class="menu selected">
                         <img class="icon" src="./media/icon/home.svg">
                         <span class="menuTitle">Home</span>
@@ -236,58 +97,17 @@
                         <span class="menuTitle">Liked Videos</span>
                     </div>
                 </a>
-                <button class="menu">
+                <button class="menu showMore">
                     <img class="icon" src="./media/icon/arrowBottom.svg">
                     <span class="menuTitle">Show More</span>
                 </button>
             </div>
             <hr>
 
-            <div>
+            <div id="subscriptions">
                 <div class="menuCategory">SUBSCRIPTIONS</div>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user1.svg">
-                        <span class="menuTitle">channel1</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user2.svg">
-                        <span class="menuTitle">channel2</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user3.svg">
-                        <span class="menuTitle">channel3</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user4.svg">
-                        <span class="menuTitle">channel4</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user5.svg">
-                        <span class="menuTitle">channel5</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user6.svg">
-                        <span class="menuTitle">channel6</span>
-                    </div>
-                </a>
-                <a href="./Channel.html">
-                    <div class="menu">
-                        <img class="icon" src="./media/userAvatar/user7.svg">
-                        <span class="menuTitle">channel7</span>
-                    </div>
-                </a>
-                <button class="menu">
+                <!--JS로 채워지는 부분-->
+                <button class="menu showMore">
                     <img class="icon" src="./media/icon/arrowBottom.svg">
                     <span class="menuTitle">Show More</span>
                 </button>
@@ -329,13 +149,15 @@
         <!-- main -->
         <main>
             <header id="channelInfo">
-                <div id="channelCover"><img src="./media/img/channelCover.svg"></div>
-                <div id="channelProfile">
+                <div id="channelCover"><img src="./media/img/channelCover.png"></div>
+                <div id="channelTitle">
                     <!--추후에 js로 교체-->
-                    <img src="./media/userAvatar/user3.svg">
-                    <div>
-                        <div id="channelName">ChannelName</div>
-                        <div id="subscribers">1.2M subscribers</div>
+                    <div id="channelProfile">
+                        <img src="">
+                        <span>
+                            <div id="channelName">ChannelName</div>
+                            <div id="subscribers">1.2M subscribers</div>
+                        </span>
                     </div>
                     <!--교체구간-->
                     <button id="subscriptionBtn">SUBSCRIBES</button>
@@ -350,70 +172,41 @@
                 <button class="channelNavBtn" id="ABOUT">ABOUT</button>
                 <button class="channelSearchActivate" onclick="searchActivate()"><img class="icon"
                         src="./media/icon/search.svg"></button>
-                <input type="text" id="channelSearch">
-                <button><img class="icon" src="./media/icon/leftArrow.svg"></button>
+                <input type="text" id="channelSearch" class="display_none" placeholder="검색">
+                <button class="channelNavScroll"><img class="icon" src="./media/icon/leftArrow.svg"></button>
             </nav>
             <div id="channelMain">
                 <div id="semiVideo">
                     <!--추후에 js로 교체-->
                     <div>
-                        <video src="https://storage.googleapis.com/oreumi.appspot.com/video_1.mp4" controls
-                            poster="https://storage.googleapis.com/oreumi.appspot.com/img_1.jpg" width="500"></video>
+                        <video src="" controls autoplay muted poster="" width="500"></video>
                     </div>
-                    <div id="semiVideoTitle">VideoTitle</div>
-                    <div id="semiVideoViewsAndUploaded">Views,Uploaded</div>
-                    <div id="semiVideoDescription">VideoDescription</div>
+                    <div class="semiVideoinfo">
+                        <div id="semiVideoTitle"></div>
+                        <div id="semiVideoViewsAndUploaded"></div>
+                        <div id="semiVideoDescription"></div>
+                    </div>
                     <!--교체구간-->
                 </div>
+                <div id="playlist__box" class="playlist__box">
+                    <div id="playlist__info" class="playlist__info">
+                        <div class="playlist__title">재생목록</div>
+                        <button>
+                            <div>
+                                <img src="./media/icon/Play1.svg" alt="">
+                            </div>
+                            <div>PLAY ALL</div>
+                        </button>
+                    </div>
+                    <div id="playlist" class="playlist">
+
+                    </div>
+
+                </div>
+
                 <div id="playLists">
                     <!--추후에 js로 교체-->
-                    <div class="playList" style="display: inline-block;">
-                        <div class="videoCard"><img width="200" class="thumbnail"
-                                src="https://storage.googleapis.com/oreumi.appspot.com/img_6.jpg">
-                            <div class="detail">
-                                <div class="infoText">
-                                    <div class="title">가상현실(VR)과 증강현실(AR)의 혁신</div>
-                                    <div class="channelName">oreumi</div>
-                                    <div class="viewsAndUploaded">225308Views, 1달 전</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="playList" style="display: inline-block;">
-                        <div class="videoCard"><img width="200" class="thumbnail"
-                                src="https://storage.googleapis.com/oreumi.appspot.com/img_6.jpg">
-                            <div class="detail">
-                                <div class="infoText">
-                                    <div class="title">가상현실(VR)과 증강현실(AR)의 혁신</div>
-                                    <div class="channelName">oreumi</div>
-                                    <div class="viewsAndUploaded">225308Views, 1달 전</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="playList" style="display: inline-block;">
-                        <div class="videoCard"><img width="200" class="thumbnail"
-                                src="https://storage.googleapis.com/oreumi.appspot.com/img_6.jpg">
-                            <div class="detail">
-                                <div class="infoText">
-                                    <div class="title">가상현실(VR)과 증강현실(AR)의 혁신</div>
-                                    <div class="channelName">oreumi</div>
-                                    <div class="viewsAndUploaded">225308Views, 1달 전</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="playList" style="display: inline-block;">
-                        <div class="videoCard"><img width="200" class="thumbnail"
-                                src="https://storage.googleapis.com/oreumi.appspot.com/img_6.jpg">
-                            <div class="detail">
-                                <div class="infoText">
-                                    <div class="title">가상현실(VR)과 증강현실(AR)의 혁신</div>
-                                    <div class="channelName">oreumi</div>
-                                    <div class="viewsAndUploaded">225308Views, 1달 전</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="playList">
                     </div>
                     <!--교체구간-->
                 </div>
@@ -422,5 +215,6 @@
     </div>
 </body>
 <script src="./JavaScript/Channel.js"></script>
+<script src="./JavaScript/common.js"></script>
 
 </html>
