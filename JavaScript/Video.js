@@ -84,7 +84,7 @@ fetch(url).then((response) => response.json())
         filterByChannelBtn.innerHTML = `From ${data["video_channel"]}`
 
         for (const link of linkToChannel) {
-            link.href = `file:///D:/project/youtub_clone_sos/Channel.html?channel_name=${data["video_channel"]}`
+            link.href = `./Channel.html?channel_name=${data["video_channel"]}`
         }
 
         Cname = data["video_channel"]
