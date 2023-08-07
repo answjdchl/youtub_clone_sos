@@ -6,6 +6,7 @@ const searchArea = document.getElementById("searchArea");
 const headerMenu = document.getElementById("headerMenu");
 const searchInput = document.getElementById('searchInput');
 const backBtn = document.getElementById('backBtn');
+let pageTitle = document.querySelector("title");
 
 const subscription_list = ["oreumi", "나와 토끼들", "개조"];
 

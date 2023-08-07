@@ -71,6 +71,7 @@ fetch(url).then((response) => response.json())
         let view = '';
 
         console.log(data["views"])
+        pageTitle.innerText = data["video_title"];
 
         if (1000000 >= data["views"] && data["views"] >= 1000) {
             thou = Math.floor(data["views"] / 1000);

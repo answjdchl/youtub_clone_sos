@@ -7,8 +7,6 @@ const channelSearchInput = document.getElementById('channelSearch');
 let allVideoList = [];
 
 
-
-
 //날짜 계산
 function caluateDate(date) {                                            // date -> 업로드 날짜를 넣을 예정
   let Upload = new Date(date)                                          // 받아온 변수 date 를 날짜 형식으로 변환
@@ -95,6 +93,7 @@ async function getChannelInfos() {
       // 채널 이름 받아오기
       var name = document.querySelector("#channelName");
       name.textContent = data['channel_name'];
+      pageTitle.innerText = data['channel_name'];
 
       // 채널 배너 바꾸기
       var banner = document.querySelector('#channelCover img');
