@@ -18,7 +18,6 @@
 
 <body>
     <!-- header -->
-
     <header id="header">
         <div id="menuBtnAndLogo" class="headerDiv">
             <button onclick="menuOpen()"><img src="./media/icon/hamburger.svg"></button>
@@ -26,15 +25,18 @@
         </div>
 
         <div id="searchArea" class="headerDiv desktopMode">
+            <button id="backBtn" onclick="deactivateMobileSearch()" class="display_none"><img
+                    src="./media/icon/arrowLeft.svg" class="icon"></button>
             <div id="search">
-                <input id="searchInput" type="text" onkeyup="searchToHomeEnter(event)">
+                <input id="searchInput" type="text" placeholder="search" onkeyup="searchToHomeEnter(event)">
                 <button id="searchBtn" onclick="searchToHome()"><img class="icon"
                         src="./media/icon/search.svg"></button>
             </div>
             <button id="micBtn"><img id="micBtnIcon" class="icon" src="./media/icon/mic.svg"></button>
         </div>
         <div id="headerMenu" class="headerDiv">
-            <button><img class="icon mobileMode" src="./media/icon/search.svg"></button>
+            <button onclick="activateMobileSearch()"><img class="icon mobileMode"
+                    src="./media/icon/search.svg"></button>
             <button><img class="icon mobileMode" src="./media/icon/mic.svg"></button>
             <button><img class="icon" src="./media/icon/create.svg"></button>
             <button><img class="icon" src="./media/icon/apps.svg"></button>
@@ -152,9 +154,8 @@
 
             <article>
                 <section class="player">
-                    <video controls autoplay muted src="https://storage.googleapis.com/oreumi.appspot.com/video_12.mp4"
-                        controlList="allowFullScreen nodownload" width="640" height="360"
-                        poster="https://storage.googleapis.com/oreumi.appspot.com/img_12.jpg"></video>
+                    <video controls autoplay muted src="" controlList="allowFullScreen nodownload" width="640"
+                        height="360" poster=""></video>
                 </section>
 
                 <!-- 비디오정보 -->
@@ -164,7 +165,7 @@
                             Blind Woodturner: Turning passion into fine art
                         </span>
                     </div>
-                    <div class="videoviews" id="viewsAnduploaded">
+                    <div class='videoviewsparents' id="viewsAnduploaded">
                         <span class="videoviews">576,969 views . Oct 8, 2021</span>
                         <span class="actions">
                             <div class="btn-list">

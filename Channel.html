@@ -26,14 +26,18 @@
         </div>
 
         <div id="searchArea" class="headerDiv desktopMode">
+            <button id="backBtn" onclick="deactivateMobileSearch()" class="display_none"><img
+                    src="./media/icon/arrowLeft.svg" class="icon"></button>
             <div id="search">
-                <input id="searchInput" type="text" onkeyup="searchEnter(event)" placeholder="Search">
-                <button id="searchBtn" onclick="search()"><img class="icon" src="./media/icon/search.svg"></button>
+                <input id="searchInput" type="text" placeholder="search" onkeyup="searchToHomeEnter(event)">
+                <button id="searchBtn" onclick="searchToHome()"><img class="icon"
+                        src="./media/icon/search.svg"></button>
             </div>
             <button id="micBtn"><img id="micBtnIcon" class="icon" src="./media/icon/mic.svg"></button>
         </div>
         <div id="headerMenu" class="headerDiv">
-            <button><img class="icon mobileMode" src="./media/icon/search.svg"></button>
+            <button onclick="activateMobileSearch()"><img class="icon mobileMode"
+                    src="./media/icon/search.svg"></button>
             <button><img class="icon mobileMode" src="./media/icon/mic.svg"></button>
             <button><img class="icon" src="./media/icon/create.svg"></button>
             <button><img class="icon" src="./media/icon/apps.svg"></button>
@@ -41,6 +45,7 @@
             <button><img id="headerUserAvatar" class="userAvatar" src="./media/userAvatar/user0.svg"></button>
         </div>
     </header>
+
     <div id="navAndMain">
         <!-- nav -->
         <nav id="navBar">

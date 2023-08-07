@@ -2,7 +2,7 @@
 const URLSearch = new URLSearchParams(location.search);
 const id = URLSearch.get('channel_name');
 
-const searchInput = document.getElementById('channelSearch');
+const channelSearchInput = document.getElementById('channelSearch');
 
 let allVideoList = [];
 

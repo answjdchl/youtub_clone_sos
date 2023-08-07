@@ -17,10 +17,10 @@ const monthToString = {
     12: "Dec",
 };
 
-//영상정보
+//비디오정보
 let currentVideoInfo;
-let targetTagList
-let targetVideoId
+let targetTagList;
+let targetVideoId;
 
 //댓글 요소
 let commnetInput = document.getElementById("comment-input");
@@ -38,7 +38,7 @@ let url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${id}`
 
 var video = document.querySelector("video");
 var title = document.querySelector(".title");
-var view_info = document.querySelector("#viewsAnduploaded");
+var view_info = document.querySelector('.videoviews');
 var videoDesc = document.querySelector(".video-description");
 
 
@@ -58,11 +58,13 @@ var Cname = '';
 
 var CURL = '';
 
+//현재 비디오 설정
 fetch(url).then((response) => response.json())
     .then((data) => {
         currentVideoInfo = data;
-        targetTagList = currentVideoInfo.video_tag;
-        targetVideoId = currentVideoInfo.video_id;
+        targetTagList = data.video_tag;
+        targetVideoId = data.video_id;
+
         video.src = data["video_link"];
         video.poster = data["image_link"];
         title.textContent = data["video_title"];
@@ -141,6 +143,7 @@ fetch("https://oreumi.appspot.com/video/getVideoList")
         allVideoList = data;
         setVideoCards(allVideoList);
     });
+
 
 async function setVideoCards(videoList) {
     recommendedVideo = await calculateVideoSimilarities(
