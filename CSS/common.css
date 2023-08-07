@@ -188,6 +188,9 @@ main {
     flex-basis: 2.7rem;
 }
 
+#backBtn {
+    margin: 0.5rem;
+}
 
 #micBtnIcon {
     padding: 0.6rem;

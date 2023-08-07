@@ -1,6 +1,11 @@
 const navBar = document.getElementById("navBar");
 const main = document.querySelector("main");
 const header = document.getElementById("header");
+const menuBtnAndLogo = document.getElementById("menuBtnAndLogo");
+const searchArea = document.getElementById("searchArea");
+const headerMenu = document.getElementById("headerMenu");
+const searchInput = document.getElementById('searchInput');
+const backBtn = document.getElementById('backBtn');
 
 const subscription_list = ["oreumi", "나와 토끼들", "개조"];
 
@@ -36,6 +41,7 @@ function menuOpen() {
 
 //resize 이벤트에 따라 스타일 변경하는 함수
 function onResize() {
+    deactivateMobileSearch();
     if (!isMobile && window.innerWidth <= 600) {
         if (isOpen) menuOpen();
 
@@ -128,4 +134,35 @@ function subscriptionsFill(subscriptionList) {
                 subscriptionTitle.innerText = data.channel_name;
             })
     }
+}
+
+//채널, 비디오 사이트 검색
+function searchToHome() {
+    let searchText = searchInput.value;
+
+    window.location.href = `./index.html?search=${searchText}`;
+}
+
+//검색창 엔터 이벤트 리스너
+function searchToHomeEnter(event) {
+    if (event.key === 'Enter') {
+        searchToHome();
+    }
+}
+
+
+//모바일모드 검색창 활성화 이벤트
+function activateMobileSearch() {
+    menuBtnAndLogo.classList.add("desktopMode");
+    searchArea.classList.remove("desktopMode");
+    headerMenu.classList.add("desktopMode");
+    backBtn.classList.remove("display_none");
+}
+
+//모바일모드 검색창 비활성화 이벤트
+function deactivateMobileSearch() {
+    menuBtnAndLogo.classList.remove("desktopMode");
+    searchArea.classList.add("desktopMode");
+    headerMenu.classList.remove("desktopMode");
+    backBtn.classList.add("display_none");
 }

@@ -1,5 +1,4 @@
 const videoTag = document.getElementById('video');
-const searchInput = document.getElementById('searchInput');
 const tagNav = document.getElementById('tagNav');
 const tagNavForward = document.getElementById('tagNavScrollForward');
 const tagNavBackward = document.getElementById('tagNavScrollBackward');
@@ -11,6 +10,10 @@ let currentVideoList = [];
 //현재 비디오의 태그 리스트
 let currentTags = [];
 
+//다른 페이지에서 검색했을 경우 검색키워드 받아오기
+const URLSearch = new URLSearchParams(location.search);
+const searchParam = URLSearch.get('search');
+
 
 
 //전체 비디오 리스트 초기화 및 비디오카드 생성
@@ -20,12 +23,16 @@ fetch("https://oreumi.appspot.com/video/getVideoList")
         console.log(data);
         allVideoList = data;
         currentVideoList = data;
+    })
+    .then(() => {
+        if (searchParam != null) {
+            searchInput.value = searchParam;
+            search();
+        }
         setVideoCards(currentVideoList);
         setTagNavigator(getTags(currentVideoList));
         onResize();
-    });
-
-
+    })
 
 //tagNav 직접 스크롤 시 이벤트 리스너
 tagNav.addEventListener('scroll', tagNavResize);

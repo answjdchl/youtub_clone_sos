@@ -17,11 +17,18 @@ const monthToString = {
     12: "Dec",
 };
 
+//영상정보
+let currentVideoInfo;
+let targetTagList
+let targetVideoId
+
 //댓글 요소
 let commnetInput = document.getElementById("comment-input");
 let cancelBtn = document.getElementById("cancelComment");
 let writeBtn = document.getElementById("writeComment");
 
+//전체 비디오 리스트
+let allVideoList = [];
 //우측 비디오카드 리스트
 let recommendedVideo = [];
 
@@ -53,6 +60,9 @@ var CURL = '';
 
 fetch(url).then((response) => response.json())
     .then((data) => {
+        currentVideoInfo = data;
+        targetTagList = currentVideoInfo.video_tag;
+        targetVideoId = currentVideoInfo.video_id;
         video.src = data["video_link"];
         video.poster = data["image_link"];
         title.textContent = data["video_title"];
@@ -124,35 +134,25 @@ fetch(url).then((response) => response.json())
             })
     });
 
-//추천영상 설정
+//전체영상 설정
 fetch("https://oreumi.appspot.com/video/getVideoList")
     .then((response) => response.json())
     .then((data) => {
-        getRandomVideos(data);
-        setVideoCards(recommendedVideo);
+        allVideoList = data;
+        setVideoCards(allVideoList);
     });
 
-//비디오 순서 랜덤으로 정렬
-function getRandomVideos(videoList) {
-    for (var i = 0; i < videoList.length; i++) {
-        if (videoList[i].video_id === id) {
-            fruits.splice(i, 1);
-        }
-    }
-    videoList.sort(function (a, b) {
-        return 0.5 - Math.random();
-    });
-
-    recommendedVideo = videoList;
-}
-
-function setVideoCards(videoList) {
+async function setVideoCards(videoList) {
+    recommendedVideo = await calculateVideoSimilarities(
+        videoList,
+        targetTagList
+    );
     //비디오카드가 추가될 html 요소
     const videos = document.getElementById("videos");
     //자식 요소 초기화
     videos.replaceChildren();
 
-    for (let i = 0; i < videoList.length; i++) {
+    for (let i = 0; i < recommendedVideo.length; i++) {
         //비디오카드 생성을 위한 html 요소
         const videoLink = document.createElement("a");
         const videoCard = document.createElement("div");
@@ -176,7 +176,7 @@ function setVideoCards(videoList) {
 
         videos.appendChild(videoLink);
 
-        videoLink.href = `./Video.html?video_id=${videoList[i].video_id}`
+        videoLink.href = `./Video.html?video_id=${recommendedVideo[i].video_id}`
         videoLink.className = "videoCard";
         thumbnail.className = "thumbnail";
         infoText.className = "infoText";
@@ -185,7 +185,7 @@ function setVideoCards(videoList) {
         viewsAndUploaded.className = "viewsAndUploaded";
 
         //비디오 정보 받아오기
-        fetch(`https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoList[i].video_id}`)
+        fetch(`https://oreumi.appspot.com/video/getVideoInfo?video_id=${recommendedVideo[i].video_id}`)
             .then((response) => response.json())
             .then((data) => {
                 thumbnail.src = data.image_link;
@@ -377,4 +377,70 @@ function writeComment() {
 
     //댓글수 증가
     countComment.innerText = parseInt(countComment.innerText) + 1;
+}
+
+//유사도 측정 함수
+async function getSimilarity(firstWord, secondWord) {
+    const openApiURL = "http://aiopen.etri.re.kr:8000/WiseWWN/WordRel";
+    const access_key = "c487154b-f9d3-4962-a154-914e5e99c56d";
+
+    let requestJson = {
+        argument: {
+            first_word: firstWord,
+            second_word: secondWord,
+        },
+    };
+
+    let response = await fetch(openApiURL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: access_key,
+        },
+        body: JSON.stringify(requestJson),
+    });
+    let data = await response.json();
+    return data.return_object["WWN WordRelInfo"].WordRelInfo.Distance;
+}
+
+async function calculateVideoSimilarities(videoList, targetTagList) {
+    let filteredVideoList = [];
+
+    for (let video of videoList) {
+        let totalDistance = 0;
+        let promises = [];
+
+        for (let videoTag of video.video_tag) {
+            for (let targetTag of targetTagList) {
+                if (videoTag == targetTag) {
+                    promises.push(0);
+                } else {
+                    promises.push(getSimilarity(videoTag, targetTag));
+                }
+            }
+        }
+
+        let distances = await Promise.all(promises);
+
+        for (let distance of distances) {
+            if (distance !== -1) {
+                totalDistance += distance;
+            }
+        }
+
+        if (totalDistance !== 0) {
+            if (targetVideoId !== video.video_id) {
+                filteredVideoList.push({ ...video, score: totalDistance });
+            }
+        }
+    }
+
+    filteredVideoList.sort((a, b) => a.score - b.score);
+
+    filteredVideoList = filteredVideoList.map((video) => ({
+        ...video,
+        score: 0,
+    }));
+    console.log(filteredVideoList);
+    return filteredVideoList;
 }
