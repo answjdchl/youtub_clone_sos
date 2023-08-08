@@ -483,6 +483,11 @@ main {
     /* margin-left: auto; */
 }
 
+#subscriptionBtn:hover {
+    background: #900;
+    color: #ccc
+}
+
 #channelName {
     font-size: 14px;
     color: #aaa;
@@ -700,39 +705,39 @@ main {
 
 /* 8.3 */
 
-main{
+main {
     overflow: hidden;
     overflow-x: hidden;
     overflow-y: scroll;
 }
 
 
-.playList{
+.playList {
     overflow-x: scroll;
     margin: 0 5% 5px 5%;
 
 }
 
-.playList::-webkit-scrollbar{
+.playList::-webkit-scrollbar {
     height: 8px;
     margin-bottom: 2px;
 }
 
-.playList::-webkit-scrollbar-thumb{
+.playList::-webkit-scrollbar-thumb {
     background-color: #000;
-    
+
 }
 
-.playList:hover::-webkit-scrollbar-thumb{
+.playList:hover::-webkit-scrollbar-thumb {
     background-color: #717171;
 }
 
-.videoCard .detail{
-    width:200px;
+.videoCard .detail {
+    width: 200px;
 }
 
 
-.videoCard{
+.videoCard {
     padding: 10px;
     margin: 0 5px;
     display: flex;
@@ -742,27 +747,27 @@ main{
 }
 
 
-.videoCard:hover{
+.videoCard:hover {
     background: #282828;
 }
 
-#semiVideo{
+#semiVideo {
     width: fit-content;
-    padding: 0.7rem ;
+    padding: 0.7rem;
     height: fit-content;
     border-radius: 5px;
     margin: 1rem 10% 1rem 10%;
 }
 
-#semiVideo:hover{
+#semiVideo:hover {
     background: #212121;
 }
 
-#semiVideo div{
+#semiVideo div {
     height: fit-content;
 }
 
-.playlist__box{
+.playlist__box {
     border-top: #343434 1px solid;
     margin: 8px 5% 0 5%;
 }

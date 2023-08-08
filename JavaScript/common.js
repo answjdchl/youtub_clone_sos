@@ -167,3 +167,8 @@ function deactivateMobileSearch() {
     headerMenu.classList.remove("desktopMode");
     backBtn.classList.add("display_none");
 }
+
+function subscription() {
+    const subscriptionBtn = document.getElementById("subscriptionBtn");
+    subscriptionBtn.innerText = "SUBSCRIBING"
+}

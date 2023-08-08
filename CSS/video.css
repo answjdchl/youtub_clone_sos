@@ -92,7 +92,7 @@ article {
 
 
 
-.subscribe {
+#subscriptionBtn {
     border-radius: 2px;
     background: #C00;
     display: flex;
@@ -114,7 +114,7 @@ article {
 }
 
 
-.subscribe:hover {
+#subscriptionBtn:hover {
     background: #900;
     color: #ccc
 }
