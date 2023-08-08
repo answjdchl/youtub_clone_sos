@@ -10,6 +10,7 @@ let pageTitle = document.querySelector("title");
 
 const subscription_list = ["oreumi", "나와 토끼들", "개조"];
 
+var clicked = false;
 //navBar가 열려있는지에 대한 변수
 let isOpen = true;
 //모바일모드에 진입했는지 여부
@@ -170,5 +171,17 @@ function deactivateMobileSearch() {
 
 function subscription() {
     const subscriptionBtn = document.getElementById("subscriptionBtn");
-    subscriptionBtn.innerText = "SUBSCRIBING"
+
+    if (clicked){
+        subscriptionBtn.innerText = "SUBSCRIBE";
+        subscriptionBtn.style.background = '#c00';
+        clicked = false;
+    }
+    else{
+        subscriptionBtn.innerText = "SUBSCRIBING";
+        subscriptionBtn.style.background = '#303030';
+        clicked = true;
+    }
+    
+    
 }
