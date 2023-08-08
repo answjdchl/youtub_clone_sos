@@ -270,6 +270,7 @@ function cancelComment() {
     commnetInput.blur();
     cancelBtn.classList.add("display_none");
     writeBtn.classList.add("display_none");
+    writeBtn.disabled = true;
 }
 
 function writeComment() {
